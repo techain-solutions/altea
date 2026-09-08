@@ -1,0 +1,343 @@
+/* ==========================================================================
+   ALTEA STORES — Feuille de marque
+   Chargee dans layout/theme.liquid juste apres theme.css, donc elle gagne
+   la cascade sur base.css et theme.css sans avoir besoin de !important.
+
+   Regle du projet : aucune couleur en dur en dehors du bloc :root ci-dessous.
+   Tout passe par --altea-* (cette feuille) ou --color-* (schemas Debutify).
+
+   Sommaire
+     1. Polices multi-ecritures (latin + arabe)
+     2. Tokens de marque
+     3. Rythme typographique
+     4. Composants (boutons, cartes, badges, focus)
+     5. Correctifs RTL pour l'existant Debutify
+   ========================================================================== */
+
+
+/* 1. POLICES MULTI-ECRITURES
+   -------------------------------------------------------------------------
+   Poppins (chargee par le font_picker Debutify) ne contient que du latin et
+   du devanagari : aucun glyphe arabe. On ne branche PAS selon la locale, on
+   laisse le navigateur retomber glyphe par glyphe — le latin rend en Poppins,
+   l'arabe dans la premiere face arabe disponible.
+   Les faces listees apres Poppins sont des polices systeme (zero telechargement).
+   TODO possible : auto-heberger Tajawal ou Noto Sans Arabic en woff2 pour un
+   rendu arabe identique sur tous les OS.                                    */
+:root {
+  --altea-font-arabic: "Noto Sans Arabic", "Noto Naskh Arabic", Tajawal,
+                       "Geeza Pro", "Segoe UI", Tahoma, Arial;
+}
+
+body,
+input, textarea, select, button {
+  font-family: var(--font-body-family), var(--altea-font-arabic), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--font-heading-family), var(--altea-font-arabic), sans-serif;
+}
+
+
+/* 2. TOKENS DE MARQUE
+   -------------------------------------------------------------------------
+   Les couleurs sont stockees en triplets RGB pour interoperer avec la
+   convention Debutify rgb(var(--x)) / rgba(var(--x), .5).                   */
+:root {
+  /* Palette */
+  --altea-navy:        3, 29, 66;      /* #031D42 — primaire */
+  --altea-gold:        214, 166, 94;   /* #D6A65E — accent   */
+  --altea-red:         234, 13, 25;    /* #EA0D19 — promo    */
+  --altea-ink:         0, 0, 0;
+  --altea-surface:     255, 255, 255;
+  --altea-surface-alt: 243, 243, 243;  /* #F3F3F3 */
+  --altea-hairline:    rgba(var(--altea-navy), 0.12);
+
+  /* Espacement — echelle 8 crans */
+  --altea-space-1: 0.4rem;
+  --altea-space-2: 0.8rem;
+  --altea-space-3: 1.2rem;
+  --altea-space-4: 1.6rem;
+  --altea-space-5: 2.4rem;
+  --altea-space-6: 3.2rem;
+  --altea-space-7: 4.8rem;
+  --altea-space-8: 6.4rem;
+
+  /* Typographie fluide (le thème est en base 10px : 1rem = 10px) */
+  --altea-text-xs:  1.2rem;
+  --altea-text-sm:  1.4rem;
+  --altea-text-md:  1.6rem;
+  --altea-text-lg:  clamp(1.8rem, 1.6rem + 0.6vw, 2.2rem);
+  --altea-text-xl:  clamp(2.2rem, 1.9rem + 1.2vw, 3.2rem);
+  --altea-text-2xl: clamp(2.8rem, 2.2rem + 2.4vw, 4.4rem);
+  --altea-text-3xl: clamp(3.4rem, 2.4rem + 4vw, 6.4rem);
+
+  /* Elevation */
+  --altea-shadow-card: 0 0.2rem 0.6rem rgba(var(--altea-navy), 0.06),
+                       0 0.6rem 1.5rem rgba(var(--altea-navy), 0.08);
+  --altea-shadow-cta:  0 0.4rem 1.4rem rgba(var(--altea-navy), 0.24);
+
+  /* Rayons */
+  --altea-radius-sm: 0.6rem;
+  --altea-radius-md: 1.2rem;
+  --altea-radius-lg: 2rem;
+  --altea-radius-pill: 999rem;
+
+  /* Cible tactile minimale (WCAG 2.2 / mobile-first) */
+  --altea-tap: 4.8rem;
+}
+
+
+/* 3. RYTHME TYPOGRAPHIQUE
+   -------------------------------------------------------------------------
+   Debutify laisse les titres a une interligne heritee qui « colle » sur les
+   grands corps. On resserre le letter-spacing et on ouvre l'interligne.     */
+h1, h2, h3, .h0, .h1, .h2, .h3 {
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-wrap: balance;          /* evite les veuves sur les titres courts */
+}
+
+h4, h5, h6, .h4, .h5 {
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+p, li {
+  line-height: 1.65;
+}
+
+/* L'arabe a une hauteur d'x plus grande et des diacritiques : il lui faut
+   plus d'interligne et pas de resserrement de chasse. */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] .h0, [dir="rtl"] .h1, [dir="rtl"] .h2, [dir="rtl"] .h3 {
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] p,
+[dir="rtl"] li {
+  line-height: 1.9;
+}
+
+
+/* 4. COMPOSANTS
+   ====================================================================== */
+
+/* 4.1 Boutons — cible tactile, poids, retour au tap */
+.button,
+.shopify-challenge__button,
+.customer button {
+  min-height: var(--altea-tap);
+  padding-block: var(--altea-space-3);
+  padding-inline: var(--altea-space-6);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 120ms ease, box-shadow 200ms ease,
+              background-color 200ms ease;
+}
+
+.button:not(.button--tertiary):hover {
+  box-shadow: var(--altea-shadow-cta);
+}
+
+/* Retour tactile : le bouton s'enfonce legerement au doigt */
+.button:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+  .button:active { transform: none; }
+}
+
+/* 4.2 Cartes produit — ombre douce plutot que bordure dure */
+.card-wrapper .card,
+.card--card {
+  box-shadow: var(--altea-shadow-card);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) {
+  .card-wrapper:hover .card,
+  .card-wrapper:hover .card--card {
+    transform: translateY(-2px);
+    box-shadow: 0 0.4rem 1rem rgba(var(--altea-navy), 0.08),
+                0 1.2rem 2.4rem rgba(var(--altea-navy), 0.12);
+  }
+}
+
+/* 4.3 Badges promo — rouge Altea, forme pilule */
+.badge--sale,
+.badge.color-inverse {
+  border-radius: var(--altea-radius-pill);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-inline: var(--altea-space-3);
+}
+
+/* 4.4 Prix barre — le prix fort doit dominer */
+.price--on-sale .price-item--regular {
+  opacity: 0.55;
+  font-weight: 400;
+}
+
+.price--on-sale .price-item--sale {
+  font-weight: 700;
+}
+
+/* 4.5 Focus visible — accessibilite clavier, sur les deux fonds */
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid rgb(var(--altea-gold));
+  outline-offset: 2px;
+  border-radius: var(--altea-radius-sm);
+}
+
+/* 4.6 Filet de separation coherent */
+hr,
+.section-separator {
+  border: 0;
+  border-block-start: 1px solid var(--altea-hairline);
+}
+
+
+/* 5. CORRECTIFS RTL POUR L'EXISTANT DEBUTIFY
+   =========================================================================
+   Le thème ne contenait aucun selecteur [dir="rtl"] et utilise des proprietes
+   physiques (left/right/margin-left...). Les paires symetriques left:0;right:0
+   sont deja RTL-safe et ne sont pas reprises ici.
+   Tout le CSS ECRIT POUR ALTEA utilise des proprietes logiques et n'a donc
+   besoin d'aucune regle dans ce bloc.
+   Chaque correctif ci-dessous vise une regle reellement presente dans
+   base.css / theme.css (verifiee).                                          */
+
+/* --- Priorite 1 : formulaires (chemin de conversion COD) --- */
+
+/* .field__label { left: calc(var(--inputs-border-width) + 2rem) } */
+[dir="rtl"] .field__label,
+[dir="rtl"] .customer .field label {
+  left: auto;
+  right: calc(var(--inputs-border-width) + 2rem);
+}
+
+/* .field__input { text-align: left } */
+[dir="rtl"] .field__input,
+[dir="rtl"] .customer .field input,
+[dir="rtl"] .form__message {
+  text-align: right;
+}
+
+/* .field__button { right: 0 } */
+[dir="rtl"] .field__button {
+  right: auto;
+  left: 0;
+}
+
+/* .select .svg-wrapper { right: 0 } — chevron des menus deroulants */
+[dir="rtl"] .select .svg-wrapper,
+[dir="rtl"] .customer select + .svg-wrapper {
+  right: auto;
+  left: 0;
+}
+
+/* .form__message .icon { margin-right: .5rem } */
+[dir="rtl"] .form__message .svg-wrapper,
+[dir="rtl"] .form__message .icon {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+[dir="rtl"] .form__message--large .icon {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* input[type=checkbox] { margin-right: .5rem } */
+[dir="rtl"] input[type="checkbox"] {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* --- Priorite 2 : fiche produit --- */
+
+/* .quantity__button:first-child { margin-left } / :last-child { margin-right } */
+[dir="rtl"] .quantity__button:first-child {
+  margin-left: 0;
+  margin-right: calc(var(--inputs-border-width));
+}
+[dir="rtl"] .quantity__button:last-child {
+  margin-right: 0;
+  margin-left: calc(var(--inputs-border-width));
+}
+
+/* summary .icon-caret { right: 1.5rem } — FAQ ET accordeons de contenu */
+[dir="rtl"] summary .icon-caret {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* .link-with-icon .icon { margin-left: 1rem } */
+[dir="rtl"] .link-with-icon .icon {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* .share-button__button { margin-left:0; padding-left:0 } + .icon-share */
+[dir="rtl"] .share-button__button .icon-share {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* --- Priorite 3 : chrome et mise en page --- */
+
+/* .grid--peek — la gouttiere du carrousel doit basculer de cote */
+[dir="rtl"] .grid--peek.slider .grid__item:first-of-type,
+[dir="rtl"] .grid--peek .grid__item:first-of-type,
+[dir="rtl"] .slider--tablet.grid--peek .grid__item:first-of-type {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+[dir="rtl"] .grid--peek.slider:after {
+  margin-left: 0;
+  margin-right: calc(var(--grid-mobile-horizontal-spacing) * -1);
+}
+[dir="rtl"] .grid--peek .grid__item {
+  padding-left: 0;
+  padding-right: var(--grid-mobile-horizontal-spacing);
+}
+
+/* .announcement-bar .slider-button--next { margin-right } */
+[dir="rtl"] .announcement-bar .slider-button--next {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* .list-social { margin-left: -1.2rem } */
+[dir="rtl"] .utility-bar__grid .list-social,
+[dir="rtl"] .list-social {
+  margin-left: 0;
+  margin-right: -1.2rem;
+}
+
+/* blockquote { border-left + padding-left } */
+[dir="rtl"] blockquote {
+  border-left: 0;
+  padding-left: 0;
+  border-right: 0.2rem solid rgba(var(--color-foreground), 0.2);
+  padding-right: 1.5rem;
+}
+
+/* Utilitaires d'alignement de theme.css : traites comme logiques, ils
+   doivent donc se refleter quand la page bascule en RTL. */
+[dir="rtl"] .text-left  { text-align: right; }
+[dir="rtl"] .text-right { text-align: left; }
+[dir="rtl"] .mr-auto    { margin-right: 0 !important; margin-left: auto !important; }
+[dir="rtl"] .ml-auto    { margin-left: 0 !important; margin-right: auto !important; }
+
+/* Les fleches de carrousel Splide et les icones directionnelles pointent
+   dans le mauvais sens une fois la page miroir. */
+[dir="rtl"] .slider-button .icon-caret,
+[dir="rtl"] .slider-button--prev .icon,
+[dir="rtl"] .slider-button--next .icon {
+  transform: scaleX(-1);
+}

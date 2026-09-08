@@ -1,5 +1,17 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}">
+{%- liquid
+  # Direction du texte : FR/LTR par defaut, bascule automatique en RTL pour l'arabe.
+  # request.locale.primary est un booleen ("est-ce la locale principale"), pas la langue :
+  # on teste donc iso_code, normalise (ar-MA -> ar) et compare a un tableau (split)
+  # pour que 'contains' fasse un test d'appartenance et non de sous-chaine.
+  assign rtl_langs = 'ar,he,fa,ur,ps,sd,ug,yi,dv,ckb' | split: ','
+  assign lang_code = request.locale.iso_code | split: '-' | first | downcase
+  assign text_dir = 'ltr'
+  if rtl_langs contains lang_code
+    assign text_dir = 'rtl'
+  endif
+-%}
+<html class="js" lang="{{ request.locale.iso_code }}" dir="{{ text_dir }}">
   <head>
     <script>
       const start = performance.now();
@@ -92,6 +104,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'altea-brand.css' | asset_url | stylesheet_tag }}
     {{ 'dbtfy-drawer.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'dbtfy-toast.css' | asset_url }}" media="print" onload="this.media='all'">
     <script src="{{ 'dbtfy-toast.js' | asset_url }}" defer></script>
