@@ -1,0 +1,237 @@
+{%- comment -%}
+  ALTEA — Fiche technique produit
+
+  Section reutilisable, pilotee par blocs : une ligne = un bloc « spec ».
+  Le panneau lateral « Dans la boite » est optionnel (blocs « item »).
+
+  Comme altea-hero, la section n'est PAS gatee derriere widget-blocker :
+  c'est du contenu produit, il ne doit pas disparaitre du site en ligne.
+
+  Ecrite en proprietes logiques : RTL natif, aucune surcharge necessaire.
+{%- endcomment -%}
+
+{{ 'section-altea-product-specs.css' | asset_url | stylesheet_tag }}
+{%- render 'section-padding', section: section -%}
+
+{%- liquid
+  assign s = section.settings
+
+  assign spec_blocks = section.blocks | where: 'type', 'spec'
+  assign item_blocks = section.blocks | where: 'type', 'item'
+
+  assign has_box = false
+  if item_blocks.size > 0 and s.box_title != blank
+    assign has_box = true
+  endif
+-%}
+
+<section
+  class="altea-specs show-on--{{ s.show_on }} color-{{ s.custom_color_scheme }} dbtfy-color-{{ s.color_scheme }} section-{{ section.id }}-padding{% if has_box %} altea-specs--split{% endif %}{% if s.center_header %} altea-specs--center{% endif %}"
+  {{ section.shopify_attributes }}
+>
+  <div class="{{ s.container_size }}">
+    {%- if s.eyebrow != blank or s.heading != blank or s.intro != blank -%}
+      <div class="altea-specs__header">
+        {%- if s.eyebrow != blank -%}
+          <p class="altea-specs__eyebrow">{{ s.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if s.heading != blank -%}
+          <h2 class="altea-specs__heading">{{ s.heading }}</h2>
+        {%- endif -%}
+        {%- if s.intro != blank -%}
+          <div class="altea-specs__intro">{{ s.intro }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="altea-specs__inner">
+      {%- if spec_blocks.size > 0 -%}
+        <dl class="altea-specs__table">
+          {%- for block in spec_blocks -%}
+            <div class="altea-specs__row" {{ block.shopify_attributes }}>
+              <dt class="altea-specs__label">{{ block.settings.label }}</dt>
+              <dd class="altea-specs__value">{{ block.settings.value }}</dd>
+            </div>
+          {%- endfor -%}
+        </dl>
+      {%- endif -%}
+
+      {%- if has_box -%}
+        <div class="altea-specs__box">
+          <h3 class="altea-specs__box-title">{{ s.box_title }}</h3>
+          <ul class="altea-specs__list" role="list">
+            {%- for block in item_blocks -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+            {%- endfor -%}
+          </ul>
+          {%- if s.note != blank -%}
+            <div class="altea-specs__note">{{ s.note }}</div>
+          {%- endif -%}
+        </div>
+      {%- elsif s.note != blank -%}
+        <div class="altea-specs__note">{{ s.note }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Altea — Fiche technique",
+  "tag": "section",
+  "class": "altea-product-specs-section",
+  "settings": [
+    { "type": "header", "content": "En-tête" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "CARACTÉRISTIQUES"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Fiche technique"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_header",
+      "label": "Centrer l'en-tête",
+      "default": true
+    },
+    { "type": "header", "content": "Panneau « Dans la boîte »" },
+    {
+      "type": "text",
+      "id": "box_title",
+      "label": "Titre du panneau",
+      "info": "Laisser vide pour masquer le panneau et afficher le tableau sur toute la largeur.",
+      "default": "Dans la boîte"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note de bas de section",
+      "info": "Mentions, précautions d'usage, durée de garantie…"
+    },
+    { "type": "header", "content": "Affichage" },
+    {
+      "type": "select",
+      "id": "show_on",
+      "label": "Afficher sur",
+      "default": "both",
+      "options": [
+        { "value": "both", "label": "Desktop et mobile" },
+        { "value": "desktop-only", "label": "Desktop uniquement" },
+        { "value": "mobile-only", "label": "Mobile uniquement" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "label": "Largeur du conteneur",
+      "info": "« Standard » applique la classe page-width du thème.",
+      "default": "page-width",
+      "options": [
+        { "value": "page-width", "label": "Standard" },
+        { "value": "", "label": "Pleine largeur" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Schéma de couleurs Debutify",
+      "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Clair" },
+        { "value": "scheme-2", "label": "Primaire" },
+        { "value": "scheme-3", "label": "Secondaire" },
+        { "value": "scheme-4", "label": "Foncé" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "custom_color_scheme",
+      "label": "Schéma de couleurs personnalisé",
+      "default": "scheme-1"
+    },
+    { "type": "header", "content": "Espacement" },
+    {
+      "type": "select",
+      "id": "padding___top",
+      "label": "Marge haute",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "label": "Marge haute personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "padding___bottom",
+      "label": "Marge basse",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "label": "Marge basse personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Ligne de caractéristique",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Intitulé", "default": "Dimensions" },
+        { "type": "inline_richtext", "id": "value", "label": "Valeur", "default": "à compléter" }
+      ]
+    },
+    {
+      "type": "item",
+      "name": "Élément « Dans la boîte »",
+      "settings": [
+        { "type": "inline_richtext", "id": "text", "label": "Texte", "default": "1 × produit" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Altea — Fiche technique",
+      "blocks": [
+        { "type": "spec" },
+        { "type": "spec" },
+        { "type": "spec" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

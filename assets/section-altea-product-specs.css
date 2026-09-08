@@ -1,0 +1,151 @@
+/* ==========================================================================
+   ALTEA — Fiche technique produit (section altea-product-specs)
+
+   Ecrite en proprietes logiques (inline-start/end, block) : RTL natif,
+   aucune surcharge [dir="rtl"] necessaire.
+   Aucune couleur en dur : tout passe par --altea-* (assets/altea-brand.css)
+   ou --color-* (schemas Debutify).
+   ========================================================================== */
+
+.altea-specs__inner {
+  display: grid;
+  gap: var(--altea-space-6);
+}
+
+@media screen and (min-width: 990px) {
+  .altea-specs--split .altea-specs__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--altea-space-7);
+  }
+}
+
+/* --- En-tete ---------------------------------------------------------- */
+
+.altea-specs__eyebrow {
+  margin: 0 0 var(--altea-space-2);
+  font-size: var(--altea-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(var(--altea-gold));
+}
+
+.altea-specs__heading {
+  margin: 0;
+  font-size: var(--altea-text-xl);
+}
+
+.altea-specs__intro {
+  margin-block-start: var(--altea-space-3);
+  font-size: var(--altea-text-md);
+  opacity: 0.8;
+}
+
+.altea-specs__intro > *:last-child { margin-block-end: 0; }
+
+.altea-specs--center .altea-specs__header { text-align: center; }
+
+/* --- Tableau ---------------------------------------------------------- */
+
+.altea-specs__table {
+  margin: 0;
+  border: 1px solid var(--altea-hairline);
+  border-radius: var(--altea-radius-md);
+  overflow: hidden;
+  background: rgb(var(--altea-surface));
+  box-shadow: var(--altea-shadow-card);
+}
+
+.altea-specs__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--altea-space-1);
+  padding: var(--altea-space-3) var(--altea-space-4);
+  border-block-start: 1px solid var(--altea-hairline);
+}
+
+.altea-specs__row:first-child { border-block-start: 0; }
+
+/* Zebrage : lisibilite sur les fiches longues */
+.altea-specs__row:nth-child(even) {
+  background: rgb(var(--altea-surface-alt));
+}
+
+@media screen and (min-width: 750px) {
+  .altea-specs__row {
+    grid-template-columns: minmax(14rem, 38%) minmax(0, 1fr);
+    gap: var(--altea-space-4);
+    align-items: baseline;
+  }
+}
+
+.altea-specs__label {
+  margin: 0;
+  font-size: var(--altea-text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgb(var(--altea-navy));
+}
+
+.altea-specs__value {
+  margin: 0;
+  font-size: var(--altea-text-md);
+}
+
+.altea-specs__value > *:last-child { margin-block-end: 0; }
+
+/* --- Groupe « Dans la boite » ----------------------------------------- */
+
+.altea-specs__box {
+  padding: var(--altea-space-5);
+  border-radius: var(--altea-radius-md);
+  background: rgb(var(--altea-surface-alt));
+}
+
+.altea-specs__box-title {
+  margin: 0 0 var(--altea-space-3);
+  font-size: var(--altea-text-lg);
+}
+
+.altea-specs__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--altea-space-2);
+}
+
+.altea-specs__list li {
+  position: relative;
+  padding-inline-start: var(--altea-space-5);
+  font-size: var(--altea-text-md);
+}
+
+/* Puce coche dessinee en CSS : pas de dependance a une police d'icones */
+.altea-specs__list li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0.7em;
+  inline-size: 1rem;
+  block-size: 0.5rem;
+  border-inline-start: 0.2rem solid rgb(var(--altea-gold));
+  border-block-end: 0.2rem solid rgb(var(--altea-gold));
+  transform: rotate(-45deg);
+}
+
+[dir="rtl"] .altea-specs__list li::before {
+  /* La coche est un glyphe, pas une direction : on la garde identique. */
+  transform: rotate(-45deg) scaleX(-1);
+}
+
+/* --- Mention legale / note -------------------------------------------- */
+
+.altea-specs__note {
+  margin-block-start: var(--altea-space-4);
+  font-size: var(--altea-text-xs);
+  opacity: 0.65;
+}
+
+.altea-specs__note > *:last-child { margin-block-end: 0; }
