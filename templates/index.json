@@ -85,7 +85,7 @@
             "title_zeRuiip": {
               "type": "_title",
               "settings": {
-                "title": "Proven bestsellers",
+                "title": "Nos produits phares",
                 "title_text_color": "default",
                 "title_text_color_custom": "#a52a2a",
                 "custom_color": false,
@@ -130,7 +130,7 @@
         "columns_desktop": 4,
         "list_type": false,
         "show_view_all": true,
-        "view_all_text": "View all",
+        "view_all_text": "Voir tous nos produits",
         "view_all_link": "",
         "view_all_style": "link underlined-link button--link",
         "button_size": "inherit",
@@ -176,211 +176,6 @@
         "custom_padding_bottom": 32
       }
     },
-    "collection_list_EDRrfw": {
-      "type": "collection-list",
-      "blocks": {
-        "heading": {
-          "type": "_heading",
-          "static": true,
-          "settings": {
-            "as_column": false,
-            "columns": 1,
-            "row_gap": 20,
-            "column_gap": 20,
-            "columns_mobile": 1,
-            "row_gap_mobile": 20,
-            "column_gap_mobile": 20,
-            "padding___top": "none",
-            "custom_padding_top": 36,
-            "padding___bottom": "none",
-            "custom_padding_bottom": 36
-          },
-          "blocks": {
-            "title_HFbKp9": {
-              "type": "_title",
-              "settings": {
-                "title": "SHOP OUR SIGNATURE COLLECTIONS",
-                "title_text_color": "default",
-                "title_text_color_custom": "#a52a2a",
-                "custom_color": false,
-                "title_color": "#000000",
-                "title_line": "none",
-                "title_bg_color": "#000000",
-                "highlighted_1_border_radius": 8,
-                "highlighted_1_border_width": 0,
-                "highlighted_1_border": "solid",
-                "highlighted_1_border_color": "#003934",
-                "highlighted_1_vertical_padding": 20,
-                "highlighted_1_horizontal_padding": 20,
-                "stroke_thickness": 20,
-                "half_stroke_thickness": 40,
-                "stroke_vertical_position": 100,
-                "alignment": "text-center",
-                "alignment_mobile": "",
-                "size": "inherit",
-                "style": "inherit",
-                "icon_enable": false,
-                "icon": "lock",
-                "icon_size": "medium",
-                "icon_alignment": "align-items-center",
-                "padding___top": "custom",
-                "custom_padding_top": 0,
-                "padding___bottom": "custom",
-                "custom_padding_bottom": 20
-              },
-              "blocks": {}
-            },
-            "description_EepKpx": {
-              "type": "_description",
-              "name": "t:general.settings.description",
-              "settings": {
-                "description": "<p>Explore FITNOVA sportswear by collection and find the styles that fit your movement, routine, and everyday life.</p>",
-                "alignment": "text-center",
-                "alignment_mobile": "",
-                "custom_bullet_icon": "",
-                "text_animation": "none",
-                "glacier_speed": 5,
-                "typing_speed": 50,
-                "typing_initial_delay": 0,
-                "typing_pause_duration": 2000,
-                "typing_deleting_speed": 30,
-                "typing_show_cursor": true,
-                "typing_cursor_character": "|",
-                "typing_cursor_blink_duration": 500,
-                "typing_hide_cursor_while_typing": false,
-                "padding___top": "custom",
-                "custom_padding_top": 0,
-                "padding___bottom": "custom",
-                "custom_padding_bottom": 24
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "title_HFbKp9",
-            "description_EepKpx"
-          ]
-        },
-        "collection-list": {
-          "type": "_collection-list",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "collection_list_block_qWWCwa": {
-              "type": "_collection-list-block",
-              "name": "t:general.settings.visibility.collection.label",
-              "settings": {
-                "collection": "frontpage",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            },
-            "collection_list_block_rG7Kgn": {
-              "type": "_collection-list-block",
-              "settings": {
-                "collection": "premium-active-casual-shorts",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            },
-            "collection_list_block_6RkJ4V": {
-              "type": "_collection-list-block",
-              "settings": {
-                "collection": "loungewear-track-pants",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            },
-            "collection_list_block_cEyhNV": {
-              "type": "_collection-list-block",
-              "name": "t:general.settings.visibility.collection.label",
-              "settings": {
-                "collection": "premium-hoodies",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            },
-            "collection_list_block_bQxDPr": {
-              "type": "_collection-list-block",
-              "name": "t:general.settings.visibility.collection.label",
-              "settings": {
-                "collection": "t-shirts",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            },
-            "collection_list_block_KeWVK7": {
-              "type": "_collection-list-block",
-              "settings": {
-                "collection": "cozy-crewneck-sweatshirts-pullovers",
-                "image_position": "center-center",
-                "title": ""
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_list_block_qWWCwa",
-            "collection_list_block_rG7Kgn",
-            "collection_list_block_6RkJ4V",
-            "collection_list_block_cEyhNV",
-            "collection_list_block_bQxDPr",
-            "collection_list_block_KeWVK7"
-          ]
-        }
-      },
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "show_on": "both",
-        "container_size": "page-width",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "show_view_all": false,
-        "view_all_style": "button button--primary",
-        "button_size": "inherit",
-        "pattern_bg": "none",
-        "pattern_color": "#a52a2a",
-        "pattern_size": 20,
-        "pattern_size_thickness": 1,
-        "pattern_opacity": 50,
-        "columns_mobile": "1",
-        "slider_on": "mobile",
-        "enable_autoplay": false,
-        "autoplay_speed": 5,
-        "enable_loop": true,
-        "enable_dots": true,
-        "enable_arrows": true,
-        "arrow_color": "inherit",
-        "custom_arrow_color": "#ffffff",
-        "custom_arrow_background_color": "#7559ff",
-        "arrow_position": "bottom",
-        "color_scheme": "custom",
-        "custom_color_scheme": "scheme-2",
-        "padding___top": "custom",
-        "custom_padding_top": 40,
-        "padding___bottom": "custom",
-        "custom_padding_bottom": 56
-      }
-    },
-    "custom_liquid_VJ8fBX": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.name",
-      "settings": {
-        "show_on": "desktop-only",
-        "custom_liquid": "<section class=\"fitnova-lifestyle-banner\">\n  <div class=\"fitnova-lifestyle-banner__media\">\n\n    <img\n      src=\"https://cdn.shopify.com/s/files/1/1022/7259/8148/files/ChatGPT_Image_1_sept._2026_15_07_14.jpg?v=1788279477\"\n      alt=\"FITNOVA lifestyle collection\"\n      class=\"fitnova-lifestyle-banner__image\"\n      loading=\"lazy\"\n      width=\"2000\"\n      height=\"1000\"\n    >\n\n    <div class=\"fitnova-lifestyle-banner__overlay\"></div>\n\n    <div class=\"fitnova-lifestyle-banner__content page-width\">\n      <div class=\"fitnova-lifestyle-banner__content-inner\">\n\n        <p class=\"fitnova-lifestyle-banner__eyebrow\">\n          MOVE YOUR WAY\n        </p>\n\n        <h2 class=\"fitnova-lifestyle-banner__heading\">\n  Designed for <span class=\"fitnova-lifestyle-banner__green\">Movement.</span><br>\n  Built for <br/>Everyday.\n</h2>\n\n        <p class=\"fitnova-lifestyle-banner__text\">\n          Versatile FITNOVA apparel designed to move with you —<br/>\n          from active moments to everyday life.\n        </p>\n\n        <a\n          href=\"https://fitnovaltd.com/collections\"\n          class=\"fitnova-lifestyle-banner__button\"\n        >\n          <span>Explore FITNOVA</span>\n\n          <svg\n            class=\"fitnova-lifestyle-banner__arrow\"\n            viewBox=\"0 0 14 10\"\n            aria-hidden=\"true\"\n          >\n            <path\n              fill=\"currentColor\"\n              fill-rule=\"evenodd\"\n              d=\"M8.537.808a.5.5 0 0 1 .817-.162l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 1 1-.708-.708L11.793 5.5H1a.5.5 0 0 1 0-1h10.793L8.646 1.354a.5.5 0 0 1-.109-.546\"\n              clip-rule=\"evenodd\"\n            />\n          </svg>\n        </a>\n\n      </div>\n    </div>\n\n    <div class=\"fitnova-lifestyle-banner__signature\">\n      <span>MOVE</span>\n      <span class=\"fitnova-lifestyle-banner__dot\"></span>\n      <span>LIVE</span>\n      <span class=\"fitnova-lifestyle-banner__dot\"></span>\n      <span>FITNOVA</span>\n    </div>\n\n  </div>\n</section>\n\n<style>\n  .fitnova-lifestyle-banner {\n    --fitnova-black: #111111;\n    --fitnova-white: #ffffff;\n    --fitnova-green: #0cc982;\n\n    width: 100%;\n    margin: 0;\n    padding: 0;\n  }\n\n  .fitnova-lifestyle-banner__media {\n    position: relative;\n    min-height: 580px;\n    overflow: hidden;\n    background: var(--fitnova-black);\n  }\n\n  .fitnova-lifestyle-banner__image {\n    position: absolute;\n    inset: 0;\n\n    width: 100%;\n    height: 100%;\n\n    object-fit: cover;\n    object-position: center center;\n\n    transition: transform 1s ease;\n  }\n\n  .fitnova-lifestyle-banner:hover\n  .fitnova-lifestyle-banner__image {\n    transform: scale(1.035);\n  }\n\n  .fitnova-lifestyle-banner__overlay {\n    position: absolute;\n    inset: 0;\n\n    background:\n      linear-gradient(\n        90deg,\n        rgba(10, 10, 10, 0.82) 0%,\n        rgba(10, 10, 10, 0.58) 35%,\n        rgba(10, 10, 10, 0.18) 68%,\n        rgba(10, 10, 10, 0.04) 100%\n      );\n\n    pointer-events: none;\n  }\n\n.fitnova-lifestyle-banner__green {\n  color: var(--fitnova-green);\n}\n\n  .fitnova-lifestyle-banner__content {\n    position: relative;\n    z-index: 2;\n\n    display: flex;\n    align-items: center;\n\n    min-height: 580px;\n\n    padding-top: 72px;\n    padding-bottom: 72px;\n  }\n\n  .fitnova-lifestyle-banner__content-inner {\n    width: 100%;\n    max-width: 650px;\n  }\n\n  .fitnova-lifestyle-banner__eyebrow {\n    margin: 0 0 16px;\n\n    font-family: var(--font-body-family);\n    font-size: 13px;\n    font-weight: var(--font-body-weight-bold);\n\n    line-height: 1.2;\n    letter-spacing: 0.16em;\n\n    text-transform: uppercase;\n\n    color: var(--fitnova-green);\n  }\n\n  .fitnova-lifestyle-banner__heading {\n    margin: 0;\n\n    max-width: 650px;\n\n    font-family: var(--font-heading-family) !important;\n    font-style: var(--font-heading-style);\n    font-weight: var(--font-heading-weight);\n\n    font-size: clamp(46px, 5.5vw, 76px);\n    line-height: 1;\n\n    letter-spacing: -0.025em;\n\n    color: var(--fitnova-white);\n  }\n\n  .fitnova-lifestyle-banner__text {\n    max-width: 520px;\n\n    margin: 24px 0 0;\n\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n\n    font-size: 15px;\n    line-height: 1.7;\n\n    color: rgba(255, 255, 255, 0.84);\n  }\n\n  .fitnova-lifestyle-banner__button {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    gap: 14px;\n\n    min-height: 50px;\n\n    margin-top: 32px;\n    padding: 0 24px;\n\n    background: var(--fitnova-green);\n    color: var(--fitnova-black);\n\n    border: 1px solid var(--fitnova-green);\n    border-radius: 4px;\n\n    font-family: var(--font-body-family);\n    font-size: 13px;\n    font-weight: var(--font-body-weight-bold);\n\n    letter-spacing: 0.04em;\n    text-transform: uppercase;\n    text-decoration: none;\n\n    transition:\n      background-color 200ms ease,\n      color 200ms ease,\n      transform 200ms ease;\n  }\n\n  .fitnova-lifestyle-banner__button:hover {\n    background: var(--fitnova-white);\n    color: var(--fitnova-black);\n\n    transform: translateY(-2px);\n  }\n\n  .fitnova-lifestyle-banner__arrow {\n    width: 15px;\n    height: 11px;\n\n    transition: transform 200ms ease;\n  }\n\n  .fitnova-lifestyle-banner__button:hover\n  .fitnova-lifestyle-banner__arrow {\n    transform: translateX(4px);\n  }\n\n  .fitnova-lifestyle-banner__signature {\n    position: absolute;\n    right: 28px;\n    bottom: 22px;\n\n    z-index: 2;\n\n    display: flex;\n    align-items: center;\n\n    gap: 10px;\n\n    font-family: var(--font-body-family);\n    font-size: 10px;\n    font-weight: var(--font-body-weight-bold);\n\n    letter-spacing: 0.16em;\n    text-transform: uppercase;\n\n    color: rgba(255, 255, 255, 0.78);\n  }\n\n  .fitnova-lifestyle-banner__dot {\n    width: 4px;\n    height: 4px;\n\n    background: var(--fitnova-green);\n\n    border-radius: 50%;\n  }\n\n  @media screen and (max-width: 990px) {\n    .fitnova-lifestyle-banner__media,\n    .fitnova-lifestyle-banner__content {\n      min-height: 520px;\n    }\n\n    .fitnova-lifestyle-banner__heading {\n      font-size: clamp(42px, 7vw, 62px);\n    }\n  }\n\n  @media screen and (max-width: 749px) {\n    .fitnova-lifestyle-banner__media,\n    .fitnova-lifestyle-banner__content {\n      min-height: 500px;\n    }\n\n    .fitnova-lifestyle-banner__image {\n      object-position: 65% center;\n    }\n\n    .fitnova-lifestyle-banner__overlay {\n  position: absolute;\n  inset: 0;\n  z-index: 1;\n\n  /*\n    1. Assombrit toute l'image\n    2. Renforce la partie gauche derrière le texte\n  */\n  background:\n    linear-gradient(\n      rgba(0, 0, 0, 0.52),\n      rgba(0, 0, 0, 0.52)\n    ),\n    linear-gradient(\n      90deg,\n      rgba(5, 7, 8, 0.78) 0%,\n      rgba(5, 7, 8, 0.58) 28%,\n      rgba(5, 7, 8, 0.30) 52%,\n      rgba(5, 7, 8, 0.12) 75%,\n      rgba(5, 7, 8, 0.08) 100%\n    );\n\n  pointer-events: none;\n}\n\n    .fitnova-lifestyle-banner__content {\n      align-items: flex-end;\n\n      padding-top: 48px;\n      padding-bottom: 48px;\n    }\n\n    .fitnova-lifestyle-banner__eyebrow {\n      font-size: 11px;\n      margin-bottom: 12px;\n    }\n\n    .fitnova-lifestyle-banner__heading {\n      font-size: clamp(38px, 11vw, 50px);\n    }\n\n    .fitnova-lifestyle-banner__text {\n      margin-top: 18px;\n\n      font-size: 14px;\n      line-height: 1.65;\n    }\n\n    .fitnova-lifestyle-banner__button {\n      min-height: 46px;\n\n      margin-top: 24px;\n      padding: 0 20px;\n\n      font-size: 12px;\n    }\n\n    .fitnova-lifestyle-banner__signature {\n      display: none;\n    }\n  }\n\n  @media screen and (max-width: 480px) {\n    .fitnova-lifestyle-banner__media,\n    .fitnova-lifestyle-banner__content {\n      min-height: 470px;\n    }\n\n    .fitnova-lifestyle-banner__heading {\n      font-size: 38px;\n    }\n  }\n\n  @media (prefers-reduced-motion: reduce) {\n    .fitnova-lifestyle-banner__image,\n    .fitnova-lifestyle-banner__button,\n    .fitnova-lifestyle-banner__arrow {\n      transition: none;\n    }\n\n    .fitnova-lifestyle-banner:hover\n    .fitnova-lifestyle-banner__image {\n      transform: none;\n    }\n  }\n</style>",
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "",
-        "padding___top": "custom",
-        "custom_padding_top": 0,
-        "padding___bottom": "custom",
-        "custom_padding_bottom": 0
-      }
-    },
     "dbtfy_scrolling_banner_BxqtDj": {
       "type": "dbtfy-scrolling-banner",
       "blocks": {
@@ -407,56 +202,92 @@
           "static": true,
           "settings": {},
           "blocks": {
-            "dbtfy_scrolling_banner_icon_DPi4tE": {
-              "type": "_dbtfy-scrolling-banner_icon",
-              "name": "t:general.settings.icon_label",
-              "settings": {
-                "icon": "bolt",
-                "icon_height_on_desktop": 30,
-                "icon_height_on_mobile": 30
-              },
-              "blocks": {}
-            },
-            "dbtfy_scrolling_banner_text_gDddQX": {
-              "type": "_dbtfy-scrolling-banner_text",
-              "name": "t:general.settings.text",
-              "settings": {
-                "text": "FITNOVA — MADE FOR EVERY MOVE",
-                "url": "",
-                "heading_size": "h2",
-                "custom_heading_size": 16,
-                "is_all_stroked": false,
-                "stroked_text": "shipping, returns"
-              },
-              "blocks": {}
-            },
-            "dbtfy_scrolling_banner_icon_efYFe3": {
+            "sbi_MW3uGRk0": {
               "type": "_dbtfy-scrolling-banner_icon",
               "settings": {
                 "icon": "local_shipping",
                 "icon_height_on_desktop": 30,
                 "icon_height_on_mobile": 30
-              },
-              "blocks": {}
+              }
             },
-            "dbtfy_scrolling_banner_text_3wHbjp": {
+            "sbt_WdKwlL8I": {
               "type": "_dbtfy-scrolling-banner_text",
               "settings": {
-                "text": "FREE SHIPPING",
+                "text": "LIVRAISON GRATUITE 24-48H",
                 "url": "",
                 "heading_size": "h2",
                 "custom_heading_size": 16,
                 "is_all_stroked": false,
-                "stroked_text": "shipping, returns"
-              },
-              "blocks": {}
+                "stroked_text": ""
+              }
+            },
+            "sbi_hEW7Sc7L": {
+              "type": "_dbtfy-scrolling-banner_icon",
+              "settings": {
+                "icon": "payments",
+                "icon_height_on_desktop": 30,
+                "icon_height_on_mobile": 30
+              }
+            },
+            "sbt_fhfPjYgH": {
+              "type": "_dbtfy-scrolling-banner_text",
+              "settings": {
+                "text": "PAIEMENT À LA LIVRAISON",
+                "url": "",
+                "heading_size": "h2",
+                "custom_heading_size": 16,
+                "is_all_stroked": false,
+                "stroked_text": ""
+              }
+            },
+            "sbi_Bca48hT9": {
+              "type": "_dbtfy-scrolling-banner_icon",
+              "settings": {
+                "icon": "autorenew",
+                "icon_height_on_desktop": 30,
+                "icon_height_on_mobile": 30
+              }
+            },
+            "sbt_42uSE6R0": {
+              "type": "_dbtfy-scrolling-banner_text",
+              "settings": {
+                "text": "RETOUR SOUS 3 JOURS",
+                "url": "",
+                "heading_size": "h2",
+                "custom_heading_size": 16,
+                "is_all_stroked": false,
+                "stroked_text": ""
+              }
+            },
+            "sbi_1xSfm6zQ": {
+              "type": "_dbtfy-scrolling-banner_icon",
+              "settings": {
+                "icon": "support_agent",
+                "icon_height_on_desktop": 30,
+                "icon_height_on_mobile": 30
+              }
+            },
+            "sbt_JqK4uvll": {
+              "type": "_dbtfy-scrolling-banner_text",
+              "settings": {
+                "text": "SUPPORT WHATSAPP 8H-23H",
+                "url": "",
+                "heading_size": "h2",
+                "custom_heading_size": 16,
+                "is_all_stroked": false,
+                "stroked_text": ""
+              }
             }
           },
           "block_order": [
-            "dbtfy_scrolling_banner_icon_DPi4tE",
-            "dbtfy_scrolling_banner_text_gDddQX",
-            "dbtfy_scrolling_banner_icon_efYFe3",
-            "dbtfy_scrolling_banner_text_3wHbjp"
+            "sbi_MW3uGRk0",
+            "sbt_WdKwlL8I",
+            "sbi_hEW7Sc7L",
+            "sbt_fhfPjYgH",
+            "sbi_Bca48hT9",
+            "sbt_42uSE6R0",
+            "sbi_1xSfm6zQ",
+            "sbt_JqK4uvll"
           ]
         }
       },
@@ -465,7 +296,7 @@
         "show_overlay": false,
         "image_overlay_opacity": 0,
         "marquee_direction": "left",
-        "animation_duration": 0,
+        "animation_duration": 12,
         "pause_on_hover": true,
         "gap": 12,
         "mobile_gap": 12,
@@ -474,153 +305,12 @@
         "pattern_size": 20,
         "pattern_size_thickness": 1,
         "pattern_opacity": 50,
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-3",
         "padding___top": "small",
         "custom_padding_top": 36,
         "padding___bottom": "small",
         "custom_padding_bottom": 36
-      }
-    },
-    "custom_liquid_VwfEbr": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.name",
-      "settings": {
-        "show_on": "both",
-        "custom_liquid": "<section class=\"fitnova-lifestyle-shop\">\n  <div class=\"fitnova-lifestyle-shop__inner page-width\">\n\n    <!-- HEADER -->\n    <div class=\"fitnova-lifestyle-shop__header\">\n\n      <p class=\"fitnova-lifestyle-shop__eyebrow\">\n        FIND YOUR FLOW\n      </p>\n\n      <h2 class=\"fitnova-lifestyle-shop__heading\">\n        Shop by Lifestyle\n      </h2>\n\n      <p class=\"fitnova-lifestyle-shop__intro\">\n        From training sessions to everyday movement and laid-back moments,\n        discover FITNOVA styles that fit the way you live.\n      </p>\n\n    </div>\n\n\n    <!-- CARDS -->\n    <div class=\"fitnova-lifestyle-shop__grid\">\n\n\n      <!-- =========================\n           01 — TRAIN\n      ========================== -->\n      <a\n        href=\"/collections/premium-active-casual-shorts\"\n        class=\"fitnova-lifestyle-shop__card\"\n      >\n\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/1022/7259/8148/files/ChatGPT_Image_1_sept._2026_15_27_57.jpg?v=1788279355\"\n          alt=\"FITNOVA training collection\"\n          class=\"fitnova-lifestyle-shop__image\"\n          loading=\"lazy\"\n          width=\"1200\"\n          height=\"1600\"\n          draggable=\"false\"\n        >\n\n        <div class=\"fitnova-lifestyle-shop__overlay\"></div>\n\n        <div class=\"fitnova-lifestyle-shop__content\">\n\n          <span class=\"fitnova-lifestyle-shop__number\">\n            01\n          </span>\n\n          <div class=\"fitnova-lifestyle-shop__bottom\">\n\n            <div class=\"fitnova-lifestyle-shop__copy\">\n\n              <h3 class=\"fitnova-lifestyle-shop__title\">\n                TRAIN\n              </h3>\n\n              <p class=\"fitnova-lifestyle-shop__text\">\n                Styles made for movement, training, and active days.\n              </p>\n\n            </div>\n\n            <span class=\"fitnova-lifestyle-shop__arrow\">\n\n              <svg\n                viewBox=\"0 0 24 16\"\n                aria-hidden=\"true\"\n              >\n                <path\n                  d=\"M1 8H22M15 1L22 8L15 15\"\n                  fill=\"none\"\n                  stroke=\"currentColor\"\n                  stroke-width=\"2\"\n                  stroke-linecap=\"round\"\n                  stroke-linejoin=\"round\"\n                ></path>\n              </svg>\n\n            </span>\n\n          </div>\n\n        </div>\n\n      </a>\n\n\n      <!-- =========================\n           02 — EVERYDAY\n      ========================== -->\n      <a\n        href=\"/collections/t-shirts\"\n        class=\"fitnova-lifestyle-shop__card\"\n      >\n\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/1022/7259/8148/files/ChatGPT_Image_1_sept._2026_15_33_57.jpg?v=1788279218\"\n          alt=\"FITNOVA everyday collection\"\n          class=\"fitnova-lifestyle-shop__image\"\n          loading=\"lazy\"\n          width=\"1200\"\n          height=\"1600\"\n          draggable=\"false\"\n        >\n\n        <div class=\"fitnova-lifestyle-shop__overlay\"></div>\n\n        <div class=\"fitnova-lifestyle-shop__content\">\n\n          <span class=\"fitnova-lifestyle-shop__number\">\n            02\n          </span>\n\n          <div class=\"fitnova-lifestyle-shop__bottom\">\n\n            <div class=\"fitnova-lifestyle-shop__copy\">\n\n              <h3 class=\"fitnova-lifestyle-shop__title\">\n                EVERYDAY\n              </h3>\n\n              <p class=\"fitnova-lifestyle-shop__text\">\n                Versatile essentials designed for your everyday routine.\n              </p>\n\n            </div>\n\n            <span class=\"fitnova-lifestyle-shop__arrow\">\n\n              <svg\n                viewBox=\"0 0 24 16\"\n                aria-hidden=\"true\"\n              >\n                <path\n                  d=\"M1 8H22M15 1L22 8L15 15\"\n                  fill=\"none\"\n                  stroke=\"currentColor\"\n                  stroke-width=\"2\"\n                  stroke-linecap=\"round\"\n                  stroke-linejoin=\"round\"\n                ></path>\n              </svg>\n\n            </span>\n\n          </div>\n\n        </div>\n\n      </a>\n\n\n      <!-- =========================\n           03 — RELAX\n      ========================== -->\n      <a\n        href=\"/collections/loungewear-track-pants\"\n        class=\"fitnova-lifestyle-shop__card\"\n      >\n\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/1022/7259/8148/files/ChatGPT_Image_1_sept._2026_15_32_21.jpg?v=1788279276\"\n          alt=\"FITNOVA loungewear collection\"\n          class=\"fitnova-lifestyle-shop__image\"\n          loading=\"lazy\"\n          width=\"1200\"\n          height=\"1600\"\n          draggable=\"false\"\n        >\n\n        <div class=\"fitnova-lifestyle-shop__overlay\"></div>\n\n        <div class=\"fitnova-lifestyle-shop__content\">\n\n          <span class=\"fitnova-lifestyle-shop__number\">\n            03\n          </span>\n\n          <div class=\"fitnova-lifestyle-shop__bottom\">\n\n            <div class=\"fitnova-lifestyle-shop__copy\">\n\n              <h3 class=\"fitnova-lifestyle-shop__title\">\n                RELAX\n              </h3>\n\n              <p class=\"fitnova-lifestyle-shop__text\">\n                Comfortable pieces for slower days.\n              </p>\n\n            </div>\n\n            <span class=\"fitnova-lifestyle-shop__arrow\">\n\n              <svg\n                viewBox=\"0 0 24 16\"\n                aria-hidden=\"true\"\n              >\n                <path\n                  d=\"M1 8H22M15 1L22 8L15 15\"\n                  fill=\"none\"\n                  stroke=\"currentColor\"\n                  stroke-width=\"2\"\n                  stroke-linecap=\"round\"\n                  stroke-linejoin=\"round\"\n                ></path>\n              </svg>\n\n            </span>\n\n          </div>\n\n        </div>\n\n      </a>\n\n    </div>\n  </div>\n</section>\n\n\n<style>\n\n/* =========================================\n   FITNOVA — SHOP BY LIFESTYLE\n========================================= */\n\n.fitnova-lifestyle-shop {\n  --fitnova-black: #111111;\n  --fitnova-white: #ffffff;\n  --fitnova-offwhite: #f5f5f2;\n  --fitnova-green: #0cc982;\n\n  width: 100%;\n  padding: 46px 0 60px;\n  background: var(--fitnova-offwhite);\n  color: var(--fitnova-black);\n}\n\n\n/* =========================================\n   HEADER\n========================================= */\n\n.fitnova-lifestyle-shop__header {\n  max-width: 760px;\n  margin: 0 auto 44px;\n  text-align: center;\n}\n\n.fitnova-lifestyle-shop__eyebrow {\n  margin: 0 0 12px;\n\n  font-family: var(--font-body-family);\n  font-size: 12px;\n  font-weight: var(--font-body-weight-bold);\n\n  line-height: 1.2;\n  letter-spacing: 0.18em;\n\n  color: var(--fitnova-green);\n\n  text-transform: uppercase;\n}\n\n.fitnova-lifestyle-shop__heading {\n  margin: 0;\n\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n\n  font-size: clamp(38px, 4vw, 54px);\n  line-height: 1.05;\n\n  color: var(--fitnova-black);\n}\n\n.fitnova-lifestyle-shop__intro {\n  max-width: 650px;\n\n  margin: 18px auto 0;\n\n  font-family: var(--font-body-family);\n  font-style: var(--font-body-style);\n  font-weight: var(--font-body-weight);\n\n  font-size: 14px;\n  line-height: 1.7;\n\n  color: rgba(17, 17, 17, 0.68);\n}\n\n\n/* =========================================\n   GRID\n========================================= */\n\n.fitnova-lifestyle-shop__grid {\n  display: grid;\n\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n\n  gap: 22px;\n}\n\n\n/* =========================================\n   CARD\n========================================= */\n\n.fitnova-lifestyle-shop__card {\n  position: relative;\n\n  display: block;\n\n  width: 100%;\n\n  aspect-ratio: 9 / 16;\n\n  overflow: hidden;\n\n  border-radius: 6px;\n\n  background: #111111;\n\n  color: #ffffff;\n\n  text-decoration: none;\n\n  isolation: isolate;\n}\n\n\n/* =========================================\n   IMAGE\n========================================= */\n\n.fitnova-lifestyle-shop__image {\n  position: absolute;\n\n  inset: 0;\n\n  z-index: 0;\n\n  display: block;\n\n  width: 100%;\n  height: 100%;\n\n  object-fit: cover;\n  object-position: center;\n\n  transition:\n    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),\n    filter 500ms ease;\n}\n\n\n/* =========================================\n   DARK GRADIENT\n========================================= */\n\n.fitnova-lifestyle-shop__overlay {\n  position: absolute !important;\n\n  inset: 0 !important;\n\n  z-index: 1 !important;\n\n  pointer-events: none;\n\n  background: linear-gradient(\n    to bottom,\n\n    rgba(6, 8, 8, 0.05) 0%,\n\n    rgba(6, 8, 8, 0.05) 30%,\n\n    rgba(6, 8, 8, 0.12) 42%,\n\n    rgba(6, 8, 8, 0.28) 55%,\n\n    rgba(6, 8, 8, 0.55) 68%,\n\n    rgba(6, 8, 8, 0.78) 80%,\n\n    rgba(6, 8, 8, 0.92) 90%,\n\n    rgba(6, 8, 8, 0.97) 100%\n  ) !important;\n\n  transition: background 300ms ease;\n}\n\n\n/* =========================================\n   CONTENT\n========================================= */\n\n.fitnova-lifestyle-shop__content {\n  position: absolute !important;\n\n  inset: 0 !important;\n\n  z-index: 2 !important;\n\n  display: flex;\n\n  flex-direction: column;\n\n  justify-content: space-between;\n\n  padding: 28px;\n}\n\n\n/* =========================================\n   NUMBER\n========================================= */\n\n.fitnova-lifestyle-shop__number {\n  display: inline-flex;\n\n  align-items: center;\n  justify-content: center;\n\n  align-self: flex-start;\n\n  min-width: 58px;\n  height: 34px;\n\n  padding: 0 15px;\n\n  border: 1px solid rgba(255, 255, 255, 0.55);\n\n  border-radius: 100px;\n\n  background: rgba(10, 10, 10, 0.18);\n\n  backdrop-filter: blur(5px);\n  -webkit-backdrop-filter: blur(5px);\n\n  font-family: var(--font-body-family);\n\n  font-size: 11px;\n  font-weight: var(--font-body-weight-bold);\n\n  line-height: 1;\n\n  letter-spacing: 0.15em;\n\n  color: #ffffff;\n}\n\n\n/* =========================================\n   BOTTOM CONTENT\n========================================= */\n\n.fitnova-lifestyle-shop__bottom {\n  display: flex;\n\n  align-items: flex-end;\n\n  justify-content: space-between;\n\n  gap: 20px;\n\n  width: 100%;\n}\n\n.fitnova-lifestyle-shop__copy {\n  flex: 1 1 auto;\n\n  min-width: 0;\n}\n\n\n/* =========================================\n   TITLE\n========================================= */\n\n.fitnova-lifestyle-shop__title {\n  margin: 0 0 12px;\n\n  font-family: var(--font-heading-family);\n  font-style: var(--font-heading-style);\n  font-weight: var(--font-heading-weight);\n\n  font-size: clamp(38px, 3.2vw, 58px);\n\n  line-height: 0.95;\n\n  letter-spacing: -0.02em;\n\n  color: #ffffff !important;\n\n  text-transform: uppercase;\n\n  text-shadow:\n    0 2px 8px rgba(0, 0, 0, 0.35),\n    0 1px 3px rgba(0, 0, 0, 0.4);\n}\n\n\n/* =========================================\n   DESCRIPTION\n========================================= */\n\n.fitnova-lifestyle-shop__text {\n  max-width: 310px;\n\n  margin: 0;\n\n  font-family: var(--font-body-family);\n  font-style: var(--font-body-style);\n  font-weight: var(--font-body-weight);\n\n  font-size: 14px;\n\n  line-height: 1.55;\n\n  color: rgba(255, 255, 255, 0.92) !important;\n\n  text-shadow:\n    0 1px 5px rgba(0, 0, 0, 0.65);\n}\n\n\n/* =========================================\n   ARROW\n========================================= */\n\n.fitnova-lifestyle-shop__arrow {\n  display: flex;\n\n  align-items: center;\n  justify-content: center;\n\n  flex: 0 0 auto;\n\n  width: 54px;\n  height: 54px;\n\n  border-radius: 50%;\n\n  background: var(--fitnova-green);\n\n  color: var(--fitnova-black);\n\n  transition:\n    transform 250ms ease,\n    background-color 250ms ease;\n}\n\n.fitnova-lifestyle-shop__arrow svg {\n  display: block;\n\n  width: 23px;\n  height: 16px;\n}\n\n\n/* =========================================\n   HOVER\n========================================= */\n\n.fitnova-lifestyle-shop__card:hover\n.fitnova-lifestyle-shop__image {\n  transform: scale(1.035);\n}\n\n.fitnova-lifestyle-shop__card:hover\n.fitnova-lifestyle-shop__arrow {\n  transform: translateX(4px);\n\n  background: #ffffff;\n}\n\n\n/* =========================================\n   TABLET\n========================================= */\n\n@media screen and (max-width: 990px) {\n\n  .fitnova-lifestyle-shop {\n    padding: 60px 0 68px;\n  }\n\n  .fitnova-lifestyle-shop__grid {\n    gap: 14px;\n  }\n\n  .fitnova-lifestyle-shop__content {\n    padding: 22px;\n  }\n\n  .fitnova-lifestyle-shop__title {\n    font-size: 38px;\n  }\n\n  .fitnova-lifestyle-shop__text {\n    font-size: 12px;\n  }\n\n  .fitnova-lifestyle-shop__arrow {\n    width: 46px;\n    height: 46px;\n  }\n\n}\n\n\n/* =========================================\n   MOBILE\n========================================= */\n\n@media screen and (max-width: 749px) {\n\n  .fitnova-lifestyle-shop {\n    padding: 52px 0 60px;\n  }\n\n  .fitnova-lifestyle-shop__header {\n    margin-bottom: 30px;\n  }\n\n  .fitnova-lifestyle-shop__heading {\n    font-size: 38px;\n  }\n\n  .fitnova-lifestyle-shop__intro {\n    margin-top: 14px;\n\n    font-size: 13px;\n  }\n\n  .fitnova-lifestyle-shop__grid {\n    grid-template-columns: 1fr;\n\n    gap: 16px;\n  }\n\n  .fitnova-lifestyle-shop__card {\n    aspect-ratio: 9 / 13;\n  }\n\n  .fitnova-lifestyle-shop__content {\n    padding: 24px;\n  }\n\n  .fitnova-lifestyle-shop__overlay {\n    background: linear-gradient(\n      to bottom,\n\n      rgba(6, 8, 8, 0.04) 0%,\n\n      rgba(6, 8, 8, 0.06) 30%,\n\n      rgba(6, 8, 8, 0.18) 48%,\n\n      rgba(6, 8, 8, 0.48) 64%,\n\n      rgba(6, 8, 8, 0.78) 78%,\n\n      rgba(6, 8, 8, 0.96) 100%\n    ) !important;\n  }\n\n  .fitnova-lifestyle-shop__title {\n    font-size: 42px;\n  }\n\n  .fitnova-lifestyle-shop__text {\n    max-width: 260px;\n\n    font-size: 13px;\n  }\n\n  .fitnova-lifestyle-shop__arrow {\n    width: 50px;\n    height: 50px;\n  }\n\n}\n\n\n/* =========================================\n   SMALL MOBILE\n========================================= */\n\n@media screen and (max-width: 420px) {\n\n  .fitnova-lifestyle-shop__card {\n    aspect-ratio: 9 / 14;\n  }\n\n  .fitnova-lifestyle-shop__content {\n    padding: 20px;\n  }\n\n  .fitnova-lifestyle-shop__title {\n    font-size: 38px;\n  }\n\n  .fitnova-lifestyle-shop__bottom {\n    gap: 12px;\n  }\n\n  .fitnova-lifestyle-shop__arrow {\n    width: 46px;\n    height: 46px;\n  }\n\n}\n\n\n/* =========================================\n   REDUCED MOTION\n========================================= */\n\n@media (prefers-reduced-motion: reduce) {\n\n  .fitnova-lifestyle-shop__image,\n  .fitnova-lifestyle-shop__arrow {\n    transition: none;\n  }\n\n  .fitnova-lifestyle-shop__card:hover\n  .fitnova-lifestyle-shop__image {\n    transform: none;\n  }\n\n}\n\n/* =========================================================\n   FITNOVA - DARK BACKGROUND DIRECTLY BEHIND TEXT\n   ========================================================= */\n\n.fitnova-lifestyle-shop__bottom {\n  position: relative !important;\n  z-index: 10 !important;\n\n  display: flex !important;\n  align-items: flex-end !important;\n  justify-content: space-between !important;\n\n  gap: 20px !important;\n\n  /* étend le fond jusqu'aux bords de la carte */\n  margin:\n    0 -28px -28px -28px !important;\n\n  padding:\n    70px 28px 28px 28px !important;\n\n  /* fond sombre progressif */\n  background: linear-gradient(\n    to bottom,\n    rgba(7, 9, 9, 0) 0%,\n    rgba(7, 9, 9, 0.35) 20%,\n    rgba(7, 9, 9, 0.72) 48%,\n    rgba(7, 9, 9, 0.92) 75%,\n    rgba(7, 9, 9, 0.98) 100%\n  ) !important;\n}\n\n\n/* Texte toujours devant */\n\n.fitnova-lifestyle-shop__copy {\n  position: relative !important;\n  z-index: 11 !important;\n\n  flex: 1 1 auto !important;\n}\n\n\n/* TITRES */\n\n.fitnova-lifestyle-shop__title {\n  position: relative !important;\n  z-index: 12 !important;\n\n  margin: 0 0 12px !important;\n\n  color: #ffffff !important;\n\n  text-shadow:\n    0 2px 8px rgba(0, 0, 0, 0.6) !important;\n}\n\n\n/* DESCRIPTION */\n\n.fitnova-lifestyle-shop__text {\n  position: relative !important;\n  z-index: 12 !important;\n\n  margin: 0 !important;\n\n  color: rgba(255, 255, 255, 0.95) !important;\n\n  text-shadow:\n    0 1px 5px rgba(0, 0, 0, 0.7) !important;\n}\n\n\n/* ARROW */\n\n.fitnova-lifestyle-shop__arrow {\n  position: relative !important;\n  z-index: 12 !important;\n}\n\n\n/* =========================================================\n   MOBILE\n   ========================================================= */\n\n@media screen and (max-width: 749px) {\n\n  .fitnova-lifestyle-shop__bottom {\n    margin:\n      0 -24px -24px -24px !important;\n\n    padding:\n      60px 24px 24px 24px !important;\n\n    background: linear-gradient(\n      to bottom,\n      rgba(7, 9, 9, 0) 0%,\n      rgba(7, 9, 9, 0.42) 20%,\n      rgba(7, 9, 9, 0.78) 48%,\n      rgba(7, 9, 9, 0.94) 75%,\n      rgba(7, 9, 9, 0.99) 100%\n    ) !important;\n  }\n\n}\n\n\n/* SMALL MOBILE */\n\n@media screen and (max-width: 420px) {\n\n  .fitnova-lifestyle-shop__bottom {\n    margin:\n      0 -20px -20px -20px !important;\n\n    padding:\n      52px 20px 20px 20px !important;\n  }\n\n}\n\n/* =========================================\n   FITNOVA - FULL WIDTH BOTTOM GRADIENT\n   ========================================= */\n\n.fitnova-lifestyle-shop__card {\n  position: relative !important;\n  overflow: hidden !important;\n}\n\n\n/* Gradient sombre sur TOUTE la largeur */\n\n.fitnova-lifestyle-shop__card::after {\n  content: \"\" !important;\n\n  position: absolute !important;\n  z-index: 2 !important;\n\n  left: 0 !important;\n  right: 0 !important;\n  bottom: 0 !important;\n\n  width: 100% !important;\n  height: 55% !important;\n\n  background: linear-gradient(\n    to bottom,\n    rgba(7, 9, 9, 0) 0%,\n    rgba(7, 9, 9, 0.25) 18%,\n    rgba(7, 9, 9, 0.65) 45%,\n    rgba(7, 9, 9, 0.90) 72%,\n    rgba(7, 9, 9, 0.98) 100%\n  ) !important;\n\n  pointer-events: none !important;\n}\n\n\n/* Le contenu reste au-dessus du gradient */\n\n.fitnova-lifestyle-shop__content {\n  position: absolute !important;\n  z-index: 3 !important;\n\n  inset: 0 !important;\n\n  display: flex !important;\n  flex-direction: column !important;\n  justify-content: space-between !important;\n\n  padding: 28px !important;\n}\n\n\n/* IMPORTANT :\n   on retire le background du bottom */\n\n.fitnova-lifestyle-shop__bottom {\n  position: relative !important;\n  z-index: 4 !important;\n\n  width: 100% !important;\n\n  display: flex !important;\n  align-items: flex-end !important;\n  justify-content: space-between !important;\n\n  gap: 20px !important;\n\n  margin: 0 !important;\n  padding: 0 !important;\n\n  background: transparent !important;\n}\n\n\n/* TITRE */\n\n.fitnova-lifestyle-shop__title {\n  margin: 0 0 12px !important;\n\n  color: #ffffff !important;\n\n  text-shadow:\n    0 2px 8px rgba(0, 0, 0, 0.45) !important;\n}\n\n\n/* DESCRIPTION */\n\n.fitnova-lifestyle-shop__text {\n  margin: 0 !important;\n\n  color: rgba(255, 255, 255, 0.94) !important;\n\n  text-shadow:\n    0 1px 5px rgba(0, 0, 0, 0.55) !important;\n}\n\n\n/* Flèche */\n\n.fitnova-lifestyle-shop__arrow {\n  position: relative !important;\n  z-index: 5 !important;\n\n  flex: 0 0 auto !important;\n}\n\n\n/* =========================================\n   MOBILE\n   ========================================= */\n\n@media screen and (max-width: 749px) {\n\n  .fitnova-lifestyle-shop__card::after {\n    height: 60% !important;\n\n    background: linear-gradient(\n      to bottom,\n      rgba(7, 9, 9, 0) 0%,\n      rgba(7, 9, 9, 0.30) 18%,\n      rgba(7, 9, 9, 0.70) 45%,\n      rgba(7, 9, 9, 0.92) 72%,\n      rgba(7, 9, 9, 0.99) 100%\n    ) !important;\n  }\n\n  .fitnova-lifestyle-shop__content {\n    padding: 22px !important;\n  }\n\n  .fitnova-lifestyle-shop__bottom {\n    width: 100% !important;\n  }\n}\n\n</style>",
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "",
-        "padding___top": "custom",
-        "custom_padding_top": 0,
-        "padding___bottom": "custom",
-        "custom_padding_bottom": 0
-      }
-    },
-    "custom_liquid_L4X8xi": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.name",
-      "settings": {
-        "show_on": "both",
-        "custom_liquid": "<link\n  rel=\"stylesheet\"\n  href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200\"\n>\n\n<section class=\"fitnova-reassurance\">\n  <div class=\"fitnova-reassurance__inner\">\n\n    <h2 class=\"fitnova-reassurance__heading\">\n      Why choose <span>FITNOVA</span>?\n    </h2>\n\n    <div class=\"fitnova-reassurance__grid\">\n\n      <!-- Card 1 -->\n      <article class=\"fitnova-reassurance__card\">\n\n        <div class=\"fitnova-reassurance__icon\" aria-hidden=\"true\">\n          <span class=\"material-symbols-rounded\">\n            fitness_center\n          </span>\n        </div>\n\n        <h3 class=\"fitnova-reassurance__title\">\n          Made for Every Move\n        </h3>\n\n        <p class=\"fitnova-reassurance__text\">\n          Explore versatile sportswear for training days, rest days,\n          and everyday movement.\n        </p>\n\n      </article>\n\n      <!-- Card 2 -->\n      <article class=\"fitnova-reassurance__card\">\n\n        <div class=\"fitnova-reassurance__icon\" aria-hidden=\"true\">\n          <span class=\"material-symbols-rounded\">\n            checkroom\n          </span>\n        </div>\n\n        <h3 class=\"fitnova-reassurance__title\">\n          Find Your Fit\n        </h3>\n\n        <p class=\"fitnova-reassurance__text\">\n          Discover available styles, colors, and sizes across the\n          FITNOVA collections.\n        </p>\n\n      </article>\n\n      <!-- Card 3 -->\n      <article class=\"fitnova-reassurance__card\">\n\n        <div class=\"fitnova-reassurance__icon\" aria-hidden=\"true\">\n          <span class=\"material-symbols-rounded\">\n            lock\n          </span>\n        </div>\n\n        <h3 class=\"fitnova-reassurance__title\">\n          Secure Checkout\n        </h3>\n\n        <p class=\"fitnova-reassurance__text\">\n          Complete your purchase through Shopify’s secure and protected\n          checkout experience.\n        </p>\n\n      </article>\n\n      <!-- Card 4 -->\n      <article class=\"fitnova-reassurance__card\">\n\n        <div class=\"fitnova-reassurance__icon\" aria-hidden=\"true\">\n          <span class=\"material-symbols-rounded\">\n            support_agent\n          </span>\n        </div>\n\n        <h3 class=\"fitnova-reassurance__title\">\n          Here to Help\n        </h3>\n\n        <p class=\"fitnova-reassurance__text\">\n          Questions about a product or order? Contact the FITNOVA team\n          for assistance.\n        </p>\n\n      </article>\n\n    </div>\n  </div>\n</section>\n\n\n<style>\n\n  /* ========================================\n     FITNOVA REASSURANCE SECTION\n     ======================================== */\n\n  .fitnova-reassurance {\n\n    --fitnova-black: #111111;\n    --fitnova-white: #ffffff;\n    --fitnova-off-white: #f5f5f2;\n    --fitnova-green: #0cc982;\n    --fitnova-muted: #6b6b66;\n    --fitnova-border: #deded8;\n\n    width: 100%;\n    padding: 48px 24px 60px;\n\n    color: var(--fitnova-black);\n    background-color: var(--fitnova-white);\n\n    /* Shopify Body Typography */\n    font-family: var(--font-body-family);\n    font-style: var(--font-body-style);\n    font-weight: var(--font-body-weight);\n  }\n\n\n  /* ========================================\n     CONTAINER\n     ======================================== */\n\n  .fitnova-reassurance__inner {\n    width: 100%;\n    max-width: 1400px;\n    margin: 0 auto;\n  }\n\n\n  /* ========================================\n     MAIN HEADING\n     DM SERIF DISPLAY\n     ======================================== */\n\n  .fitnova-reassurance__heading {\n\n    margin: 0 0 48px;\n\n    color: var(--fitnova-black);\n\n    font-family: var(--font-heading-family) !important;\n    font-style: var(--font-heading-style);\n    font-weight: var(--font-heading-weight);\n\n    font-size: clamp(32px, 4vw, 48px);\n\n    line-height: 1.05;\n\n    letter-spacing: normal;\n\n    text-align: center;\n\n    text-transform: none;\n  }\n\n\n  /* FITNOVA green */\n\n  .fitnova-reassurance__heading span {\n    color: var(--fitnova-green);\n  }\n\n\n  /* ========================================\n     GRID\n     ======================================== */\n\n  .fitnova-reassurance__grid {\n\n    display: grid;\n\n    grid-template-columns:\n      repeat(4, minmax(0, 1fr));\n\n    gap: 20px;\n  }\n\n\n  /* ========================================\n     CARDS\n     ======================================== */\n\n  .fitnova-reassurance__card {\n\n    min-height: 290px;\n\n    padding: 36px 28px;\n\n    background-color:\n      var(--fitnova-off-white);\n\n    border:\n      1px solid var(--fitnova-border);\n\n    border-radius: 4px;\n\n    text-align: center;\n\n    transition:\n      transform 200ms ease,\n      background-color 200ms ease,\n      border-color 200ms ease;\n  }\n\n\n  /* Hover */\n\n  .fitnova-reassurance__card:hover {\n\n    background-color:\n      var(--fitnova-black);\n\n    border-color:\n      var(--fitnova-black);\n\n    transform:\n      translateY(-4px);\n  }\n\n\n  /* ========================================\n     ICON\n     ======================================== */\n\n  .fitnova-reassurance__icon {\n\n    display: flex;\n\n    align-items: center;\n    justify-content: center;\n\n    width: 56px;\n    height: 56px;\n\n    margin:\n      0 auto 32px;\n\n    color:\n      var(--fitnova-green);\n\n    border:\n      1px solid var(--fitnova-green);\n\n    border-radius:\n      50%;\n  }\n\n\n  /* Material icon */\n\n  .fitnova-reassurance\n  .material-symbols-rounded {\n\n    font-size: 30px;\n\n    line-height: 1;\n\n    font-variation-settings:\n      \"FILL\" 0,\n      \"wght\" 500,\n      \"GRAD\" 0,\n      \"opsz\" 30;\n  }\n\n\n  /* ========================================\n     CARD TITLES\n     DM SERIF DISPLAY\n     ======================================== */\n\n  .fitnova-reassurance__title {\n\n    margin:\n      0 0 14px;\n\n    color:\n      var(--fitnova-black);\n\n    font-family:\n      var(--font-heading-family) !important;\n\n    font-style:\n      var(--font-heading-style);\n\n    font-weight:\n      var(--font-heading-weight);\n\n    font-size:\n      20px;\n\n    line-height:\n      1.25;\n\n    letter-spacing:\n      normal;\n\n    text-align:\n      center;\n\n    text-transform:\n      none;\n\n    transition:\n      color 200ms ease;\n  }\n\n\n  /* ========================================\n     CARD BODY TEXT\n     MARTEL\n     ======================================== */\n\n  .fitnova-reassurance__text {\n\n    margin: 0;\n\n    color:\n      var(--fitnova-muted);\n\n    font-family:\n      var(--font-body-family) !important;\n\n    font-style:\n      var(--font-body-style);\n\n    font-weight:\n      var(--font-body-weight);\n\n    font-size:\n      15px;\n\n    line-height:\n      1.6;\n\n    letter-spacing:\n      normal;\n\n    text-align:\n      center;\n\n    transition:\n      color 200ms ease;\n  }\n\n\n  /* ========================================\n     HOVER TEXT\n     ======================================== */\n\n  .fitnova-reassurance__card:hover\n  .fitnova-reassurance__title,\n\n  .fitnova-reassurance__card:hover\n  .fitnova-reassurance__text {\n\n    color:\n      var(--fitnova-white);\n  }\n\n\n  /* ========================================\n     TABLET\n     ======================================== */\n\n  @media (max-width: 990px) {\n\n    .fitnova-reassurance {\n\n      padding:\n        72px 24px;\n    }\n\n\n    .fitnova-reassurance__grid {\n\n      grid-template-columns:\n        repeat(2, minmax(0, 1fr));\n    }\n\n  }\n\n\n  /* ========================================\n     MOBILE\n     ======================================== */\n\n  @media (max-width: 600px) {\n\n    .fitnova-reassurance {\n\n      padding:\n        56px 16px;\n    }\n\n\n    .fitnova-reassurance__heading {\n\n      margin-bottom:\n        32px;\n\n      font-size:\n        32px;\n    }\n\n\n    .fitnova-reassurance__grid {\n\n      grid-template-columns:\n        1fr;\n\n      gap:\n        16px;\n    }\n\n\n    .fitnova-reassurance__card {\n\n      min-height:\n        auto;\n\n      padding:\n        28px 24px;\n    }\n\n\n    .fitnova-reassurance__icon {\n\n      margin:\n        0 auto 24px;\n    }\n\n  }\n\n\n  /* ========================================\n     ACCESSIBILITY\n     ======================================== */\n\n  @media (prefers-reduced-motion: reduce) {\n\n    .fitnova-reassurance__card {\n\n      transition:\n        none;\n    }\n\n  }\n\n</style>",
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "",
-        "padding___top": "none",
-        "custom_padding_top": 36,
-        "padding___bottom": "none",
-        "custom_padding_bottom": 36
-      }
-    },
-    "collage_bbph4V": {
-      "type": "collage",
-      "blocks": {
-        "heading": {
-          "type": "_heading",
-          "static": true,
-          "settings": {
-            "as_column": false,
-            "columns": 1,
-            "row_gap": 20,
-            "column_gap": 20,
-            "columns_mobile": 1,
-            "row_gap_mobile": 20,
-            "column_gap_mobile": 20,
-            "padding___top": "none",
-            "custom_padding_top": 36,
-            "padding___bottom": "none",
-            "custom_padding_bottom": 36
-          },
-          "blocks": {
-            "title_FJnnfi": {
-              "type": "_title",
-              "settings": {
-                "title": "THE FITNOVA EDIT",
-                "title_text_color": "default",
-                "title_text_color_custom": "#a52a2a",
-                "custom_color": false,
-                "title_color": "#000000",
-                "title_line": "none",
-                "title_bg_color": "#000000",
-                "highlighted_1_border_radius": 8,
-                "highlighted_1_border_width": 0,
-                "highlighted_1_border": "solid",
-                "highlighted_1_border_color": "#003934",
-                "highlighted_1_vertical_padding": 20,
-                "highlighted_1_horizontal_padding": 20,
-                "stroke_thickness": 20,
-                "half_stroke_thickness": 40,
-                "stroke_vertical_position": 100,
-                "alignment": "text-center",
-                "alignment_mobile": "",
-                "size": "inherit",
-                "style": "inherit",
-                "icon_enable": false,
-                "icon": "lock",
-                "icon_size": "medium",
-                "icon_alignment": "align-items-center",
-                "padding___top": "custom",
-                "custom_padding_top": 0,
-                "padding___bottom": "custom",
-                "custom_padding_bottom": 32
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "title_FJnnfi"
-          ]
-        },
-        "collage": {
-          "type": "_collage",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "collage_product_block_XcwpYT": {
-              "type": "_collage-product-block",
-              "settings": {
-                "product": "gildan-pullover-hoodie",
-                "show_secondary_image": "inherit",
-                "show_carousel": "inherit"
-              },
-              "blocks": {}
-            },
-            "collage_image_block_PfYL4W": {
-              "type": "_collage-image-block",
-              "settings": {
-                "image": "shopify://shop_images/make_me_image_man_and_women_next_each_other-1787578914486.png"
-              },
-              "blocks": {}
-            },
-            "collage_collection_block_8U9ahy": {
-              "type": "_collage-collection-block",
-              "settings": {
-                "collection": "frontpage"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collage_product_block_XcwpYT",
-            "collage_image_block_PfYL4W",
-            "collage_collection_block_8U9ahy"
-          ]
-        }
-      },
-      "name": "t:sections.collage.name",
-      "settings": {
-        "desktop_layout": "left",
-        "mobile_layout": "column",
-        "card_styles": "product-card-wrapper",
-        "pattern_bg": "none",
-        "pattern_color": "#a52a2a",
-        "pattern_size": 20,
-        "pattern_size_thickness": 1,
-        "pattern_opacity": 50,
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "",
-        "padding___top": "custom",
-        "custom_padding_top": 44,
-        "padding___bottom": "custom",
-        "custom_padding_bottom": 44
       }
     },
     "dbtfy_faq_eU3bc8": {
@@ -629,75 +319,79 @@
         "dbtfy_faq_group_9VAViy": {
           "type": "_dbtfy-faq-group",
           "settings": {
-            "heading": "",
+            "heading": "Questions fréquentes",
             "title": "",
             "icon": ""
           },
           "blocks": {
-            "dbtfy_faq_question_ba7jUL": {
+            "faq_qEfvearh": {
               "type": "_dbtfy-faq-question",
               "settings": {
                 "heading": "",
                 "open_by_default": false,
-                "question": "What is FITNOVA?",
-                "answer": "<p>FITNOVA is a fitness and lifestyle clothing brand focused on combining comfort, modern design, and everyday versatility. Our apparel is made for an active lifestyle while remaining easy to wear beyond training.</p>",
+                "question": "Quels sont les délais de livraison ?",
+                "answer": "<p>Nous livrons partout au Maroc en 24 à 48h. Un SMS ou un appel vous confirme la commande avant expédition.</p>",
                 "icon": ""
-              },
-              "blocks": {}
+              }
             },
-            "dbtfy_faq_question_b8tqyD": {
+            "faq_tUcMiXTn": {
               "type": "_dbtfy-faq-question",
               "settings": {
                 "heading": "",
                 "open_by_default": false,
-                "question": "What type of clothing does FITNOVA offer?",
-                "answer": "<p>Our collections include T-shirts, hoodies, loungewear, sweatshirts & pullovers, shorts, and other fitness and lifestyle apparel available in our store.</p>",
+                "question": "Comment fonctionne le paiement à la livraison ?",
+                "answer": "<p>Vous payez en espèces directement au livreur, après avoir vérifié votre colis. Aucun paiement en ligne n'est requis.</p>",
                 "icon": ""
-              },
-              "blocks": {}
+              }
             },
-            "dbtfy_faq_question_4RfjJC": {
+            "faq_0SezR5kp": {
               "type": "_dbtfy-faq-question",
               "settings": {
                 "heading": "",
                 "open_by_default": false,
-                "question": "Is FITNOVA clothing only for workouts?",
-                "answer": "<p>No. FITNOVA combines fitness and lifestyle style, making our pieces suitable for active moments as well as casual everyday wear.</p>",
+                "question": "Puis-je retourner ou échanger un produit ?",
+                "answer": "<p>Oui, vous disposez de 3 jours après réception pour un retour ou un échange, produit non utilisé et dans son emballage d'origine.</p>",
                 "icon": ""
-              },
-              "blocks": {}
+              }
             },
-            "dbtfy_faq_question_TFzjEn": {
+            "faq_W7ffUtx2": {
               "type": "_dbtfy-faq-question",
-              "name": "Faq Questions",
               "settings": {
                 "heading": "",
                 "open_by_default": false,
-                "question": "What makes FITNOVA different?",
-                "answer": "<p>FITNOVA brings fitness and everyday style together. Our brand focuses on versatile apparel with a modern aesthetic that fits naturally into an active lifestyle.</p>",
+                "question": "Livrez-vous dans toutes les villes du Maroc ?",
+                "answer": "<p>Oui, la livraison est gratuite et disponible dans toutes les grandes villes ainsi que dans la plupart des zones rurales.</p>",
                 "icon": ""
-              },
-              "blocks": {}
+              }
             },
-            "dbtfy_faq_question_UwC4kG": {
+            "faq_UO1TYNKd": {
               "type": "_dbtfy-faq-question",
-              "name": "Faq Questions",
               "settings": {
                 "heading": "",
                 "open_by_default": false,
-                "question": "How can I get help with a FITNOVA product?",
-                "answer": "<p>If you have a question about a product, sizing, available options, or your order, contact us through our Contact page and our team will be happy to assist you.</p>",
+                "question": "Comment puis-je vous contacter ?",
+                "answer": "<p>Notre équipe est disponible sur WhatsApp tous les jours de 8h à 23h pour répondre à vos questions avant ou après votre achat.</p>",
                 "icon": ""
-              },
-              "blocks": {}
+              }
+            },
+            "faq_44vMbEMs": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "heading": "",
+                "open_by_default": false,
+                "question": "Les produits sont-ils garantis ?",
+                "answer": "<p>Oui, tous nos produits sont couverts contre les défauts de fabrication. Contactez-nous sur WhatsApp en cas de problème.</p>",
+                "icon": ""
+              }
             }
           },
           "block_order": [
-            "dbtfy_faq_question_ba7jUL",
-            "dbtfy_faq_question_b8tqyD",
-            "dbtfy_faq_question_4RfjJC",
-            "dbtfy_faq_question_TFzjEn",
-            "dbtfy_faq_question_UwC4kG"
+            "faq_qEfvearh",
+            "faq_tUcMiXTn",
+            "faq_0SezR5kp",
+            "faq_W7ffUtx2",
+            "faq_UO1TYNKd",
+            "faq_44vMbEMs"
           ]
         },
         "heading": {
@@ -769,14 +463,14 @@
         "show_on": "both",
         "container_size": "container",
         "show_search": false,
-        "search_placeholder": "Search questions...",
-        "no_result_text": "No results found....",
+        "search_placeholder": "Rechercher une question...",
+        "no_result_text": "Aucun résultat trouvé.",
         "text_alignment": "text-left",
         "text_alignment_mobile": "text-left",
-        "show_banner": false,
+        "show_banner": true,
         "banner_icon": "help",
-        "banner_heading": "Didn't find your answer?",
-        "banner_subheading": "<p>Our customer service will be happy to help you.</p>",
+        "banner_heading": "Vous n'avez pas trouvé votre réponse ?",
+        "banner_subheading": "<p>Notre équipe est là pour vous aider, du lundi au dimanche.</p>",
         "banner_button_label": "Get in Touch",
         "banner_button_url": "shopify://pages/contact",
         "banner_button_style": "button button--secondary",
@@ -803,9 +497,9 @@
       "blocks": {
         "title_EU9phJ": {
           "type": "_title",
-          "disabled": true,
+          "disabled": false,
           "settings": {
-            "title": "Talk about your brand",
+            "title": "Protégez votre foyer dès aujourd'hui",
             "title_text_color": "default",
             "title_text_color_custom": "#a52a2a",
             "custom_color": false,
@@ -823,7 +517,7 @@
             "stroke_vertical_position": 100,
             "alignment": "text-center",
             "alignment_mobile": "",
-            "size": "inherit",
+            "size": "h1",
             "style": "inherit",
             "icon_enable": false,
             "icon": "lock",
@@ -838,9 +532,9 @@
         },
         "description_aX8YNk": {
           "type": "_description",
-          "disabled": true,
+          "disabled": false,
           "settings": {
-            "description": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+            "description": "<p>Des produits fiables, un paiement à la livraison et une équipe disponible sur WhatsApp. Commandez en toute confiance.</p>",
             "alignment": "text-center",
             "alignment_mobile": "",
             "custom_bullet_icon": "",
@@ -864,17 +558,17 @@
         "double_button_6JMhFw": {
           "type": "_double_button",
           "settings": {
-            "button_label_1": "View more",
-            "button_link_1": "shopify://pages/faq",
+            "button_label_1": "Découvrir nos produits",
+            "button_link_1": "shopify://collections/best-sellers",
             "button_style_1": "button button--primary",
             "button_size_1": "inherit",
             "text_style_first": "inherit",
             "button_1_icon_show": false,
             "button_1_icon": "shopping_cart",
             "icon_position_1": "left",
-            "button_label_2": "",
+            "button_label_2": "Nous écrire sur WhatsApp",
             "button_link_2": "",
-            "button_style_2": "button button--primary",
+            "button_style_2": "button button--secondary",
             "button_size_2": "inherit",
             "text_style_second": "inherit",
             "button_2_icon_show": false,
@@ -907,7 +601,7 @@
         "pattern_size_thickness": 1,
         "pattern_opacity": 50,
         "color_scheme": "custom",
-        "custom_color_scheme": "scheme-2",
+        "custom_color_scheme": "scheme-3",
         "padding___top": "custom",
         "custom_padding_top": 0,
         "padding___bottom": "custom",
@@ -1039,17 +733,533 @@
         "padding___bottom": "custom",
         "custom_padding_bottom": 44
       }
+    },
+    "altea_guarantee": {
+      "type": "dbtfy-guarantee",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {
+            "as_column": false,
+            "columns": 1,
+            "row_gap": 20,
+            "column_gap": 20,
+            "columns_mobile": 1,
+            "row_gap_mobile": 20,
+            "column_gap_mobile": 20,
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "none",
+            "custom_padding_bottom": 8
+          },
+          "blocks": {
+            "title": {
+              "type": "_title",
+              "settings": {
+                "title": "Pourquoi ALTEA ?",
+                "title_text_color": "default",
+                "custom_color": false,
+                "title_color": "#031D42",
+                "title_line": "none",
+                "alignment": "text-center",
+                "alignment_mobile": "",
+                "size": "h2",
+                "style": "inherit",
+                "icon_enable": false,
+                "padding___top": "custom",
+                "custom_padding_top": 0,
+                "padding___bottom": "custom",
+                "custom_padding_bottom": 8
+              }
+            },
+            "description": {
+              "type": "_description",
+              "settings": {
+                "description": "<p>Des produits choisis avec soin, une qualité vérifiée et un service pensé pour vous simplifier la vie.</p>",
+                "alignment": "text-center"
+              }
+            }
+          },
+          "block_order": [
+            "title",
+            "description"
+          ]
+        },
+        "dbtfy-guarantee": {
+          "type": "_dbtfy-guarantee",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "gb_NbrnTP3f": {
+              "type": "_dbtfy-guarantee-block",
+              "blocks": {
+                "icon": {
+                  "type": "_icon",
+                  "settings": {
+                    "icon": "task_alt",
+                    "size": "medium",
+                    "alignment": "text-center"
+                  }
+                },
+                "title": {
+                  "type": "_title",
+                  "settings": {
+                    "title": "Sélection rigoureuse",
+                    "size": "h5",
+                    "alignment": "text-center"
+                  }
+                },
+                "description": {
+                  "type": "_description",
+                  "settings": {
+                    "description": "<p>Nous choisissons avec soin des produits utiles, fiables et pensés pour durer.</p>",
+                    "alignment": "text-center"
+                  }
+                }
+              },
+              "block_order": [
+                "icon",
+                "title",
+                "description"
+              ]
+            },
+            "gb_AbnFbmOH": {
+              "type": "_dbtfy-guarantee-block",
+              "blocks": {
+                "icon": {
+                  "type": "_icon",
+                  "settings": {
+                    "icon": "verified",
+                    "size": "medium",
+                    "alignment": "text-center"
+                  }
+                },
+                "title": {
+                  "type": "_title",
+                  "settings": {
+                    "title": "Qualité contrôlée",
+                    "size": "h5",
+                    "alignment": "text-center"
+                  }
+                },
+                "description": {
+                  "type": "_description",
+                  "settings": {
+                    "description": "<p>Chaque produit est testé avant sa mise en vente pour garantir sa fiabilité.</p>",
+                    "alignment": "text-center"
+                  }
+                }
+              },
+              "block_order": [
+                "icon",
+                "title",
+                "description"
+              ]
+            },
+            "gb_nKYaXRvj": {
+              "type": "_dbtfy-guarantee-block",
+              "blocks": {
+                "icon": {
+                  "type": "_icon",
+                  "settings": {
+                    "icon": "local_shipping",
+                    "size": "medium",
+                    "alignment": "text-center"
+                  }
+                },
+                "title": {
+                  "type": "_title",
+                  "settings": {
+                    "title": "Livraison 24-48h",
+                    "size": "h5",
+                    "alignment": "text-center"
+                  }
+                },
+                "description": {
+                  "type": "_description",
+                  "settings": {
+                    "description": "<p>Livraison rapide partout au Maroc, avec suivi de commande.</p>",
+                    "alignment": "text-center"
+                  }
+                }
+              },
+              "block_order": [
+                "icon",
+                "title",
+                "description"
+              ]
+            },
+            "gb_7uff0LYT": {
+              "type": "_dbtfy-guarantee-block",
+              "blocks": {
+                "icon": {
+                  "type": "_icon",
+                  "settings": {
+                    "icon": "payments",
+                    "size": "medium",
+                    "alignment": "text-center"
+                  }
+                },
+                "title": {
+                  "type": "_title",
+                  "settings": {
+                    "title": "Paiement à la livraison",
+                    "size": "h5",
+                    "alignment": "text-center"
+                  }
+                },
+                "description": {
+                  "type": "_description",
+                  "settings": {
+                    "description": "<p>Payez en toute confiance à la réception de votre commande.</p>",
+                    "alignment": "text-center"
+                  }
+                }
+              },
+              "block_order": [
+                "icon",
+                "title",
+                "description"
+              ]
+            }
+          },
+          "block_order": [
+            "gb_NbrnTP3f",
+            "gb_AbnFbmOH",
+            "gb_nKYaXRvj",
+            "gb_7uff0LYT"
+          ]
+        }
+      },
+      "settings": {
+        "show_on": "both",
+        "container_size": "container",
+        "columns_desktop": 4,
+        "columns_per_row_mobile": "1",
+        "center": true,
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "block_color": "custom",
+        "color_scheme_block": "scheme-1",
+        "custom_color_scheme_block": "scheme-1",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
+      }
+    },
+    "altea_comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "cta_block": {
+          "type": "_cta_block",
+          "static": true,
+          "blocks": {
+            "title": {
+              "type": "_title",
+              "settings": {
+                "title": "Pourquoi choisir ALTEA ?",
+                "custom_color": false,
+                "title_color": "#031D42",
+                "alignment": "text-center",
+                "size": "h2"
+              }
+            },
+            "description": {
+              "type": "_description",
+              "settings": {
+                "description": "<p>La différence entre un achat en confiance et un pari.</p>",
+                "alignment": "text-center"
+              }
+            }
+          },
+          "block_order": [
+            "title",
+            "description"
+          ]
+        },
+        "dbtfy-comparision-tables": {
+          "type": "_dbtfy-comparision-tables",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "row_cRiCPXCE": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Qualité des produits",
+                "subtitle": "",
+                "display_type": "icon",
+                "shop": true,
+                "competitor": true,
+                "icon1": "check",
+                "icon1_color": "#031D42",
+                "text_1": "Contrôlée avant expédition",
+                "icon2": "close",
+                "icon2_color": "#B9B8B8",
+                "text_2": "Aléatoire"
+              }
+            },
+            "row_bAx0HUAk": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Paiement à la livraison",
+                "subtitle": "",
+                "display_type": "icon",
+                "shop": true,
+                "competitor": true,
+                "icon1": "check",
+                "icon1_color": "#031D42",
+                "text_1": "Toujours possible",
+                "icon2": "close",
+                "icon2_color": "#B9B8B8",
+                "text_2": "Rarement proposé"
+              }
+            },
+            "row_0YxfFEVL": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Délai de livraison",
+                "subtitle": "",
+                "display_type": "text",
+                "shop": true,
+                "competitor": true,
+                "text_1": "24 à 48h",
+                "text_2": "1 à 3 semaines"
+              }
+            },
+            "row_FJxdd60s": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Support client",
+                "subtitle": "",
+                "display_type": "icon",
+                "shop": true,
+                "competitor": true,
+                "icon1": "check",
+                "icon1_color": "#031D42",
+                "text_1": "Réponse rapide sur WhatsApp",
+                "icon2": "close",
+                "icon2_color": "#B9B8B8",
+                "text_2": "Souvent injoignable"
+              }
+            },
+            "row_3Gg1K5Qf": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Retours & échanges",
+                "subtitle": "",
+                "display_type": "icon",
+                "shop": true,
+                "competitor": true,
+                "icon1": "check",
+                "icon1_color": "#031D42",
+                "text_1": "Sous 3 jours",
+                "icon2": "close",
+                "icon2_color": "#B9B8B8",
+                "text_2": "Non garanti"
+              }
+            }
+          },
+          "block_order": [
+            "row_cRiCPXCE",
+            "row_bAx0HUAk",
+            "row_0YxfFEVL",
+            "row_FJxdd60s",
+            "row_3Gg1K5Qf"
+          ]
+        }
+      },
+      "settings": {
+        "show_on": "both",
+        "container_size": "container",
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "hoverable": true,
+        "desktop_table_placement": "right",
+        "mobile_table_placement": "bottom",
+        "table_style": "classic",
+        "box_shadow_active": true,
+        "border_radius": 12,
+        "title_size": 20,
+        "title_size_mobile": 16,
+        "logo_size": 40,
+        "logo_size_mobile": 32,
+        "shop_title": "ALTEA",
+        "competitor_title": "Vendeurs génériques",
+        "table_title_size": 16,
+        "table_subtitle_size": 13,
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-2",
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
+      }
+    },
+    "altea_testimonials": {
+      "type": "dbtfy-testimonials",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {
+            "as_column": false,
+            "columns": 1,
+            "row_gap": 20,
+            "column_gap": 20,
+            "columns_mobile": 1,
+            "row_gap_mobile": 20,
+            "column_gap_mobile": 20,
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "extra_small",
+            "custom_padding_bottom": 8
+          },
+          "blocks": {
+            "title": {
+              "type": "_title",
+              "settings": {
+                "title": "Ce que disent nos clients",
+                "custom_color": false,
+                "title_color": "#031D42",
+                "alignment": "text-center",
+                "size": "h2"
+              }
+            }
+          },
+          "block_order": [
+            "title"
+          ]
+        },
+        "testimonials": {
+          "type": "_dbtfy-testimonials",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "rev_zH1knbha": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 5,
+                "text": "<p>Livraison en 2 jours à Casablanca, produit conforme et facile à installer. Exactement ce qu'il me fallait pour la cuisine.</p>",
+                "author": "Client vérifié",
+                "profession": "Casablanca",
+                "badge_1": "",
+                "badge_2": "",
+                "enable_autoplay": false,
+                "enalbe_mute": false
+              }
+            },
+            "rev_jF9QxzQu": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 5,
+                "text": "<p>J'ai payé à la livraison sans problème, le livreur m'a laissé vérifier avant de payer. Très rassurant pour un premier achat en ligne.</p>",
+                "author": "Client vérifié",
+                "profession": "Rabat",
+                "badge_1": "",
+                "badge_2": "",
+                "enable_autoplay": false,
+                "enalbe_mute": false
+              }
+            },
+            "rev_e0Mgef7g": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 4,
+                "text": "<p>Bon rapport qualité-prix. Le service WhatsApp a répondu rapidement à mes questions avant la commande.</p>",
+                "author": "Client vérifié",
+                "profession": "Marrakech",
+                "badge_1": "",
+                "badge_2": "",
+                "enable_autoplay": false,
+                "enalbe_mute": false
+              }
+            }
+          },
+          "block_order": [
+            "rev_zH1knbha",
+            "rev_jF9QxzQu",
+            "rev_e0Mgef7g"
+          ]
+        }
+      },
+      "settings": {
+        "show_on": "both",
+        "container_size": "container",
+        "display_type": "grid",
+        "layout": "grid",
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "columns_desktop": 3,
+        "enable_star_rating": true,
+        "enable_author_image": false,
+        "enable_line_before_author_name": false,
+        "enable_default_avatar": true,
+        "enable_author_name": true,
+        "enable_paragraph": true,
+        "enable_compay_profession": true,
+        "enable_date": false,
+        "date_format": "month_day_year",
+        "profile_picture_style": "circle",
+        "user_data_location": "bottom",
+        "profile_content_alignment": "text-left",
+        "review_content_aignment": "text-left",
+        "border_radius": 12,
+        "border_radius_custom": 12,
+        "media_position": "top",
+        "enable_quotation_icon": true,
+        "icon": "format_quote",
+        "icon_position": "top",
+        "icon_height": 24,
+        "icon_height_mobile": 20,
+        "line_limit": 0,
+        "enable_read_more": false,
+        "button_style": "button button--tertiary",
+        "button_size": "inherit",
+        "read_more_label": "Lire plus",
+        "read_less_label": "Lire moins",
+        "enable_read_more_shadow": false,
+        "show_more_gradient": false,
+        "show_more_gradient_height": 60,
+        "slider_on": "mobile",
+        "enable_autoplay": false,
+        "autoplay_speed": 5,
+        "enable_loop": true,
+        "enable_dots": true,
+        "enable_arrows": false,
+        "arrow_color": "default",
+        "arrow_position": "center",
+        "block_color": "custom",
+        "color_scheme_block": "scheme-1",
+        "custom_color_scheme_block": "scheme-1",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-2",
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
+      }
     }
   },
   "order": [
     "altea_hero",
     "featured_collection1",
-    "collection_list_EDRrfw",
-    "custom_liquid_VJ8fBX",
+    "altea_guarantee",
+    "altea_comparison",
     "dbtfy_scrolling_banner_BxqtDj",
-    "custom_liquid_VwfEbr",
-    "custom_liquid_L4X8xi",
-    "collage_bbph4V",
+    "altea_testimonials",
     "dbtfy_faq_eU3bc8",
     "rich_text_UeH8AR",
     "newsletter_XGRmE7"
