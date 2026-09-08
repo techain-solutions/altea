@@ -1,0 +1,202 @@
+/* ==========================================================================
+   ALTEA — Selecteur d'offre par quantite (blocks/_altea-offer.liquid)
+
+   Deux cartes radio dans la colonne d'achat. La carte du lot porte l'accent
+   or ; la carte a l'unite reste neutre. Aucun compte a rebours, aucun
+   compteur de stock : l'emphase est typographique et chromatique.
+
+   Ecrite en proprietes logiques : RTL natif.
+   Aucune couleur en dur : --altea-* uniquement.
+   ========================================================================== */
+
+.altea-offer {
+  display: block;
+  margin-block: var(--altea-space-4);
+}
+
+.altea-offer__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.altea-offer__legend {
+  display: block;
+  padding: 0;
+  margin-block-end: var(--altea-space-3);
+  font-size: var(--altea-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(var(--altea-navy));
+}
+
+.altea-offer__options {
+  display: grid;
+  /* L'ecart doit laisser respirer l'etiquette « meilleure offre », qui
+     chevauche le bord superieur de la carte mise en avant. */
+  gap: var(--altea-space-3);
+}
+
+/* --- Option ----------------------------------------------------------- */
+
+.altea-offer__option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+/* Le radio reste dans le flux pour rester focusable au clavier ; il est
+   rendu invisible mais pas display:none, sinon le focus disparait. */
+.altea-offer__radio {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.altea-offer__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: var(--altea-space-3);
+  align-items: center;
+  min-block-size: var(--altea-tap);
+  padding: var(--altea-space-3) var(--altea-space-4);
+  border: 1px solid var(--altea-hairline);
+  border-radius: var(--altea-radius-md);
+  background: rgb(var(--altea-surface));
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.altea-offer__option--featured .altea-offer__card {
+  border-color: rgba(var(--altea-gold), 0.55);
+}
+
+/* Etat selectionne */
+.altea-offer__radio:checked + .altea-offer__card {
+  border-color: rgb(var(--altea-navy));
+  box-shadow: 0 0 0 1px rgb(var(--altea-navy));
+}
+
+.altea-offer__option--featured .altea-offer__radio:checked + .altea-offer__card {
+  border-color: rgb(var(--altea-gold));
+  box-shadow: 0 0 0 1px rgb(var(--altea-gold));
+}
+
+/* Focus clavier : visible, et distinct de l'etat selectionne. */
+.altea-offer__radio:focus-visible + .altea-offer__card {
+  outline: 2px solid rgb(var(--altea-navy));
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .altea-offer__option:hover .altea-offer__card {
+    border-color: rgba(var(--altea-navy), 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .altea-offer__card { transition: none; }
+}
+
+/* --- Puce de selection ------------------------------------------------ */
+
+.altea-offer__mark {
+  inline-size: 2rem;
+  block-size: 2rem;
+  border-radius: var(--altea-radius-pill);
+  border: 1px solid rgba(var(--altea-navy), 0.35);
+  background: rgb(var(--altea-surface));
+  flex-shrink: 0;
+}
+
+.altea-offer__radio:checked + .altea-offer__card .altea-offer__mark {
+  border-color: rgb(var(--altea-navy));
+  /* Pastille pleine centree : un seul element, pas de pseudo supplementaire. */
+  box-shadow: inset 0 0 0 0.4rem rgb(var(--altea-surface)),
+              inset 0 0 0 1rem rgb(var(--altea-navy));
+}
+
+.altea-offer__option--featured .altea-offer__radio:checked + .altea-offer__card .altea-offer__mark {
+  border-color: rgb(var(--altea-gold));
+  box-shadow: inset 0 0 0 0.4rem rgb(var(--altea-surface)),
+              inset 0 0 0 1rem rgb(var(--altea-gold));
+}
+
+/* --- Textes ----------------------------------------------------------- */
+
+.altea-offer__body {
+  display: grid;
+  gap: 0.2rem;
+  min-inline-size: 0;
+}
+
+.altea-offer__label {
+  font-size: var(--altea-text-md);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.altea-offer__save {
+  font-size: var(--altea-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgb(var(--altea-gold));
+}
+
+.altea-offer__prices {
+  display: grid;
+  justify-items: end;
+  gap: 0.1rem;
+  text-align: end;
+}
+
+/* justify-items: end suit deja la direction ; en RTL les prix passent a
+   gauche sans surcharge. */
+
+.altea-offer__price {
+  font-size: var(--altea-text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.altea-offer__price-was {
+  font-size: var(--altea-text-xs);
+  opacity: 0.55;
+  white-space: nowrap;
+}
+
+/* --- Etiquette « meilleure offre » ------------------------------------ */
+
+.altea-offer__flag {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: var(--altea-space-4);
+  transform: translateY(-50%);
+  padding: 0.2rem var(--altea-space-2);
+  border-radius: var(--altea-radius-pill);
+  background: rgb(var(--altea-gold));
+  color: rgb(var(--altea-navy));
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Sur mobile etroit, la colonne des prix ne doit pas ecraser le libelle. */
+@media screen and (max-width: 389px) {
+  .altea-offer__card {
+    gap: var(--altea-space-2);
+    padding-inline: var(--altea-space-3);
+  }
+
+  .altea-offer__price { font-size: var(--altea-text-md); }
+}

@@ -1,0 +1,46 @@
+{%- comment -%}
+  ALTEA — Points cles de la colonne d'achat
+
+  Une liste courte, juste sous le prix : ce que le produit fait, en quatre
+  lignes maximum. Le contenu est un richtext pilote par le marchand, donc
+  traduisible dans Translate & Adapt sans toucher au code.
+
+  Le bloc n'affiche que ce qu'on lui donne : pas de valeur par defaut
+  inventee, pas de mention non verifiee.
+
+  Ecrit en proprietes logiques : RTL natif.
+{%- endcomment -%}
+
+{%- if block.settings.points != blank -%}
+  {{ 'altea-highlights.css' | asset_url | stylesheet_tag }}
+
+  <div class="altea-highlights" {{ block.shopify_attributes }}>
+    {%- if block.settings.title != blank -%}
+      <h2 class="altea-highlights__title">{{ block.settings.title | escape }}</h2>
+    {%- endif -%}
+    <div class="altea-highlights__list">{{ block.settings.points }}</div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Altea — Points clés",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "info": "Facultatif. Laisser vide pour n'afficher que la liste."
+    },
+    {
+      "type": "richtext",
+      "id": "points",
+      "label": "Points clés",
+      "info": "Une liste à puces. Chaque puce reçoit une coche dorée. Trois à quatre points suffisent."
+    }
+  ],
+  "presets": [
+    { "name": "Altea — Points clés" }
+  ]
+}
+{% endschema %}

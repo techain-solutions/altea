@@ -1,0 +1,724 @@
+{
+  "sections": {
+    "separator": {
+      "type": "dbtfy-separator",
+      "settings": {
+        "show_on": "both",
+        "separator_type": "straight",
+        "separator_color_scheme": "custom",
+        "color": "#F3F3F3",
+        "separator_height": 40,
+        "padding___top": "none",
+        "padding___bottom": "none"
+      }
+    },
+    "breadcrumbs": {
+      "type": "dbtfy-breadcrumbs",
+      "settings": {
+        "show_on": "desktop-only",
+        "show_social_media_icons": "none",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "small",
+        "padding___bottom": "none"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_title": {
+          "type": "_product_title",
+          "settings": {
+            "size": "custom",
+            "custom_size_desktop": 30,
+            "custom_size_mobile": 22
+          },
+          "blocks": {}
+        },
+        "product_price": {
+          "type": "_product_price",
+          "settings": {
+            "hide_shipping_policy": true
+          },
+          "blocks": {}
+        },
+        "product_description": {
+          "type": "_description",
+          "settings": {
+            "description": "{{ closest.product.description }}",
+            "padding___top": "custom",
+            "custom_padding_top": 0,
+            "padding___bottom": "custom",
+            "custom_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "altea_highlights": {
+          "type": "_altea-highlights",
+          "settings": {
+            "title": "Ce qu'il fait",
+            "points": "<ul><li>Plaque glacée en 3 secondes, par refroidissement à semi-conducteur</li><li>Turbine turbo réglable jusqu'à 100 niveaux de ventilation</li><li>Écran LED : niveau de ventilation et batterie d'un coup d'œil</li><li>Batterie 3000 mAh, recharge USB-C — dragonne et câble inclus</li></ul>"
+          },
+          "blocks": {}
+        },
+        "product_variant_picker": {
+          "type": "_product_variant-picker",
+          "settings": {},
+          "blocks": {}
+        },
+        "product_quantity": {
+          "type": "_product_quantity-selector",
+          "settings": {
+            "full_width": false
+          },
+          "blocks": {}
+        },
+        "product_buy_buttons": {
+          "type": "_product_buy-buttons",
+          "settings": {
+            "add_to_cart_style": "button button--primary",
+            "add_to_cart_color": "primary_color",
+            "display_icon_in_add_to_cart": true,
+            "button_icon": "add_shopping_cart",
+            "icon_position": "before-label",
+            "dbtfy_addtocart_animation_enable": false
+          },
+          "blocks": {}
+        },
+        "product_reassurance": {
+          "type": "_product_icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "text_size": "h5",
+            "enable_divider": true,
+            "icon_1": "custom",
+            "custom_icon_1": "payments",
+            "heading_1": "Paiement à la livraison",
+            "icon_2": "custom",
+            "custom_icon_2": "local_shipping",
+            "heading_2": "Livraison en 24 à 48h",
+            "icon_3": "custom",
+            "custom_icon_3": "autorenew",
+            "heading_3": "Retour gratuit sous 3 jours"
+          },
+          "blocks": {}
+        },
+        "product_collapsible": {
+          "type": "_collapsible-content",
+          "settings": {},
+          "blocks": {
+            "product_collapsible_row_0": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Livraison & paiement",
+                "icon": "local_shipping",
+                "row_content": "<p>Paiement à la livraison : vous réglez en espèces au livreur, à la réception. Livraison partout au Maroc en 24 à 48 heures. Nous vous appelons pour confirmer votre commande et votre adresse avant l'expédition.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_1": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Retours",
+                "icon": "autorenew",
+                "row_content": "<p>Le retour est gratuit dans les 3 jours suivant la réception. Contactez-nous via WhatsApp.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_2": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Besoin d'un conseil ?",
+                "icon": "question_mark",
+                "row_content": "<p>Notre service client répond sur WhatsApp, tous les jours de 8h à 23h.</p>"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_collapsible_row_0",
+            "product_collapsible_row_1",
+            "product_collapsible_row_2"
+          ]
+        }
+      },
+      "block_order": [
+        "product_title",
+        "product_price",
+        "product_description",
+        "altea_highlights",
+        "product_variant_picker",
+        "product_quantity",
+        "product_buy_buttons",
+        "product_reassurance",
+        "product_collapsible"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "bottom",
+        "mobile_thumbnails": "show",
+        "image_ratio": "100%",
+        "media_fit": "contain",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 24,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 44
+      }
+    },
+    "technology": {
+      "type": "altea-feature-rows",
+      "blocks": {
+        "row_0": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "LA PLAQUE RAFRAÎCHISSANTE",
+            "title": "Le froid au contact",
+            "text": "<p>Grâce à la technologie de refroidissement par semi-conducteur, la plaque métallique se refroidit rapidement pour offrir une sensation de fraîcheur immédiate. Appliquez-la sur la nuque, le front ou les poignets pour profiter d'un effet frais, sans glaçon.</p>",
+            "bullets": "<ul><li>Refroidissement rapide au contact</li><li>Surface métallique lisse et agréable sur la peau</li><li>Activation simple depuis le bouton de commande</li></ul>",
+            "media_index": 3
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "LA TURBINE TURBO",
+            "title": "Un souffle réglé selon vos envies",
+            "text": "<p>Sa turbine haute vitesse produit un flux d'air puissant et régulier. Ajustez facilement la ventilation selon vos besoins et visualisez le niveau sélectionné sur l'écran LED.</p>",
+            "bullets": "<ul><li>Jusqu'à 100 niveaux de ventilation réglables</li><li>Fonctionnement silencieux, adapté au bureau et aux déplacements</li><li>Batterie longue durée rechargeable en USB-C</li></ul>",
+            "media_index": 5
+          }
+        }
+      },
+      "block_order": [
+        "row_0",
+        "row_1"
+      ],
+      "settings": {
+        "eyebrow": "DOUBLE TECHNOLOGIE",
+        "heading": "Deux façons de vous rafraîchir",
+        "intro": "<p>Là où les ventilateurs classiques se contentent de brasser de l'air chaud, l'ALTEA Breeze combine deux technologies complémentaires.</p>",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "cta_block": {
+          "type": "_cta_block",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "cmp_title": {
+              "type": "_title",
+              "settings": {
+                "title": "ALTEA Breeze vs ventilateur classique",
+                "alignment": "text-left"
+              },
+              "blocks": {}
+            },
+            "cmp_desc": {
+              "type": "_description",
+              "settings": {
+                "description": "<p>La différence ALTEA, ligne par ligne.</p>",
+                "alignment": "text-left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "cmp_title",
+            "cmp_desc"
+          ]
+        },
+        "dbtfy-comparision-tables": {
+          "type": "_dbtfy-comparision-tables",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "cmp_0": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Plaque de refroidissement glacée",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            },
+            "cmp_1": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Réglage précis de la vitesse",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "100 niveaux",
+                "text_2": "2 à 3 niveaux"
+              },
+              "blocks": {}
+            },
+            "cmp_2": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Écran LED (vitesse + batterie)",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            },
+            "cmp_3": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Silencieux au bureau",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Variable"
+              },
+              "blocks": {}
+            },
+            "cmp_4": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Recharge USB-C universelle",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Souvent micro-USB"
+              },
+              "blocks": {}
+            },
+            "cmp_5": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Rafraîchit même l'air chaud",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Effet froid réel",
+                "text_2": "Brasse l'air ambiant"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "cmp_0",
+            "cmp_1",
+            "cmp_2",
+            "cmp_3",
+            "cmp_4",
+            "cmp_5"
+          ]
+        }
+      },
+      "settings": {
+        "container_size": "page-width",
+        "shop_title": "ALTEA Breeze",
+        "competitor_title": "Ventilateur classique",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "steps": {
+      "type": "altea-steps",
+      "blocks": {
+        "step_0": {
+          "type": "step",
+          "settings": {
+            "title": "Allumez",
+            "text": "Un appui sur le bouton ventilation et la turbine démarre instantanément."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Choisissez votre mode",
+            "text": "Air turbo, plaque glacée, ou les deux en même temps pour une fraîcheur maximale."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Profitez",
+            "text": "Réglez la vitesse parmi 100 niveaux et gardez la tête froide, où que vous soyez."
+          }
+        }
+      },
+      "block_order": [
+        "step_0",
+        "step_1",
+        "step_2"
+      ],
+      "settings": {
+        "eyebrow": "SIMPLICITÉ",
+        "heading": "Prêt en 3 secondes",
+        "intro": "",
+        "note": "",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "specs": {
+      "type": "altea-product-specs",
+      "blocks": {
+        "spec_0": {
+          "type": "spec",
+          "settings": {
+            "label": "Modèle",
+            "value": "ALTEA Breeze — ventilateur portable avec plaque rafraîchissante"
+          }
+        },
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "label": "Batterie",
+            "value": "3000 mAh"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "label": "Autonomie",
+            "value": "Environ 3,5 à 10 heures selon le niveau utilisé"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "label": "Recharge",
+            "value": "USB-C"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "label": "Niveau sonore",
+            "value": "Environ 29 dB"
+          }
+        },
+        "spec_5": {
+          "type": "spec",
+          "settings": {
+            "label": "Vitesse du moteur",
+            "value": "Jusqu'à 13 000 tr/min"
+          }
+        },
+        "spec_6": {
+          "type": "spec",
+          "settings": {
+            "label": "Dimensions",
+            "value": "Environ 6 × 7 × 18 cm"
+          }
+        },
+        "spec_7": {
+          "type": "spec",
+          "settings": {
+            "label": "Fonctions",
+            "value": "Ventilation réglable + plaque rafraîchissante"
+          }
+        },
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "text": "Ventilateur ALTEA Breeze, plaque de refroidissement intégrée"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Câble USB-C, compatible avec tous vos chargeurs"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Dragonne, pour le garder au poignet en déplacement"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "Notice d'utilisation"
+          }
+        }
+      },
+      "block_order": [
+        "spec_0",
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "eyebrow": "CARACTÉRISTIQUES",
+        "heading": "Fiche technique",
+        "box_title": "Dans la boîte",
+        "note": "",
+        "container_size": "page-width",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "reviews": {
+      "type": "dbtfy-testimonials",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "t_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Ils ont adopté l'ALTEA Breeze",
+                "alignment": "text-center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "t_title"
+          ]
+        },
+        "testimonials": {
+          "type": "_dbtfy-testimonials",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "review_0": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 5,
+                "author": "Salma B.",
+                "profession": "Casablanca",
+                "text": "<p>Commande reçue en 48h à Casablanca. Le ventilateur est exactement comme sur les photos, et la plaque froide fonctionne vraiment.</p>",
+                "verified_badge": "Achat vérifié"
+              },
+              "blocks": {}
+            },
+            "review_1": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 5,
+                "author": "Yassine A.",
+                "profession": "Rabat",
+                "text": "<p>Le paiement à la livraison m'a rassuré. Ils m'ont appelé pour confirmer, livreur sérieux, produit de qualité.</p>",
+                "verified_badge": "Achat vérifié"
+              },
+              "blocks": {}
+            },
+            "review_2": {
+              "type": "_dbtfy-testimonial-item",
+              "settings": {
+                "star_rating": 5,
+                "author": "Khadija O.",
+                "profession": "Marrakech",
+                "text": "<p>Service client très réactif sur WhatsApp. Réponse en quelques minutes avant ma commande.</p>",
+                "verified_badge": "Achat vérifié"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "review_0",
+            "review_1",
+            "review_2"
+          ]
+        }
+      },
+      "settings": {
+        "container_size": "page-width",
+        "display_type": "grid",
+        "columns_desktop": 3,
+        "enable_star_rating": true,
+        "enable_author_image": false,
+        "enable_date": false,
+        "enable_read_more": false,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "faq": {
+      "type": "dbtfy-faq",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "faq_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Questions fréquentes",
+                "alignment": "text-center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_title"
+          ]
+        },
+        "faq_group": {
+          "type": "_dbtfy-faq-group",
+          "settings": {},
+          "blocks": {
+            "faq_q_0": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment se passe le paiement ?",
+                "answer": "<p>Vous payez en espèces directement au livreur à la réception de votre commande. Aucun paiement en ligne n'est requis.</p>",
+                "open_by_default": true
+              },
+              "blocks": {}
+            },
+            "faq_q_1": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Quels sont les délais de livraison ?",
+                "answer": "<p>Après confirmation, votre commande est livrée partout au Maroc entre 24 et 48 heures selon votre ville.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_2": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "La plaque métallique devient-elle vraiment froide ?",
+                "answer": "<p>Oui. La technologie semi-conducteur refroidit rapidement la plaque pour un effet frais immédiat.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_3": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Est-il bruyant ?",
+                "answer": "<p>Non. Aux vitesses basses et moyennes, il reste discret au bureau, dans les transports ou en réunion.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_4": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment le recharger ?",
+                "answer": "<p>Via le port USB-C avec le câble inclus, sur un chargeur de téléphone, un ordinateur ou une batterie externe.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_5": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Puis-je retourner le produit ?",
+                "answer": "<p>Oui. Le retour est gratuit dans les 3 jours suivant la réception. Contactez-nous via WhatsApp.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_q_0",
+            "faq_q_1",
+            "faq_q_2",
+            "faq_q_3",
+            "faq_q_4",
+            "faq_q_5"
+          ]
+        }
+      },
+      "block_order": [
+        "faq_group"
+      ],
+      "settings": {
+        "container_size": "container",
+        "show_search": false,
+        "show_banner": false,
+        "text_alignment": "text-left",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "final_cta": {
+      "type": "altea-final-cta",
+      "blocks": {
+        "cta_r_0": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "payments",
+            "text": "Paiement à la livraison"
+          }
+        },
+        "cta_r_1": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "local_shipping",
+            "text": "Livraison en 24 à 48h"
+          }
+        },
+        "cta_r_2": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "autorenew",
+            "text": "Retour gratuit sous 3 jours"
+          }
+        }
+      },
+      "block_order": [
+        "cta_r_0",
+        "cta_r_1",
+        "cta_r_2"
+      ],
+      "settings": {
+        "eyebrow": "PRÊT À COMMANDER ?",
+        "heading": "Emportez la fraîcheur avec vous",
+        "text": "<p>Commandez aujourd'hui, profitez d'une livraison entre 24 et 48 heures et payez à la livraison.</p>",
+        "button_label": "Commander maintenant",
+        "show_price": true,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "show_vendor": false,
+        "show_rating": false,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "recently_viewed": {
+      "type": "dbtfy-recently-viewed",
+      "settings": {
+        "products_to_show": 4,
+        "grid_col_desktop": 4,
+        "grid_col_mobile": "2",
+        "custom_color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "separator",
+    "breadcrumbs",
+    "main",
+    "technology",
+    "comparison",
+    "steps",
+    "specs",
+    "reviews",
+    "faq",
+    "final_cta",
+    "related_products",
+    "recently_viewed"
+  ]
+}

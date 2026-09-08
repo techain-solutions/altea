@@ -1,0 +1,816 @@
+{
+  "sections": {
+    "separator": {
+      "type": "dbtfy-separator",
+      "settings": {
+        "show_on": "both",
+        "separator_type": "straight",
+        "separator_color_scheme": "custom",
+        "color": "#F3F3F3",
+        "separator_height": 40,
+        "padding___top": "none",
+        "padding___bottom": "none"
+      }
+    },
+    "breadcrumbs": {
+      "type": "dbtfy-breadcrumbs",
+      "settings": {
+        "show_on": "desktop-only",
+        "show_social_media_icons": "none",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "small",
+        "padding___bottom": "none"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_title": {
+          "type": "_product_title",
+          "settings": {
+            "size": "custom",
+            "custom_size_desktop": 30,
+            "custom_size_mobile": 22
+          },
+          "blocks": {}
+        },
+        "product_price": {
+          "type": "_product_price",
+          "settings": {
+            "hide_shipping_policy": true
+          },
+          "blocks": {}
+        },
+        "product_description": {
+          "type": "_description",
+          "settings": {
+            "description": "{{ closest.product.description }}",
+            "padding___top": "custom",
+            "custom_padding_top": 0,
+            "padding___bottom": "custom",
+            "custom_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "altea_highlights": {
+          "type": "_altea-highlights",
+          "settings": {
+            "title": "Ce qu'il fait",
+            "points": "<ul><li>Double détection : gaz inflammable (butane, méthane) et monoxyde de carbone</li><li>Écran LCD couleur : gaz, CO, température et humidité</li><li>Alarme 85 dB avec flash lumineux rouge</li><li>Se branche sur une prise murale, bouton TEST intégré</li></ul>"
+          },
+          "blocks": {}
+        },
+        "product_variant_picker": {
+          "type": "_product_variant-picker",
+          "settings": {},
+          "blocks": {}
+        },
+        "altea_offer": {
+          "type": "_altea-offer",
+          "settings": {
+            "single_label": "1 détecteur",
+            "bundle_label": "2 détecteurs",
+            "bundle_quantity": 2,
+            "offer_price": 599,
+            "default_selection": "single"
+          },
+          "blocks": {}
+        },
+        "product_buy_buttons": {
+          "type": "_product_buy-buttons",
+          "settings": {
+            "add_to_cart_style": "button button--primary",
+            "add_to_cart_color": "primary_color",
+            "display_icon_in_add_to_cart": true,
+            "button_icon": "add_shopping_cart",
+            "icon_position": "before-label",
+            "dbtfy_addtocart_animation_enable": false
+          },
+          "blocks": {}
+        },
+        "product_reassurance": {
+          "type": "_product_icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "text_size": "h5",
+            "enable_divider": true,
+            "icon_1": "custom",
+            "custom_icon_1": "payments",
+            "heading_1": "Paiement à la livraison",
+            "icon_2": "custom",
+            "custom_icon_2": "local_shipping",
+            "heading_2": "Livraison en 24 à 48h",
+            "icon_3": "custom",
+            "custom_icon_3": "autorenew",
+            "heading_3": "Retours sous 3 jours"
+          },
+          "blocks": {}
+        },
+        "product_collapsible": {
+          "type": "_collapsible-content",
+          "settings": {},
+          "blocks": {
+            "product_collapsible_row_0": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Livraison & paiement",
+                "icon": "local_shipping",
+                "row_content": "<p>Paiement à la livraison : vous réglez en espèces au livreur, à la réception. Livraison partout au Maroc en 24 à 48 heures. Nous vous appelons pour confirmer votre commande et votre adresse avant l'expédition.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_1": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Retours et échanges",
+                "icon": "autorenew",
+                "row_content": "<p>Vous disposez de 3 jours après la réception pour demander un échange ou un remboursement en cas de défaut de fabrication.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_2": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Besoin d'un conseil ?",
+                "icon": "question_mark",
+                "row_content": "<p>Notre service client répond sur WhatsApp, tous les jours de 8h à 23h.</p>"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_collapsible_row_0",
+            "product_collapsible_row_1",
+            "product_collapsible_row_2"
+          ]
+        }
+      },
+      "block_order": [
+        "product_title",
+        "product_price",
+        "product_description",
+        "altea_highlights",
+        "product_variant_picker",
+        "altea_offer",
+        "product_buy_buttons",
+        "product_reassurance",
+        "product_collapsible"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "bottom",
+        "mobile_thumbnails": "show",
+        "image_ratio": "100%",
+        "media_fit": "contain",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 24,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 44
+      }
+    },
+    "benefits": {
+      "type": "altea-benefits",
+      "blocks": {
+        "benefit_0": {
+          "type": "benefit",
+          "settings": {
+            "icon": "gas_meter",
+            "title": "Gaz inflammable",
+            "text": "Butane et méthane, mesure de 0 à 15 % de la LIE."
+          }
+        },
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "detector_co",
+            "title": "Monoxyde de carbone",
+            "text": "Mesure du CO de 0 à 999 ppm, affichée en continu."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "monitor_heart",
+            "title": "Quatre indicateurs à l'écran",
+            "text": "Taux de gaz, niveau de CO, température et humidité de la pièce."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "notifications_active",
+            "title": "Alarme 85 dB",
+            "text": "Signal sonore accompagné d'un flash lumineux rouge."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_0",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ],
+      "settings": {
+        "eyebrow": "DEUX RISQUES, UN SEUL APPAREIL",
+        "heading": "Le gaz qui fuit, et le gaz qui brûle mal",
+        "intro": "<p>Une fuite de gaz s'accumule vite dans une pièce. Une combustion incomplète, elle, dégage du monoxyde de carbone : un gaz sans couleur, sans odeur et sans fumée. Deux dangers différents, surveillés par un seul appareil.</p>",
+        "columns_desktop": "4",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "technology": {
+      "type": "altea-feature-rows",
+      "blocks": {
+        "row_0": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "DEUX CAPTEURS",
+            "title": "Un capteur dédié à chaque danger",
+            "text": "<p>Détecter un gaz inflammable et détecter du monoxyde de carbone sont deux mesures différentes. L'appareil embarque donc deux capteurs indépendants, chacun dédié à un risque.</p>",
+            "bullets": "<ul><li>Gaz inflammable : butane et méthane, de 0 à 15 % LIE — normes citées UL 1484 et EN 50194</li><li>Monoxyde de carbone : de 0 à 999 ppm — normes citées UL 2034 et EN 50291</li></ul>",
+            "media_index": 1
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "ALERTE PROGRESSIVE",
+            "title": "Vous voyez le niveau monter avant l'alarme",
+            "text": "<p>Plutôt qu'un simple état « normal » ou « alarme », l'écran affiche en continu l'évolution du taux de gaz. Vous pouvez intervenir avant que la situation ne s'aggrave.</p>",
+            "bullets": "<ul><li>Moins de 2 % LIE — air normal, aucune fuite</li><li>2 à 4 % LIE — légère hausse, aérez la pièce</li><li>4 à 6 % LIE — seuil approché, fermez la vanne et la bouteille</li><li>Plus de 6 % LIE — alarme déclenchée sous 30 secondes</li></ul>",
+            "media_index": 3
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "LECTURE",
+            "title": "Un écran couleur qui alterne gaz et CO",
+            "text": "<p>L'écran bascule automatiquement entre la lecture du gaz et celle du monoxyde de carbone, pendant que les deux capteurs continuent de surveiller en arrière-plan. Après une minute, la luminosité baisse ; après cinq minutes, l'écran s'éteint — la surveillance, elle, ne s'arrête pas.</p>",
+            "bullets": "",
+            "media_index": 4
+          }
+        }
+      },
+      "block_order": [
+        "row_0",
+        "row_1",
+        "row_2"
+      ],
+      "settings": {
+        "eyebrow": "EN DÉTAIL",
+        "heading": "Comment l'appareil surveille",
+        "intro": "",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "steps": {
+      "type": "altea-steps",
+      "blocks": {
+        "step_0": {
+          "type": "step",
+          "settings": {
+            "title": "Choisissez l'emplacement",
+            "text": "À proximité des appareils à gaz, en suivant les indications de la notice."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Branchez l'appareil",
+            "text": "Sur n'importe quelle prise murale de 100 à 240 volts."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Attendez 200 secondes",
+            "text": "Le capteur chauffe et se stabilise, puis la surveillance démarre automatiquement."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Appuyez sur TEST",
+            "text": "Pour vérifier que l'alarme sonore et les voyants répondent."
+          }
+        }
+      },
+      "block_order": [
+        "step_0",
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "eyebrow": "MISE EN SERVICE",
+        "heading": "Branché en une minute, opérationnel en 200 secondes",
+        "intro": "<p>Aucun câblage, aucun outil, aucun technicien.</p>",
+        "note": "<p>Si l'alarme se déclenche : ouvrez portes et fenêtres, fermez la vanne de la bouteille ou l'arrivée principale, n'actionnez aucun interrupteur ni appareil électrique, quittez les lieux et faites contrôler l'origine de la fuite par un technicien qualifié avant toute remise en service.</p>",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "cta_block": {
+          "type": "_cta_block",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "cmp_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Détecteur de gaz seul, ou double protection ?",
+                "alignment": "text-left"
+              },
+              "blocks": {}
+            },
+            "cmp_desc": {
+              "type": "_description",
+              "settings": {
+                "description": "<p>Un détecteur de gaz classique ne couvre que la moitié du risque.</p>",
+                "alignment": "text-left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "cmp_title",
+            "cmp_desc"
+          ]
+        },
+        "dbtfy-comparision-tables": {
+          "type": "_dbtfy-comparision-tables",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "cmp_0": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Détection du butane",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Oui"
+              },
+              "blocks": {}
+            },
+            "cmp_1": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Détection du monoxyde de carbone",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            },
+            "cmp_2": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Deux capteurs indépendants",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            },
+            "cmp_3": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Écran gaz, CO, température, humidité",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            },
+            "cmp_4": {
+              "type": "_dbtfy-comparision-table",
+              "settings": {
+                "title": "Mesure du CO en ppm",
+                "subtitle": "",
+                "display_type": "text",
+                "text_1": "Oui",
+                "text_2": "Non"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "cmp_0",
+            "cmp_1",
+            "cmp_2",
+            "cmp_3",
+            "cmp_4"
+          ]
+        }
+      },
+      "settings": {
+        "container_size": "page-width",
+        "shop_title": "ALTEA 2 en 1",
+        "competitor_title": "Détecteur de gaz classique",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "specs": {
+      "type": "altea-product-specs",
+      "blocks": {
+        "spec_0": {
+          "type": "spec",
+          "settings": {
+            "label": "Type de produit",
+            "value": "Détecteur combiné gaz inflammable et monoxyde de carbone"
+          }
+        },
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "label": "Gaz détectés",
+            "value": "Butane, méthane et monoxyde de carbone (CO)"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "label": "Plage de mesure du gaz",
+            "value": "0 à 15 % LIE"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "label": "Plage de mesure du CO",
+            "value": "0 à 999 ppm"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "label": "Seuil d'alarme gaz",
+            "value": "Au-delà de 6 % LIE, réponse en 30 secondes"
+          }
+        },
+        "spec_5": {
+          "type": "spec",
+          "settings": {
+            "label": "Alarme sonore",
+            "value": "85 dB, accompagnée d'un signal lumineux"
+          }
+        },
+        "spec_6": {
+          "type": "spec",
+          "settings": {
+            "label": "Alimentation",
+            "value": "Courant alternatif 100 à 240 V, 50/60 Hz"
+          }
+        },
+        "spec_7": {
+          "type": "spec",
+          "settings": {
+            "label": "Consommation",
+            "value": "Moins de 3 W, soit environ 26 kWh par an"
+          }
+        },
+        "spec_8": {
+          "type": "spec",
+          "settings": {
+            "label": "Durée de préchauffage",
+            "value": "200 secondes"
+          }
+        },
+        "spec_9": {
+          "type": "spec",
+          "settings": {
+            "label": "Durée de vie du capteur",
+            "value": "5 ans"
+          }
+        },
+        "spec_10": {
+          "type": "spec",
+          "settings": {
+            "label": "Dimensions",
+            "value": "103 × 56 × 23 mm"
+          }
+        },
+        "spec_11": {
+          "type": "spec",
+          "settings": {
+            "label": "Plage de température affichée",
+            "value": "0 à 100 °C"
+          }
+        },
+        "spec_12": {
+          "type": "spec",
+          "settings": {
+            "label": "Plage d'humidité affichée",
+            "value": "0 à 99 % HR"
+          }
+        },
+        "spec_13": {
+          "type": "spec",
+          "settings": {
+            "label": "Température de fonctionnement",
+            "value": "−10 à 55 °C"
+          }
+        },
+        "spec_14": {
+          "type": "spec",
+          "settings": {
+            "label": "Écran",
+            "value": "Numérique couleur : gaz, CO, température et humidité"
+          }
+        },
+        "spec_15": {
+          "type": "spec",
+          "settings": {
+            "label": "Commandes",
+            "value": "Appui court pour le test, appui long pour basculer entre °C et °F"
+          }
+        },
+        "spec_16": {
+          "type": "spec",
+          "settings": {
+            "label": "Veille de l'écran",
+            "value": "Luminosité réduite après 1 minute, écran éteint après 5 minutes, surveillance maintenue"
+          }
+        },
+        "spec_17": {
+          "type": "spec",
+          "settings": {
+            "label": "Installation",
+            "value": "Directement sur prise murale ou fixation murale"
+          }
+        },
+        "spec_18": {
+          "type": "spec",
+          "settings": {
+            "label": "Normes de conception citées",
+            "value": "UL 2034 et EN 50291 (CO) · UL 1484 et EN 50194 (gaz)"
+          }
+        },
+        "spec_19": {
+          "type": "spec",
+          "settings": {
+            "label": "Certifications indiquées",
+            "value": "CE · UKCA · FCC · RoHS"
+          }
+        },
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "text": "Détecteur de gaz et monoxyde de carbone ALTEA"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Notice d'utilisation"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Emballage de protection"
+          }
+        }
+      },
+      "block_order": [
+        "spec_0",
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "spec_8",
+        "spec_9",
+        "spec_10",
+        "spec_11",
+        "spec_12",
+        "spec_13",
+        "spec_14",
+        "spec_15",
+        "spec_16",
+        "spec_17",
+        "spec_18",
+        "spec_19",
+        "item_0",
+        "item_1",
+        "item_2"
+      ],
+      "settings": {
+        "eyebrow": "CARACTÉRISTIQUES",
+        "heading": "Fiche technique",
+        "box_title": "Dans la boîte",
+        "note": "<p>Les normes et certifications indiquées sont celles annoncées par le fabricant sur le produit et son emballage.</p>",
+        "container_size": "page-width",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "faq": {
+      "type": "dbtfy-faq",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "faq_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Questions fréquentes",
+                "alignment": "text-center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_title"
+          ]
+        },
+        "faq_group": {
+          "type": "_dbtfy-faq-group",
+          "settings": {},
+          "blocks": {
+            "faq_q_0": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "L'appareil détecte-t-il réellement le monoxyde de carbone ?",
+                "answer": "<p>Oui. Il embarque deux capteurs totalement indépendants : l'un dédié au monoxyde de carbone, l'autre aux gaz inflammables comme le butane.</p>",
+                "open_by_default": true
+              },
+              "blocks": {}
+            },
+            "faq_q_1": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Fonctionne-t-il sans Wi-Fi ?",
+                "answer": "<p>Oui. Il ne nécessite ni internet, ni application, ni abonnement. Branchez-le et il fonctionne de façon autonome.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_2": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Faut-il un électricien pour l'installer ?",
+                "answer": "<p>Non. Il se branche directement sur une prise murale ordinaire, sans câblage supplémentaire ni outil.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_3": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Quelle est sa consommation électrique ?",
+                "answer": "<p>Moins de 3 W, soit environ 26 kWh par an.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_4": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "L'écran reste-t-il allumé toute la nuit ?",
+                "answer": "<p>Non. La luminosité baisse automatiquement après une minute, puis l'écran s'éteint après cinq minutes. La détection et l'alarme, elles, restent actives en permanence.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_5": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Où faut-il l'installer ?",
+                "answer": "<p>À proximité des sources de gaz — cuisine ou chauffe-eau — en respectant la distance et la hauteur recommandées dans la notice fournie.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_6": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment vérifier qu'il fonctionne ?",
+                "answer": "<p>Un appui court sur le bouton TEST déclenche l'alarme et fait clignoter les voyants. Il est conseillé de faire ce test une fois par mois.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_7": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment se passe la livraison ?",
+                "answer": "<p>Nous livrons partout au Maroc en 24 à 48 heures. Vous recevez un appel de confirmation de la commande et de l'adresse avant l'expédition.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_q_0",
+            "faq_q_1",
+            "faq_q_2",
+            "faq_q_3",
+            "faq_q_4",
+            "faq_q_5",
+            "faq_q_6",
+            "faq_q_7"
+          ]
+        }
+      },
+      "block_order": [
+        "faq_group"
+      ],
+      "settings": {
+        "container_size": "container",
+        "show_search": false,
+        "show_banner": false,
+        "text_alignment": "text-left",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "final_cta": {
+      "type": "altea-final-cta",
+      "blocks": {
+        "cta_r_0": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "payments",
+            "text": "Paiement à la livraison"
+          }
+        },
+        "cta_r_1": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "local_shipping",
+            "text": "Livraison en 24 à 48h"
+          }
+        },
+        "cta_r_2": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "autorenew",
+            "text": "Retours sous 3 jours"
+          }
+        }
+      },
+      "block_order": [
+        "cta_r_0",
+        "cta_r_1",
+        "cta_r_2"
+      ],
+      "settings": {
+        "eyebrow": "PRÊT À COMMANDER ?",
+        "heading": "Protégez votre foyer des dangers invisibles",
+        "text": "<p>Commandez maintenant et payez à la livraison. Vous pouvez vérifier votre commande avec le livreur à la réception.</p>",
+        "button_label": "Commander maintenant",
+        "show_price": true,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "show_vendor": false,
+        "show_rating": false,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "recently_viewed": {
+      "type": "dbtfy-recently-viewed",
+      "settings": {
+        "products_to_show": 4,
+        "grid_col_desktop": 4,
+        "grid_col_mobile": "2",
+        "custom_color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "separator",
+    "breadcrumbs",
+    "main",
+    "benefits",
+    "technology",
+    "steps",
+    "comparison",
+    "specs",
+    "faq",
+    "final_cta",
+    "related_products",
+    "recently_viewed"
+  ]
+}

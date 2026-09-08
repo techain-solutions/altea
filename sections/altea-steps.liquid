@@ -1,0 +1,225 @@
+{%- comment -%}
+  ALTEA — Etapes numerotees
+
+  Section reutilisable : un bloc = une etape (01, 02, 03...).
+  Sert aux parcours courts : mise en service, utilisation en urgence,
+  conduite a tenir. Le numero est genere par le compteur de boucle : il
+  reste juste meme si le marchand reordonne les blocs dans l'editeur.
+
+  Non gatee derriere widget-blocker : c'est du contenu produit.
+  Ecrite en proprietes logiques : RTL natif.
+{%- endcomment -%}
+
+{{ 'section-altea-steps.css' | asset_url | stylesheet_tag }}
+{%- render 'section-padding', section: section -%}
+
+{%- liquid
+  assign s = section.settings
+-%}
+
+<section
+  class="altea-steps show-on--{{ s.show_on }} color-{{ s.custom_color_scheme }} dbtfy-color-{{ s.color_scheme }} section-{{ section.id }}-padding{% if s.center_header %} altea-steps--center{% endif %}{% if s.show_connector %} altea-steps--connected{% endif %}"
+  {{ section.shopify_attributes }}
+>
+  <div class="{{ s.container_size }}">
+    {%- if s.eyebrow != blank or s.heading != blank or s.intro != blank -%}
+      <div class="altea-steps__header">
+        {%- if s.eyebrow != blank -%}
+          <p class="altea-steps__eyebrow">{{ s.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if s.heading != blank -%}
+          <h2 class="altea-steps__heading">{{ s.heading }}</h2>
+        {%- endif -%}
+        {%- if s.intro != blank -%}
+          <div class="altea-steps__intro">{{ s.intro }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="altea-steps__list" style="--altea-steps-count: {{ section.blocks.size }};">
+        {%- for block in section.blocks -%}
+          <li class="altea-steps__step" {{ block.shopify_attributes }}>
+            <span class="altea-steps__badge" aria-hidden="true">
+              {{- forloop.index | prepend: '0' | slice: -2, 2 -}}
+            </span>
+            <div class="altea-steps__body">
+              {%- if block.settings.title != blank -%}
+                <h3 class="altea-steps__title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="altea-steps__text">{{ block.settings.text }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if s.note != blank -%}
+      <div class="altea-steps__note">{{ s.note }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Altea — Étapes",
+  "tag": "section",
+  "class": "altea-steps-section",
+  "settings": [
+    { "type": "header", "content": "En-tête" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "MODE D'EMPLOI"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "En trois étapes"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_header",
+      "label": "Centrer l'en-tête",
+      "default": true
+    },
+    { "type": "header", "content": "Disposition" },
+    {
+      "type": "checkbox",
+      "id": "show_connector",
+      "label": "Relier les étapes par un filet",
+      "info": "Filet doré discret entre les numéros, sur desktop uniquement.",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note de bas de section",
+      "info": "Précautions, renvoi à la notice…"
+    },
+    { "type": "header", "content": "Affichage" },
+    {
+      "type": "select",
+      "id": "show_on",
+      "label": "Afficher sur",
+      "default": "both",
+      "options": [
+        { "value": "both", "label": "Desktop et mobile" },
+        { "value": "desktop-only", "label": "Desktop uniquement" },
+        { "value": "mobile-only", "label": "Mobile uniquement" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "label": "Largeur du conteneur",
+      "info": "« Standard » applique la classe page-width du thème.",
+      "default": "page-width",
+      "options": [
+        { "value": "page-width", "label": "Standard" },
+        { "value": "", "label": "Pleine largeur" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Schéma de couleurs Debutify",
+      "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Clair" },
+        { "value": "scheme-2", "label": "Primaire" },
+        { "value": "scheme-3", "label": "Secondaire" },
+        { "value": "scheme-4", "label": "Foncé" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "custom_color_scheme",
+      "label": "Schéma de couleurs personnalisé",
+      "default": "scheme-2"
+    },
+    { "type": "header", "content": "Espacement" },
+    {
+      "type": "select",
+      "id": "padding___top",
+      "label": "Marge haute",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "label": "Marge haute personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "padding___bottom",
+      "label": "Marge basse",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "label": "Marge basse personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Titre",
+          "default": "Titre de l'étape"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Une phrase courte qui décrit le geste à faire."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Altea — Étapes",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
+    }
+  ]
+}
+{% endschema %}

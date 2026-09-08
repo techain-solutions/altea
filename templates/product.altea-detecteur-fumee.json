@@ -1,0 +1,584 @@
+{
+  "sections": {
+    "separator": {
+      "type": "dbtfy-separator",
+      "settings": {
+        "show_on": "both",
+        "separator_type": "straight",
+        "separator_color_scheme": "custom",
+        "color": "#F3F3F3",
+        "separator_height": 40,
+        "padding___top": "none",
+        "padding___bottom": "none"
+      }
+    },
+    "breadcrumbs": {
+      "type": "dbtfy-breadcrumbs",
+      "settings": {
+        "show_on": "desktop-only",
+        "show_social_media_icons": "none",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "small",
+        "padding___bottom": "none"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_title": {
+          "type": "_product_title",
+          "settings": {
+            "size": "custom",
+            "custom_size_desktop": 30,
+            "custom_size_mobile": 22
+          },
+          "blocks": {}
+        },
+        "product_price": {
+          "type": "_product_price",
+          "settings": {
+            "hide_shipping_policy": true
+          },
+          "blocks": {}
+        },
+        "product_description": {
+          "type": "_description",
+          "settings": {
+            "description": "{{ closest.product.description }}",
+            "padding___top": "custom",
+            "custom_padding_top": 0,
+            "padding___bottom": "custom",
+            "custom_padding_bottom": 0
+          },
+          "blocks": {}
+        },
+        "altea_highlights": {
+          "type": "_altea-highlights",
+          "settings": {
+            "title": "Ce qu'il fait",
+            "points": "<ul><li>Capteur photoélectrique infrarouge, réponse rapide</li><li>Alarme sonore de plus de 85 dB à 3 mètres</li><li>Batterie lithium intégrée, jusqu'à 10 ans</li><li>Bouton HUSH : silence temporaire de 15 minutes</li></ul>"
+          },
+          "blocks": {}
+        },
+        "product_quantity": {
+          "type": "_product_quantity-selector",
+          "settings": {
+            "full_width": false
+          },
+          "blocks": {}
+        },
+        "product_buy_buttons": {
+          "type": "_product_buy-buttons",
+          "settings": {
+            "add_to_cart_style": "button button--primary",
+            "add_to_cart_color": "primary_color",
+            "display_icon_in_add_to_cart": true,
+            "button_icon": "add_shopping_cart",
+            "icon_position": "before-label",
+            "dbtfy_addtocart_animation_enable": false
+          },
+          "blocks": {}
+        },
+        "product_reassurance": {
+          "type": "_product_icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "text_size": "h5",
+            "enable_divider": true,
+            "icon_1": "custom",
+            "custom_icon_1": "payments",
+            "heading_1": "Paiement à la livraison",
+            "icon_2": "custom",
+            "custom_icon_2": "local_shipping",
+            "heading_2": "Livraison en 24 à 48h",
+            "icon_3": "custom",
+            "custom_icon_3": "autorenew",
+            "heading_3": "Retours sous 3 jours"
+          },
+          "blocks": {}
+        },
+        "product_collapsible": {
+          "type": "_collapsible-content",
+          "settings": {},
+          "blocks": {
+            "product_collapsible_row_0": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Livraison & paiement",
+                "icon": "local_shipping",
+                "row_content": "<p>Paiement à la livraison : vous réglez en espèces au livreur, à la réception. Livraison partout au Maroc en 24 à 48 heures. Nous vous appelons pour confirmer votre commande et votre adresse avant l'expédition.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_1": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Retours et échanges",
+                "icon": "autorenew",
+                "row_content": "<p>Vous disposez de 3 jours après la réception pour demander un échange ou un remboursement en cas de défaut de fabrication.</p>"
+              },
+              "blocks": {}
+            },
+            "product_collapsible_row_2": {
+              "type": "_collapsible-con-block",
+              "settings": {
+                "heading": "Besoin d'un conseil ?",
+                "icon": "question_mark",
+                "row_content": "<p>Notre service client répond sur WhatsApp, tous les jours de 8h à 23h.</p>"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_collapsible_row_0",
+            "product_collapsible_row_1",
+            "product_collapsible_row_2"
+          ]
+        }
+      },
+      "block_order": [
+        "product_title",
+        "product_price",
+        "product_description",
+        "altea_highlights",
+        "product_quantity",
+        "product_buy_buttons",
+        "product_reassurance",
+        "product_collapsible"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "media_position": "left",
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "bottom",
+        "mobile_thumbnails": "show",
+        "image_ratio": "100%",
+        "media_fit": "contain",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 24,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 44
+      }
+    },
+    "benefits": {
+      "type": "altea-benefits",
+      "blocks": {
+        "benefit_0": {
+          "type": "benefit",
+          "settings": {
+            "icon": "sensors",
+            "title": "Capteur photoélectrique",
+            "text": "Détection rapide des particules de fumée, avec moins de fausses alertes que les capteurs classiques."
+          }
+        },
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "volume_up",
+            "title": "Alarme de plus de 85 dB",
+            "text": "Audible à 3 mètres, pour alerter même pendant un sommeil profond."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "battery_full",
+            "title": "Jusqu'à 10 ans d'autonomie",
+            "text": "Batterie lithium intégrée : ni câblage, ni remplacement de piles."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "notifications_off",
+            "title": "Bouton HUSH",
+            "text": "Coupe l'alarme pendant 15 minutes quand vous en avez besoin."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_0",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ],
+      "settings": {
+        "eyebrow": "POURQUOI CE DÉTECTEUR",
+        "heading": "Une protection pensée pour le quotidien",
+        "intro": "<p>Chaque détail sert le même objectif : vous alerter vite, et éviter les alarmes intempestives.</p>",
+        "columns_desktop": "4",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "technology": {
+      "type": "altea-feature-rows",
+      "blocks": {
+        "row_0": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "DÉTECTION",
+            "title": "Un capteur infrarouge dédié à la fumée",
+            "text": "<p>Le capteur photoélectrique à infrarouge est conçu pour repérer les particules de fumée avec précision, et déclencher l'alarme dès les premières fumées.</p>",
+            "bullets": "<ul><li>Alarme sonore de plus de 85 dB à 3 mètres</li><li>Voyant LED rouge indiquant l'état de l'appareil</li><li>Autotest automatique toutes les 56 secondes environ</li></ul>",
+            "media_index": 2
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "FAUSSES ALERTES",
+            "title": "Une grille anti-insectes de 0,7 mm",
+            "text": "<p>Les ouvertures de 0,7 mm empêchent moustiques et petits insectes d'entrer dans la chambre de détection — l'une des causes principales de fausses alarmes sur les appareils classiques.</p>",
+            "bullets": "",
+            "media_index": 4
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "eyebrow": "TRANQUILLITÉ",
+            "title": "Dix ans, sans entretien",
+            "text": "<p>La batterie lithium intégrée fonctionne jusqu'à 10 ans. Lorsqu'elle approche de sa fin, le voyant rouge s'allume et l'appareil émet un bip intermittent : vous êtes prévenu à l'avance.</p>",
+            "bullets": "<ul><li>Alerte de batterie faible : LED rouge et bip intermittent</li><li>Aucun câblage électrique nécessaire</li><li>Aucun remplacement de pile pendant sa durée de service</li></ul>",
+            "media_index": 5
+          }
+        }
+      },
+      "block_order": [
+        "row_0",
+        "row_1",
+        "row_2"
+      ],
+      "settings": {
+        "eyebrow": "EN DÉTAIL",
+        "heading": "La technologie derrière l'alerte",
+        "intro": "",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "steps": {
+      "type": "altea-steps",
+      "blocks": {
+        "step_0": {
+          "type": "step",
+          "settings": {
+            "title": "Fixez la base",
+            "text": "Vissez la base au plafond avec les vis fournies."
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Clipsez le détecteur",
+            "text": "Placez l'appareil sur la base et tournez-le pour le verrouiller."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Testez",
+            "text": "Appuyez sur le bouton de test pour vérifier l'alarme et les voyants."
+          }
+        }
+      },
+      "block_order": [
+        "step_0",
+        "step_1",
+        "step_2"
+      ],
+      "settings": {
+        "eyebrow": "INSTALLATION",
+        "heading": "Posé en moins de deux minutes",
+        "intro": "<p>Aucune expérience ni outil électrique nécessaire.</p>",
+        "note": "<p>Emplacement conseillé : au plafond, au centre de la pièce — chambres, couloirs, séjour et cuisine, à distance de la zone de cuisson directe pour éviter les fausses alarmes.</p>",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "specs": {
+      "type": "altea-product-specs",
+      "blocks": {
+        "spec_0": {
+          "type": "spec",
+          "settings": {
+            "label": "Type de capteur",
+            "value": "Photoélectrique (optique)"
+          }
+        },
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "label": "Type d'alerte",
+            "value": "Alarme sonore locale de 85 dB — sans Wi-Fi ni application"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "label": "Batterie",
+            "value": "Lithium intégrée — durée de service jusqu'à 10 ans environ"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "label": "Silence temporaire",
+            "value": "Bouton HUSH — coupe l'alarme pendant 15 minutes"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "label": "Autotest",
+            "value": "Contrôle automatique toutes les 56 secondes environ"
+          }
+        },
+        "spec_5": {
+          "type": "spec",
+          "settings": {
+            "label": "Protection anti-insectes",
+            "value": "Grille intégrée à ouvertures de 0,7 mm"
+          }
+        },
+        "spec_6": {
+          "type": "spec",
+          "settings": {
+            "label": "Installation",
+            "value": "Fixation au plafond par rotation, sans câblage"
+          }
+        },
+        "spec_7": {
+          "type": "spec",
+          "settings": {
+            "label": "Certifications indiquées",
+            "value": "CE · EN14604 · RoHS"
+          }
+        },
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "text": "Détecteur de fumée ALTEA"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "Support de fixation et visserie"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Notice d'utilisation"
+          }
+        }
+      },
+      "block_order": [
+        "spec_0",
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "item_0",
+        "item_1",
+        "item_2"
+      ],
+      "settings": {
+        "eyebrow": "CARACTÉRISTIQUES",
+        "heading": "Fiche technique",
+        "box_title": "Dans la boîte",
+        "note": "<p>Les certifications indiquées sont celles annoncées par le fabricant sur l'emballage du produit.</p>",
+        "container_size": "page-width",
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "faq": {
+      "type": "dbtfy-faq",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "faq_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Questions fréquentes",
+                "alignment": "text-center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_title"
+          ]
+        },
+        "faq_group": {
+          "type": "_dbtfy-faq-group",
+          "settings": {},
+          "blocks": {
+            "faq_q_0": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment se passe la livraison ?",
+                "answer": "<p>Nous livrons partout au Maroc en 24 à 48 heures. Vous recevez un appel de confirmation de la commande et de l'adresse avant l'expédition.</p>",
+                "open_by_default": true
+              },
+              "blocks": {}
+            },
+            "faq_q_1": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Le détecteur a-t-il besoin du Wi-Fi ou d'une application ?",
+                "answer": "<p>Non. Il fonctionne de façon autonome : il déclenche une alarme locale de 85 dB, audible dans le logement. Sans internet, sans application et sans abonnement.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_2": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Comment se passe le paiement ?",
+                "answer": "<p>Vous payez en espèces directement au livreur à la réception de votre commande. Aucun paiement en ligne n'est requis.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_3": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Puis-je échanger ou retourner le produit ?",
+                "answer": "<p>Oui. Vous disposez de 3 jours après la réception pour demander un échange ou un remboursement en cas de défaut de fabrication.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_4": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "L'installation est-elle compliquée ?",
+                "answer": "<p>Non. Fixez la base au plafond avec les vis fournies, puis clipsez le détecteur d'un mouvement de rotation. Aucun outil électrique n'est nécessaire.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_5": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Faut-il changer la pile régulièrement ?",
+                "answer": "<p>Non. La batterie lithium intégrée dure environ 10 ans. À l'approche de la fin de sa durée de vie, l'appareil vous prévient par un voyant rouge clignotant et un signal sonore intermittent.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            },
+            "faq_q_6": {
+              "type": "_dbtfy-faq-question",
+              "settings": {
+                "question": "Où faut-il l'installer ?",
+                "answer": "<p>Au plafond, au centre de la pièce : chambres, couloirs, séjour et cuisine — en gardant une distance avec la zone de cuisson directe pour éviter les fausses alarmes.</p>",
+                "open_by_default": false
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_q_0",
+            "faq_q_1",
+            "faq_q_2",
+            "faq_q_3",
+            "faq_q_4",
+            "faq_q_5",
+            "faq_q_6"
+          ]
+        }
+      },
+      "block_order": [
+        "faq_group"
+      ],
+      "settings": {
+        "container_size": "container",
+        "show_search": false,
+        "show_banner": false,
+        "text_alignment": "text-left",
+        "custom_color_scheme": "scheme-2"
+      }
+    },
+    "final_cta": {
+      "type": "altea-final-cta",
+      "blocks": {
+        "cta_r_0": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "payments",
+            "text": "Paiement à la livraison"
+          }
+        },
+        "cta_r_1": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "local_shipping",
+            "text": "Livraison en 24 à 48h"
+          }
+        },
+        "cta_r_2": {
+          "type": "reassurance",
+          "settings": {
+            "icon": "autorenew",
+            "text": "Retours sous 3 jours"
+          }
+        }
+      },
+      "block_order": [
+        "cta_r_0",
+        "cta_r_1",
+        "cta_r_2"
+      ],
+      "settings": {
+        "eyebrow": "PRÊT À COMMANDER ?",
+        "heading": "Protégez votre maison dès aujourd'hui",
+        "text": "<p>Commandez maintenant et payez à la livraison. Livraison rapide partout au Maroc.</p>",
+        "button_label": "Commander maintenant",
+        "show_price": true,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "show_vendor": false,
+        "show_rating": false,
+        "custom_color_scheme": "scheme-1"
+      }
+    },
+    "recently_viewed": {
+      "type": "dbtfy-recently-viewed",
+      "settings": {
+        "products_to_show": 4,
+        "grid_col_desktop": 4,
+        "grid_col_mobile": "2",
+        "custom_color_scheme": "scheme-1"
+      }
+    }
+  },
+  "order": [
+    "separator",
+    "breadcrumbs",
+    "main",
+    "benefits",
+    "technology",
+    "steps",
+    "specs",
+    "faq",
+    "final_cta",
+    "related_products",
+    "recently_viewed"
+  ]
+}

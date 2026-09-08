@@ -1,0 +1,126 @@
+/* ==========================================================================
+   ALTEA — Grille de benefices (section altea-benefits)
+
+   Ecrite en proprietes logiques : RTL natif, aucune surcharge [dir="rtl"].
+   Aucune couleur en dur : tout passe par --altea-* (assets/altea-brand.css)
+   ou --color-* (schemas Debutify).
+   ========================================================================== */
+
+/* --- En-tete ---------------------------------------------------------- */
+
+.altea-benefits__header {
+  margin-block-end: var(--altea-space-6);
+}
+
+.altea-benefits__eyebrow {
+  margin: 0 0 var(--altea-space-2);
+  font-size: var(--altea-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(var(--altea-gold));
+}
+
+.altea-benefits__heading {
+  margin: 0;
+  font-size: var(--altea-text-xl);
+}
+
+.altea-benefits__intro {
+  margin-block-start: var(--altea-space-3);
+  max-width: 62ch;
+  font-size: var(--altea-text-md);
+  opacity: 0.8;
+}
+
+.altea-benefits__intro > *:last-child { margin-block-end: 0; }
+
+.altea-benefits--center .altea-benefits__header { text-align: center; }
+.altea-benefits--center .altea-benefits__intro {
+  margin-inline: auto;
+}
+
+/* --- Grille ----------------------------------------------------------- */
+
+.altea-benefits__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--altea-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .altea-benefits__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--altea-space-4);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .altea-benefits__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .altea-benefits__grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* --- Carte ------------------------------------------------------------ */
+
+.altea-benefits__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--altea-space-2);
+  padding: var(--altea-space-4);
+  border: 1px solid var(--altea-hairline);
+  border-radius: var(--altea-radius-md);
+  background: rgb(var(--altea-surface));
+  box-shadow: var(--altea-shadow-card);
+}
+
+/* Le liseré doré marque l'accent de marque sans surcharger la carte. */
+.altea-benefits__card::before {
+  content: "";
+  display: block;
+  inline-size: var(--altea-space-5);
+  block-size: 2px;
+  border-radius: var(--altea-radius-pill);
+  background: rgb(var(--altea-gold));
+  order: -1;
+}
+
+.altea-benefits__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 4.4rem;
+  block-size: 4.4rem;
+  border-radius: var(--altea-radius-pill);
+  background: rgba(var(--altea-navy), 0.06);
+  color: rgb(var(--altea-navy));
+}
+
+.altea-benefits__icon .material-icon { font-size: 24px; }
+
+.altea-benefits__title {
+  margin: 0;
+  font-size: var(--altea-text-md);
+  line-height: 1.35;
+}
+
+.altea-benefits__text {
+  margin: 0;
+  font-size: var(--altea-text-sm);
+  opacity: 0.8;
+}
+
+/* Sur fond fonce (scheme-3), l'icone doit rester lisible. */
+.color-scheme-3 .altea-benefits__card,
+.color-scheme-4 .altea-benefits__card {
+  background: transparent;
+  box-shadow: none;
+  border-color: rgba(var(--altea-surface), 0.18);
+}
+
+.color-scheme-3 .altea-benefits__icon {
+  background: rgba(var(--altea-surface), 0.1);
+  color: inherit;
+}

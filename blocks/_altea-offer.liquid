@@ -1,0 +1,180 @@
+{%- comment -%}
+  ALTEA — Selecteur d'offre par quantite (colonne d'achat)
+
+  Deux cartes : l'unite seule, et le lot au prix negocie. Tous les montants
+  sont calcules a partir de la variante Shopify selectionnee — rien n'est
+  ecrit en dur, donc l'affichage suit automatiquement un changement de prix
+  dans l'admin.
+
+  Le bloc ne simule aucun prix : il pilote la quantite envoyee au panier.
+  La remise reelle est portee par la configuration Shopify / Releasit
+  decrite dans PAGES-PRODUITS.md. Si cette configuration n'existe pas,
+  le panier facturera le prix plein : le bloc ne ment jamais a l'ecran.
+
+  Securite d'affichage : si le prix d'offre est absent, nul, ou superieur ou
+  egal au prix plein du lot, le bloc ne s'affiche pas du tout.
+
+  Ecrit en proprietes logiques : RTL natif.
+{%- endcomment -%}
+
+{%- liquid
+  unless section.settings.product == blank
+    assign product = section.settings.product
+  endunless
+
+  assign variant = product.selected_or_first_available_variant
+  assign unit_price = variant.price
+
+  assign bundle_qty = block.settings.bundle_quantity
+  assign bundle_regular = unit_price | times: bundle_qty
+  assign bundle_price = block.settings.offer_price | times: 100
+
+  assign show_offer = false
+  if unit_price > 0 and bundle_qty > 1 and bundle_price > 0 and bundle_price < bundle_regular
+    assign show_offer = true
+  endif
+
+  assign savings = bundle_regular | minus: bundle_price
+  assign savings_money = savings | money
+
+  assign product_form_id = 'product-form-' | append: section.id
+  assign group_name = 'altea-offer-' | append: block.id
+  assign default_qty = 1
+  if block.settings.default_selection == 'bundle'
+    assign default_qty = bundle_qty
+  endif
+-%}
+
+{%- if show_offer -%}
+  {{ 'altea-offer.css' | asset_url | stylesheet_tag }}
+
+  <altea-offer
+    class="altea-offer"
+    data-form-data
+    data-quantity-input="Quantity-{{ section.id }}"
+    data-bundle-price="{{ bundle_price }}"
+    data-bundle-quantity="{{ bundle_qty }}"
+    data-variants='{{ product.variants | json | escape }}'
+    {{ block.shopify_attributes }}
+  >
+    <input
+      type="hidden"
+      name="quantity"
+      value="{{ default_qty }}"
+      form="{{ product_form_id }}"
+      data-altea-offer-quantity
+    >
+
+    <fieldset class="altea-offer__fieldset">
+      <legend class="altea-offer__legend">{{ 'altea.offer.choose' | t }}</legend>
+
+      <div class="altea-offer__options">
+        <label class="altea-offer__option" for="{{ group_name }}-single">
+          <input
+            class="altea-offer__radio"
+            type="radio"
+            id="{{ group_name }}-single"
+            name="{{ group_name }}"
+            value="1"
+            {% if default_qty == 1 %}checked{% endif %}
+          >
+          <span class="altea-offer__card">
+            <span class="altea-offer__mark" aria-hidden="true"></span>
+            <span class="altea-offer__body">
+              <span class="altea-offer__label">{{ block.settings.single_label | escape }}</span>
+            </span>
+            <span class="altea-offer__prices">
+              <span class="altea-offer__price" data-altea-offer-unit-price>{{ unit_price | money }}</span>
+            </span>
+          </span>
+        </label>
+
+        <label class="altea-offer__option altea-offer__option--featured" for="{{ group_name }}-bundle">
+          <input
+            class="altea-offer__radio"
+            type="radio"
+            id="{{ group_name }}-bundle"
+            name="{{ group_name }}"
+            value="{{ bundle_qty }}"
+            {% if default_qty == bundle_qty %}checked{% endif %}
+          >
+          <span class="altea-offer__card">
+            <span class="altea-offer__mark" aria-hidden="true"></span>
+            <span class="altea-offer__body">
+              <span class="altea-offer__label">{{ block.settings.bundle_label | escape }}</span>
+              <span
+                class="altea-offer__save"
+                data-altea-offer-savings
+                data-savings-template="{{ 'altea.offer.save' | t: amount: '__amount__' | escape }}"
+              >
+                {{- 'altea.offer.save' | t: amount: savings_money -}}
+              </span>
+            </span>
+            <span class="altea-offer__prices">
+              <span class="altea-offer__price">{{ bundle_price | money }}</span>
+              <s class="altea-offer__price-was" data-altea-offer-bundle-regular>
+                <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}: </span>
+                <span data-altea-offer-bundle-regular-value>{{ bundle_regular | money }}</span>
+              </s>
+            </span>
+            <span class="altea-offer__flag">{{ 'altea.offer.best_value' | t }}</span>
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </altea-offer>
+
+  <script src="{{ 'altea-offer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Altea — Offre quantité",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Le bloc pilote la quantité ajoutée au panier. La remise réelle doit être configurée côté Shopify (réduction automatique) et côté application de commande — sinon le panier facturera le prix plein."
+    },
+    {
+      "type": "text",
+      "id": "single_label",
+      "label": "Libellé de l'offre à l'unité",
+      "default": "1 détecteur"
+    },
+    {
+      "type": "text",
+      "id": "bundle_label",
+      "label": "Libellé de l'offre en lot",
+      "default": "2 détecteurs"
+    },
+    {
+      "type": "range",
+      "id": "bundle_quantity",
+      "label": "Quantité du lot",
+      "min": 2, "max": 6, "step": 1,
+      "default": 2
+    },
+    {
+      "type": "number",
+      "id": "offer_price",
+      "label": "Prix total du lot",
+      "info": "En dirhams, sans décimales. Doit correspondre exactement à la remise configurée dans l'admin. Si la valeur est vide ou supérieure au prix plein du lot, le bloc ne s'affiche pas.",
+      "default": 599
+    },
+    {
+      "type": "select",
+      "id": "default_selection",
+      "label": "Offre sélectionnée par défaut",
+      "info": "« À l'unité » garde le prix affiché en haut de la fiche cohérent avec l'offre cochée.",
+      "default": "single",
+      "options": [
+        { "value": "single", "label": "À l'unité" },
+        { "value": "bundle", "label": "Lot" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Altea — Offre quantité" }
+  ]
+}
+{% endschema %}

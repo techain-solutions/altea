@@ -655,9 +655,9 @@
   },
   "altea": {
     "offer": {
-      "choose": "Choose your offer",
-      "save": "Save {{ amount }}",
-      "best_value": "Best value"
+      "choose": "اختر عرضك",
+      "save": "وفّر {{ amount }}",
+      "best_value": "أفضل عرض"
     }
   }
 }

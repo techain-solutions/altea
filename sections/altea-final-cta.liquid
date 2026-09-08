@@ -1,0 +1,272 @@
+{%- comment -%}
+  ALTEA — Rappel d'offre de fin de page
+
+  Bandeau navy/or de cloture : titre, texte, prix reels du produit et
+  bouton de retour vers la colonne d'achat. Les blocs « reassurance »
+  reprennent les arguments deja portes par la boutique.
+
+  Le prix n'est jamais ecrit en dur : il vient de la variante Shopify
+  selectionnee, comme le prix barre. Si le marchand change le prix dans
+  l'admin, ce bandeau suit.
+
+  Non gatee derriere widget-blocker : c'est du contenu produit.
+  Ecrite en proprietes logiques : RTL natif.
+{%- endcomment -%}
+
+{{ 'section-altea-final-cta.css' | asset_url | stylesheet_tag }}
+{%- render 'section-padding', section: section -%}
+
+{%- liquid
+  assign s = section.settings
+
+  assign cta_product = product
+  unless s.product == blank
+    assign cta_product = s.product
+  endunless
+
+  assign variant = cta_product.selected_or_first_available_variant
+
+  assign button_url = s.button_url
+  if button_url == blank
+    if request.page_type == 'product'
+      comment
+        The four ALTEA templates use the stable `main` section id. Keep the
+        final CTA on the current PDP and return the shopper to its buy box,
+        rather than reloading the same product URL.
+      endcomment
+      assign button_url = '#MainProduct-main'
+    else
+      assign button_url = cta_product.url
+    endif
+  endif
+
+  assign show_price = false
+  if s.show_price and variant != blank
+    assign show_price = true
+  endif
+
+  assign on_sale = false
+  if variant.compare_at_price > variant.price
+    assign on_sale = true
+  endif
+-%}
+
+<section
+  class="altea-cta show-on--{{ s.show_on }} color-{{ s.custom_color_scheme }} dbtfy-color-{{ s.color_scheme }} section-{{ section.id }}-padding"
+  {{ section.shopify_attributes }}
+>
+  <div class="{{ s.container_size }}">
+    <div class="altea-cta__panel">
+      {%- if s.eyebrow != blank -%}
+        <p class="altea-cta__eyebrow">{{ s.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if s.heading != blank -%}
+        <h2 class="altea-cta__heading">{{ s.heading }}</h2>
+      {%- endif -%}
+
+      {%- if s.text != blank -%}
+        <div class="altea-cta__text">{{ s.text }}</div>
+      {%- endif -%}
+
+      {%- if show_price -%}
+        <p class="altea-cta__price">
+          <span class="altea-cta__price-now">{{ variant.price | money }}</span>
+          {%- if on_sale -%}
+            <s class="altea-cta__price-was">
+              <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}: </span>
+              {{- variant.compare_at_price | money -}}
+            </s>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      {%- if s.button_label != blank and button_url != blank -%}
+        <a class="altea-cta__button button button--primary" href="{{ button_url }}">
+          {{- s.button_label | escape -}}
+        </a>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="altea-cta__reassurance" role="list">
+          {%- for block in section.blocks -%}
+            <li {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                {%- render 'material-icon', icon: block.settings.icon -%}
+              {%- endif -%}
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Altea — Rappel d'offre",
+  "tag": "section",
+  "class": "altea-final-cta-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit",
+      "info": "Laisser vide sur une page produit : le produit courant est utilisé."
+    },
+    { "type": "header", "content": "Contenu" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "PRÊT À COMMANDER ?"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Protégez ce qui compte vraiment"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texte"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Afficher le prix du produit",
+      "info": "Le prix et le prix barré sont lus dans Shopify, jamais écrits dans la section.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Libellé du bouton",
+      "default": "Commander maintenant"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Lien du bouton",
+      "info": "Laisser vide pour renvoyer vers la fiche du produit."
+    },
+    { "type": "header", "content": "Affichage" },
+    {
+      "type": "select",
+      "id": "show_on",
+      "label": "Afficher sur",
+      "default": "both",
+      "options": [
+        { "value": "both", "label": "Desktop et mobile" },
+        { "value": "desktop-only", "label": "Desktop uniquement" },
+        { "value": "mobile-only", "label": "Mobile uniquement" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "label": "Largeur du conteneur",
+      "info": "« Standard » applique la classe page-width du thème.",
+      "default": "page-width",
+      "options": [
+        { "value": "page-width", "label": "Standard" },
+        { "value": "", "label": "Pleine largeur" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Schéma de couleurs Debutify",
+      "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Clair" },
+        { "value": "scheme-2", "label": "Primaire" },
+        { "value": "scheme-3", "label": "Secondaire" },
+        { "value": "scheme-4", "label": "Foncé" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "custom_color_scheme",
+      "label": "Schéma de couleurs personnalisé",
+      "default": "scheme-1"
+    },
+    { "type": "header", "content": "Espacement" },
+    {
+      "type": "select",
+      "id": "padding___top",
+      "label": "Marge haute",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "label": "Marge haute personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "padding___bottom",
+      "label": "Marge basse",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "label": "Marge basse personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reassurance",
+      "name": "Argument de réassurance",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icône",
+          "info": "Nom d'un symbole Material (ex. payments, local_shipping, support_agent).",
+          "default": "payments"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Texte",
+          "default": "Paiement à la livraison"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Altea — Rappel d'offre",
+      "blocks": [
+        { "type": "reassurance" },
+        { "type": "reassurance" },
+        { "type": "reassurance" }
+      ]
+    }
+  ]
+}
+{% endschema %}

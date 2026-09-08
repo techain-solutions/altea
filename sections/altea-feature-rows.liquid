@@ -1,0 +1,275 @@
+{%- comment -%}
+  ALTEA — Lignes image / texte
+
+  Section reutilisable : un bloc = une ligne. L'image alterne
+  automatiquement de cote a chaque ligne (option desactivable).
+  Sert au storytelling produit : une idee, une preuve visuelle.
+
+  Non gatee derriere widget-blocker : c'est du contenu produit.
+  Ecrite en proprietes logiques : RTL natif.
+{%- endcomment -%}
+
+{{ 'section-altea-feature-rows.css' | asset_url | stylesheet_tag }}
+{%- render 'section-padding', section: section -%}
+
+{%- liquid
+  assign s = section.settings
+
+  assign row_product = product
+  unless s.product == blank
+    assign row_product = s.product
+  endunless
+-%}
+
+<section
+  class="altea-rows show-on--{{ s.show_on }} color-{{ s.custom_color_scheme }} dbtfy-color-{{ s.color_scheme }} section-{{ section.id }}-padding{% if s.center_header %} altea-rows--center{% endif %}"
+  {{ section.shopify_attributes }}
+>
+  <div class="{{ s.container_size }}">
+    {%- if s.eyebrow != blank or s.heading != blank or s.intro != blank -%}
+      <div class="altea-rows__header">
+        {%- if s.eyebrow != blank -%}
+          <p class="altea-rows__eyebrow">{{ s.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if s.heading != blank -%}
+          <h2 class="altea-rows__heading">{{ s.heading }}</h2>
+        {%- endif -%}
+        {%- if s.intro != blank -%}
+          <div class="altea-rows__intro">{{ s.intro }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="altea-rows__list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign parity = forloop.index0 | modulo: 2
+          assign flip = false
+          if s.alternate and parity == 1
+            assign flip = true
+          endif
+          assign image = block.settings.image
+
+          # Repli sur un media du produit : evite d'avoir a re-televerser dans
+          # Contenu > Fichiers une image deja presente sur la fiche produit.
+          if image == blank and block.settings.media_index > 0
+            assign media_position = block.settings.media_index | minus: 1
+            assign product_media = row_product.media[media_position]
+            if product_media.media_type == 'image'
+              assign image = product_media.preview_image
+            endif
+          endif
+        -%}
+        <article
+          class="altea-rows__row{% if flip %} altea-rows__row--flip{% endif %}{% if image == blank %} altea-rows__row--no-media{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if image != blank -%}
+            <div class="altea-rows__media">
+              <img
+                src="{{ image | image_url: width: 1200 }}"
+                srcset="
+                  {{ image | image_url: width: 480 }} 480w,
+                  {{ image | image_url: width: 760 }} 760w,
+                  {{ image | image_url: width: 1200 }} 1200w
+                "
+                sizes="(min-width: 990px) 46vw, 100vw"
+                alt="{{ image.alt | escape }}"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+                loading="lazy"
+              >
+            </div>
+          {%- endif -%}
+
+          <div class="altea-rows__body">
+            {%- if block.settings.eyebrow != blank -%}
+              <p class="altea-rows__row-eyebrow">{{ block.settings.eyebrow | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h3 class="altea-rows__row-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="altea-rows__row-text">{{ block.settings.text }}</div>
+            {%- endif -%}
+            {%- if block.settings.bullets != blank -%}
+              <div class="altea-rows__bullets">{{ block.settings.bullets }}</div>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Altea — Image et texte",
+  "tag": "section",
+  "class": "altea-feature-rows-section",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produit",
+      "info": "Laisser vide sur une page produit : le produit courant est utilisé pour le repli sur ses médias."
+    },
+    { "type": "header", "content": "En-tête" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "EN DÉTAIL"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Comment ça fonctionne"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_header",
+      "label": "Centrer l'en-tête",
+      "default": true
+    },
+    { "type": "header", "content": "Disposition" },
+    {
+      "type": "checkbox",
+      "id": "alternate",
+      "label": "Alterner le côté de l'image",
+      "info": "Une ligne sur deux affiche l'image de l'autre côté.",
+      "default": true
+    },
+    { "type": "header", "content": "Affichage" },
+    {
+      "type": "select",
+      "id": "show_on",
+      "label": "Afficher sur",
+      "default": "both",
+      "options": [
+        { "value": "both", "label": "Desktop et mobile" },
+        { "value": "desktop-only", "label": "Desktop uniquement" },
+        { "value": "mobile-only", "label": "Mobile uniquement" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "container_size",
+      "label": "Largeur du conteneur",
+      "info": "« Standard » applique la classe page-width du thème.",
+      "default": "page-width",
+      "options": [
+        { "value": "page-width", "label": "Standard" },
+        { "value": "", "label": "Pleine largeur" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Schéma de couleurs Debutify",
+      "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Clair" },
+        { "value": "scheme-2", "label": "Primaire" },
+        { "value": "scheme-3", "label": "Secondaire" },
+        { "value": "scheme-4", "label": "Foncé" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "custom_color_scheme",
+      "label": "Schéma de couleurs personnalisé",
+      "default": "scheme-1"
+    },
+    { "type": "header", "content": "Espacement" },
+    {
+      "type": "select",
+      "id": "padding___top",
+      "label": "Marge haute",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "label": "Marge haute personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "padding___bottom",
+      "label": "Marge basse",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Aucune" },
+        { "value": "extra_small", "label": "Très petite" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "label": "Marge basse personnalisée",
+      "min": 0, "max": 160, "step": 4, "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Ligne",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "range",
+          "id": "media_index",
+          "label": "À défaut, média du produit n°",
+          "info": "0 = aucun. Utilise la Nième image de la fiche produit, sans avoir à la re-téléverser. Ignoré si une image est choisie ci-dessus.",
+          "min": 0, "max": 12, "step": 1,
+          "default": 0
+        },
+        { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Titre",
+          "default": "Titre de la ligne"
+        },
+        { "type": "richtext", "id": "text", "label": "Texte" },
+        {
+          "type": "richtext",
+          "id": "bullets",
+          "label": "Points clés",
+          "info": "Utilisez une liste à puces : chaque puce reçoit une coche dorée."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Altea — Image et texte",
+      "blocks": [
+        { "type": "row" },
+        { "type": "row" }
+      ]
+    }
+  ]
+}
+{% endschema %}
