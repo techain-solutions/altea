@@ -1,0 +1,339 @@
+/* ==========================================================================
+   ALTEA — Hero Section
+   Chargee en bloquant (pas via media="print" onload) : la hero est au-dessus
+   de la ligne de flottaison, un chargement differe y provoque un decalage de
+   mise en page (CLS) qui coute en conversion.
+
+   Ecrite en proprietes LOGIQUES uniquement (inline-start/end, block, start/end)
+   : la section est RTL-native, aucun correctif [dir="rtl"] n'est necessaire.
+   Mobile-first : styles mobile par defaut, min-width ensuite.
+   ========================================================================== */
+
+.altea-hero {
+  position: relative;
+  display: grid;
+  /* Piste explicite : sans elle, la colonne `auto` se dimensionne au
+     max-content et la max-inline-size du contenu (62rem) force la grille
+     a 650px, ce qui deborde sur un ecran de 375px. minmax(0, 1fr) borne
+     la piste a la largeur du conteneur. */
+  grid-template-columns: minmax(0, 1fr);
+  isolation: isolate;
+  min-block-size: var(--altea-hero-height, auto);
+  overflow: hidden;
+}
+
+/* --- Média ------------------------------------------------------------- */
+
+.altea-hero__media {
+  grid-area: 1 / 1;
+  position: relative;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.altea-hero__img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Quand la hauteur est libre ("S'adapter a l'image"), l'image dicte la
+   hauteur de la section au lieu d'etre etiree. Le reglage est independant
+   entre mobile et desktop, donc la regle l'est aussi. */
+.altea-hero--mobile-adapt .altea-hero__img {
+  block-size: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .altea-hero--mobile-adapt .altea-hero__img { block-size: 100%; }
+  .altea-hero--desktop-adapt .altea-hero__img { block-size: auto; }
+}
+
+/* Bascule desktop / mobile : une seule des deux images est peinte.
+   display:none suffit — le navigateur ne telecharge pas l'image masquee
+   des lors que les deux portent le meme sizes="100vw". */
+.altea-hero__img--desktop { display: none; }
+.altea-hero__img--mobile  { display: block; }
+
+.altea-hero__placeholder {
+  background: rgba(var(--altea-navy), 0.08);
+}
+
+/* --- Voile ------------------------------------------------------------- */
+
+.altea-hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.altea-hero--overlay-solid .altea-hero__scrim {
+  background: var(--altea-hero-overlay);
+  opacity: var(--altea-hero-overlay-alpha);
+}
+
+/* Degrade depuis le bas : garde le haut de la photo intact et n'assombrit
+   que la zone ou le texte se pose. */
+.altea-hero--overlay-gradient_block .altea-hero__scrim {
+  background-color: color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 24%), transparent);
+  background-image: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 100%), transparent) 0%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 96%), transparent) 34%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 70%), transparent) 58%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 28%), transparent) 82%,
+    transparent 100%
+  );
+}
+
+/* Degrade lateral : part du bord ou se trouve le texte. `to left` en LTR,
+   automatiquement mirroite en RTL par la regle plus bas. */
+.altea-hero--overlay-gradient_inline .altea-hero__scrim {
+  background-color: color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 24%), transparent);
+  background-image: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 100%), transparent) 0%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 88%), transparent) 32%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 45%), transparent) 62%,
+    transparent 100%
+  );
+}
+
+/* Seule exception RTL de la feuille : linear-gradient n'a pas d'equivalent
+   logique, la direction doit etre inversee explicitement. */
+[dir="rtl"] .altea-hero--overlay-gradient_inline .altea-hero__scrim {
+  background-color: color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 24%), transparent);
+  background-image: linear-gradient(
+    to left,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 100%), transparent) 0%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 88%), transparent) 32%,
+    color-mix(in srgb, var(--altea-hero-overlay) calc(var(--altea-hero-overlay-alpha) * 45%), transparent) 62%,
+    transparent 100%
+  );
+}
+
+/* Repli pour les navigateurs sans color-mix() : voile uni plutot que rien. */
+@supports not (background: color-mix(in srgb, red 50%, transparent)) {
+  .altea-hero--overlay-gradient_block .altea-hero__scrim,
+  .altea-hero--overlay-gradient_inline .altea-hero__scrim {
+    background: var(--altea-hero-overlay);
+    opacity: var(--altea-hero-overlay-alpha);
+  }
+}
+
+/* --- Contenu ----------------------------------------------------------- */
+
+.altea-hero__inner {
+  grid-area: 1 / 1;
+  z-index: 2;
+  display: flex;
+  justify-content: var(--altea-hero-align-inline, flex-start);
+  align-items: var(--altea-hero-align-block, center);
+  padding-block: var(--altea-space-7);
+  inline-size: 100%;
+}
+
+.altea-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--altea-space-4);
+  inline-size: var(--altea-hero-content-width, 100%);
+  max-inline-size: min(62rem, 100%);
+  text-align: var(--altea-hero-text-align, start);
+  align-items: var(--altea-hero-align-inline, flex-start);
+  color: rgb(var(--color-foreground));
+}
+
+.altea-hero__eyebrow {
+  margin: 0;
+  font-size: var(--altea-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgb(var(--altea-gold));
+}
+
+/* L'arabe ne se met pas en capitales et supporte mal le letter-spacing. */
+[dir="rtl"] .altea-hero__eyebrow {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.altea-hero__heading {
+  margin: 0;
+  font-size: var(--altea-text-2xl);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.altea-hero__heading--medium { font-size: var(--altea-text-xl); }
+.altea-hero__heading--large  { font-size: var(--altea-text-2xl); }
+.altea-hero__heading--xlarge { font-size: var(--altea-text-3xl); }
+
+[dir="rtl"] .altea-hero__heading { line-height: 1.35; }
+
+.altea-hero__subheading {
+  margin: 0;
+  font-size: var(--altea-text-lg);
+  line-height: 1.6;
+  max-inline-size: 52ch;
+  opacity: 0.92;
+}
+
+.altea-hero__subheading > :first-child { margin-block-start: 0; }
+.altea-hero__subheading > :last-child  { margin-block-end: 0; }
+
+/* --- Boutons ----------------------------------------------------------- */
+
+.altea-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--altea-space-3);
+  margin-block-start: var(--altea-space-2);
+  inline-size: 100%;
+  justify-content: var(--altea-hero-align-inline, flex-start);
+}
+
+.altea-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: var(--altea-tap);
+  padding-inline: var(--altea-space-6);
+  border-radius: var(--altea-radius-pill);
+  font-size: var(--altea-text-md);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.altea-hero__cta--gold {
+  background: rgb(var(--altea-gold));
+  color: rgb(var(--altea-navy));
+}
+
+.altea-hero__cta--navy {
+  background: rgb(var(--altea-navy));
+  color: rgb(var(--altea-surface));
+}
+
+.altea-hero__cta--light {
+  background: rgb(var(--altea-surface));
+  color: rgb(var(--altea-navy));
+}
+
+.altea-hero__cta--ghost {
+  background: transparent;
+  color: currentColor;
+  border-color: currentColor;
+}
+
+.altea-hero__cta[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* Sur mobile, les CTA prennent toute la largeur : cible tactile maximale. */
+@media screen and (max-width: 749px) {
+  .altea-hero__actions { flex-direction: column; }
+  .altea-hero__cta { inline-size: 100%; }
+}
+
+.altea-hero__microcopy {
+  margin: 0;
+  font-size: var(--altea-text-sm);
+  opacity: 0.9;
+}
+
+/* --- Badges de réassurance --------------------------------------------- */
+
+.altea-hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--altea-space-2);
+  margin: var(--altea-space-3) 0 0;
+  padding: 0;
+  list-style: none;
+  inline-size: 100%;
+  justify-content: var(--altea-hero-align-inline, flex-start);
+}
+
+.altea-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--altea-space-2);
+  padding-block: var(--altea-space-2);
+  padding-inline: var(--altea-space-3);
+  border-radius: var(--altea-radius-pill);
+  background: rgba(var(--altea-navy), 0.42);
+  border: 1px solid rgba(var(--altea-surface), 0.28);
+  backdrop-filter: blur(8px) saturate(1.1);
+  font-size: var(--altea-text-sm);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.altea-hero__pill-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  inline-size: 1.8rem;
+  block-size: 1.8rem;
+  color: rgb(var(--altea-gold));
+}
+
+.altea-hero__pill-icon svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+/* Sur petit ecran les badges deviennent un carrousel a accroche plutot que
+   de passer a la ligne et de pousser le CTA hors de l'ecran. */
+@media screen and (max-width: 749px) {
+  .altea-hero__pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    /* deborde jusqu'aux bords de l'ecran, en respectant le sens de lecture */
+    margin-inline: calc(var(--altea-space-4) * -1);
+    padding-inline: var(--altea-space-4);
+    max-inline-size: calc(100% + var(--altea-space-4) * 2);
+    justify-content: flex-start;
+  }
+
+  .altea-hero__pills::-webkit-scrollbar { display: none; }
+
+  .altea-hero__pill { scroll-snap-align: start; }
+}
+
+/* --- Desktop ----------------------------------------------------------- */
+
+@media screen and (min-width: 750px) {
+  .altea-hero__img--desktop { display: block; }
+  .altea-hero__img--mobile  { display: none; }
+
+  .altea-hero__inner {
+    padding-block: var(--altea-space-8);
+  }
+
+  .altea-hero__content {
+    gap: var(--altea-space-5);
+  }
+}
+
+/* --- Preferences utilisateur ------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .altea-hero__pills { scroll-behavior: auto; }
+}
+
+@media (prefers-contrast: more) {
+  .altea-hero__pill {
+    background: rgb(var(--altea-navy));
+    border-color: rgb(var(--altea-surface));
+  }
+  .altea-hero__scrim { opacity: 1; }
+}

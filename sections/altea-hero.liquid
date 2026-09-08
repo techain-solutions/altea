@@ -1,0 +1,485 @@
+{%- comment -%}
+  ALTEA — Hero Section
+
+  Volontairement NON gatee : pas de {% render 'widget-blocker' %} ni de
+  {% if request.design_mode or settings.dbtfy_* %}. 73 des 112 sections
+  Debutify sont wrappees ainsi et disparaissent du site en ligne si le flag
+  bascule, tout en restant visibles dans l'editeur. On ne met pas l'element
+  le plus important commercialement derriere cet interrupteur.
+
+  Ecrite en proprietes logiques (inline-start/end, block) : RTL natif,
+  aucune surcharge [dir="rtl"] necessaire.
+{%- endcomment -%}
+
+{{ 'section-altea-hero.css' | asset_url | stylesheet_tag }}
+{%- render 'section-padding', section: section -%}
+
+{%- liquid
+  assign s = section.settings
+
+  case s.height_desktop
+    when 'small'  then assign h_desktop = '58dvh'
+    when 'medium' then assign h_desktop = '72dvh'
+    when 'large'  then assign h_desktop = '86dvh'
+    when 'full'   then assign h_desktop = '100dvh'
+    else               assign h_desktop = 'auto'
+  endcase
+
+  case s.height_mobile
+    when 'small'  then assign h_mobile = '62dvh'
+    when 'medium' then assign h_mobile = '78dvh'
+    when 'large'  then assign h_mobile = '90dvh'
+    when 'full'   then assign h_mobile = '100dvh'
+    else               assign h_mobile = 'auto'
+  endcase
+
+  assign overlay_alpha = s.overlay_opacity | divided_by: 100.0
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --altea-hero-height: {{ h_mobile }};
+    --altea-hero-overlay: {{ s.overlay_color }};
+    --altea-hero-overlay-alpha: {{ overlay_alpha }};
+    --altea-hero-content-width: 100%;
+    --altea-hero-align-inline: {{ s.content_align_inline_mobile }};
+    --altea-hero-align-block: {{ s.content_align_block_mobile }};
+    --altea-hero-text-align: {{ s.content_align_inline_mobile | replace: 'flex-', '' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --altea-hero-height: {{ h_desktop }};
+      --altea-hero-content-width: {{ s.content_width }}%;
+      --altea-hero-align-inline: {{ s.content_align_inline }};
+      --altea-hero-align-block: {{ s.content_align_block }};
+      --altea-hero-text-align: {{ s.content_align_inline | replace: 'flex-', '' }};
+    }
+  }
+{%- endstyle -%}
+
+<altea-hero
+  class="altea-hero show-on--{{ s.show_on }} color-{{ s.custom_color_scheme }} dbtfy-color-{{ s.color_scheme }} section-{{ section.id }}-padding altea-hero--overlay-{{ s.overlay_style }} altea-hero--desktop-{{ s.height_desktop }} altea-hero--mobile-{{ s.height_mobile }}"
+  {{ section.shopify_attributes }}
+>
+  <div class="altea-hero__media">
+    {%- liquid
+      assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 2500, 3000, 3840'
+      assign has_mobile_image = false
+      if s.image_mobile != blank
+        assign has_mobile_image = true
+      endif
+    -%}
+
+    {%- if s.image != blank -%}
+      {%- liquid
+        assign desktop_class = 'altea-hero__img'
+        if has_mobile_image
+          assign desktop_class = 'altea-hero__img altea-hero__img--desktop'
+        endif
+      -%}
+      {{
+        s.image
+        | image_url: width: 3840
+        | image_tag:
+          class: desktop_class,
+          widths: widths,
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: s.image.alt | default: s.heading | strip_html
+      }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'altea-hero__img altea-hero__placeholder' }}
+    {%- endif -%}
+
+    {%- if has_mobile_image -%}
+      {{
+        s.image_mobile
+        | image_url: width: 1600
+        | image_tag:
+          class: 'altea-hero__img altea-hero__img--mobile',
+          widths: '375, 550, 750, 1100, 1500, 1600',
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: s.image_mobile.alt | default: s.heading | strip_html
+      }}
+    {%- endif -%}
+
+    {%- unless s.overlay_style == 'none' -%}
+      <span class="altea-hero__scrim" aria-hidden="true"></span>
+    {%- endunless -%}
+  </div>
+
+  <div class="altea-hero__inner page-width">
+    <div class="altea-hero__content">
+      {%- if s.eyebrow != blank -%}
+        <p class="altea-hero__eyebrow">{{ s.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if s.heading != blank -%}
+        <h2 class="altea-hero__heading altea-hero__heading--{{ s.heading_size }}">
+          {{ s.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if s.subheading != blank -%}
+        <div class="altea-hero__subheading rte">{{ s.subheading }}</div>
+      {%- endif -%}
+
+      {%- if s.cta_label != blank or s.cta2_label != blank -%}
+        <div class="altea-hero__actions">
+          {%- if s.cta_label != blank -%}
+            <a
+              class="altea-hero__cta altea-hero__cta--{{ s.cta_style }} button"
+              {% if s.cta_url != blank %}href="{{ s.cta_url }}"{% else %}role="link" aria-disabled="true"{% endif %}
+            >
+              {{ s.cta_label | escape }}
+            </a>
+          {%- endif -%}
+          {%- if s.cta2_label != blank -%}
+            <a
+              class="altea-hero__cta altea-hero__cta--ghost button"
+              {% if s.cta2_url != blank %}href="{{ s.cta2_url }}"{% else %}role="link" aria-disabled="true"{% endif %}
+            >
+              {{ s.cta2_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if s.microcopy != blank -%}
+        <p class="altea-hero__microcopy">{{ s.microcopy | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="altea-hero__pills" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'trust_pill' -%}
+              <li class="altea-hero__pill" {{ block.shopify_attributes }}>
+                <span class="altea-hero__pill-icon" aria-hidden="true">
+                  {%- case block.settings.icon -%}
+                    {%- when 'shipping' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v9H3zM13 10h4.5L21 13.5V16h-8z"/><circle cx="7" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/></svg>
+                    {%- when 'payment' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><path d="M6 14.5h3"/></svg>
+                    {%- when 'warranty' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 4.5 6v6c0 4.4 3.1 8.2 7.5 9.2 4.4-1 7.5-4.8 7.5-9.2V6z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4"/></svg>
+                    {%- when 'support' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 13h2.5v5H5a1 1 0 0 1-1-1zM20 13h-2.5v5H19a1 1 0 0 0 1-1z"/><path d="M17.5 18v.6a2.4 2.4 0 0 1-2.4 2.4H13"/></svg>
+                    {%- when 'returns' -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.2 4.5v4.3h4.3"/></svg>
+                    {%- else -%}
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12 2.4 2.4 4.6-4.8"/></svg>
+                  {%- endcase -%}
+                </span>
+                {%- if block.settings.text != blank -%}
+                  <span class="altea-hero__pill-text">{{ block.settings.text | escape }}</span>
+                {%- endif -%}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</altea-hero>
+
+{% schema %}
+{
+  "name": "Altea — Hero",
+  "tag": "section",
+  "class": "altea-hero-section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "header", "content": "Média" },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image de fond (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image de fond (mobile)",
+      "info": "Recommandé : un cadrage portrait. Sans cette image, l'image desktop est utilisée partout."
+    },
+    { "type": "header", "content": "Habillage" },
+    {
+      "type": "select",
+      "id": "overlay_style",
+      "label": "Style du voile",
+      "default": "gradient_block",
+      "options": [
+        { "value": "none", "label": "Aucun" },
+        { "value": "solid", "label": "Voile uni" },
+        { "value": "gradient_block", "label": "Dégradé depuis le bas" },
+        { "value": "gradient_inline", "label": "Dégradé latéral" }
+      ],
+      "info": "Le dégradé garde le titre lisible sans assombrir toute la photo."
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Couleur du voile",
+      "default": "#031D42"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacité du voile",
+      "min": 0, "max": 100, "step": 5, "unit": "%",
+      "default": 75
+    },
+    { "type": "header", "content": "Mise en page — Desktop" },
+    {
+      "type": "select",
+      "id": "height_desktop",
+      "label": "Hauteur",
+      "default": "large",
+      "options": [
+        { "value": "adapt", "label": "S'adapter à l'image" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "full", "label": "Plein écran" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_align_inline",
+      "label": "Position horizontale du contenu",
+      "default": "flex-start",
+      "options": [
+        { "value": "flex-start", "label": "Début (gauche en FR, droite en AR)" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Fin (droite en FR, gauche en AR)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_align_block",
+      "label": "Position verticale du contenu",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Milieu" },
+        { "value": "flex-end", "label": "Bas" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur du bloc de contenu",
+      "min": 30, "max": 100, "step": 5, "unit": "%",
+      "default": 55
+    },
+    { "type": "header", "content": "Mise en page — Mobile" },
+    {
+      "type": "select",
+      "id": "height_mobile",
+      "label": "Hauteur",
+      "default": "large",
+      "options": [
+        { "value": "adapt", "label": "S'adapter à l'image" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "full", "label": "Plein écran" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_align_inline_mobile",
+      "label": "Position horizontale du contenu",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Début" },
+        { "value": "center", "label": "Centre" },
+        { "value": "flex-end", "label": "Fin" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_align_block_mobile",
+      "label": "Position verticale du contenu",
+      "default": "flex-end",
+      "options": [
+        { "value": "flex-start", "label": "Haut" },
+        { "value": "center", "label": "Milieu" },
+        { "value": "flex-end", "label": "Bas" }
+      ]
+    },
+    { "type": "header", "content": "Contenu" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Sur-titre",
+      "default": "ALTEA STORES"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Titre",
+      "default": "Protégez ce qui compte vraiment"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Taille du titre",
+      "default": "large",
+      "options": [
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "xlarge", "label": "Très grande" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "<p>Des équipements de sécurité choisis avec soin, testés et garantis, pour toute la maison.</p>"
+    },
+    { "type": "header", "content": "Appels à l'action" },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bouton principal — texte",
+      "default": "Découvrir nos produits"
+    },
+    { "type": "url", "id": "cta_url", "label": "Bouton principal — lien" },
+    {
+      "type": "select",
+      "id": "cta_style",
+      "label": "Bouton principal — style",
+      "default": "gold",
+      "options": [
+        { "value": "gold", "label": "Or (recommandé sur fond navy)" },
+        { "value": "navy", "label": "Navy" },
+        { "value": "light", "label": "Blanc" }
+      ]
+    },
+    { "type": "text", "id": "cta2_label", "label": "Bouton secondaire — texte" },
+    { "type": "url", "id": "cta2_url", "label": "Bouton secondaire — lien" },
+    {
+      "type": "text",
+      "id": "microcopy",
+      "label": "Micro-réassurance sous les boutons",
+      "default": "Paiement à la livraison · Livraison 24-48h partout au Maroc"
+    },
+    { "type": "header", "content": "Affichage" },
+    {
+      "type": "select",
+      "id": "show_on",
+      "label": "Afficher sur",
+      "default": "both",
+      "options": [
+        { "value": "both", "label": "Desktop et mobile" },
+        { "value": "desktop-only", "label": "Desktop uniquement" },
+        { "value": "mobile-only", "label": "Mobile uniquement" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Schéma de couleurs Debutify",
+      "default": "scheme-4",
+      "options": [
+        { "value": "scheme-1", "label": "Clair" },
+        { "value": "scheme-2", "label": "Primaire" },
+        { "value": "scheme-3", "label": "Secondaire" },
+        { "value": "scheme-4", "label": "Sombre" },
+        { "value": "custom", "label": "Personnalisé" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "custom_color_scheme",
+      "label": "Schéma de couleurs personnalisé",
+      "default": "scheme-3"
+    },
+    { "type": "header", "content": "Espacement" },
+    {
+      "type": "select",
+      "id": "padding___top",
+      "label": "Marge haute",
+      "default": "none",
+      "options": [
+        { "value": "inherit", "label": "Hériter" },
+        { "value": "none", "label": "Aucune" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_top",
+      "label": "Marge haute personnalisée",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "padding___bottom",
+      "label": "Marge basse",
+      "default": "none",
+      "options": [
+        { "value": "inherit", "label": "Hériter" },
+        { "value": "none", "label": "Aucune" },
+        { "value": "small", "label": "Petite" },
+        { "value": "medium", "label": "Moyenne" },
+        { "value": "large", "label": "Grande" },
+        { "value": "custom", "label": "Personnalisée" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "custom_padding_bottom",
+      "label": "Marge basse personnalisée",
+      "min": 0, "max": 100, "step": 4, "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_pill",
+      "name": "Badge de réassurance",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "default": "shipping",
+          "options": [
+            { "value": "shipping", "label": "Livraison" },
+            { "value": "payment", "label": "Paiement à la livraison" },
+            { "value": "warranty", "label": "Garantie / Certifié" },
+            { "value": "support", "label": "Support client" },
+            { "value": "returns", "label": "Retour / Échange" },
+            { "value": "check", "label": "Validé" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texte",
+          "default": "Livraison gratuite"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Altea — Hero",
+      "blocks": [
+        { "type": "trust_pill", "settings": { "icon": "shipping", "text": "Livraison gratuite 24-48h" } },
+        { "type": "trust_pill", "settings": { "icon": "payment", "text": "Paiement à la livraison" } },
+        { "type": "trust_pill", "settings": { "icon": "returns", "text": "Retour sous 3 jours" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
