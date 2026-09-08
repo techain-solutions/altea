@@ -18,19 +18,29 @@
   assign s = section.settings
 
   case s.height_desktop
-    when 'small'  then assign h_desktop = '58dvh'
-    when 'medium' then assign h_desktop = '72dvh'
-    when 'large'  then assign h_desktop = '86dvh'
-    when 'full'   then assign h_desktop = '100dvh'
-    else               assign h_desktop = 'auto'
+    when 'small'
+      assign h_desktop = '58dvh'
+    when 'medium'
+      assign h_desktop = '72dvh'
+    when 'large'
+      assign h_desktop = '86dvh'
+    when 'full'
+      assign h_desktop = '100dvh'
+    else
+      assign h_desktop = 'auto'
   endcase
 
   case s.height_mobile
-    when 'small'  then assign h_mobile = '62dvh'
-    when 'medium' then assign h_mobile = '78dvh'
-    when 'large'  then assign h_mobile = '90dvh'
-    when 'full'   then assign h_mobile = '100dvh'
-    else               assign h_mobile = 'auto'
+    when 'small'
+      assign h_mobile = '62dvh'
+    when 'medium'
+      assign h_mobile = '78dvh'
+    when 'large'
+      assign h_mobile = '90dvh'
+    when 'full'
+      assign h_mobile = '100dvh'
+    else
+      assign h_mobile = 'auto'
   endcase
 
   assign overlay_alpha = s.overlay_opacity | divided_by: 100.0
