@@ -124,7 +124,7 @@
         "section_height_mobile": "medium",
         "image_overlay_opacity": 0,
         "show_text_box": false,
-        "image": "shopify://shop_images/image_banner.png",
+        "image": "shopify://shop_images/new_banner.png",
         "image_alignment": "center-center",
         "image_alignment_mobile": "center-center",
         "image_link": "",
