@@ -62,7 +62,7 @@
       </article>
 
       <div class="altea-problem-solution__connector" aria-hidden="true">
-        <span class="material-icon">arrow_forward</span>
+        {%- render 'material-icon', icon: 'arrow_forward' -%}
       </div>
 
       <article class="altea-problem-solution__panel altea-problem-solution__panel--solution">
@@ -96,7 +96,7 @@
     {%- if s.cta_label != blank -%}
       <a class="altea-problem-solution__cta button button--primary" href="{{ cta_href }}">
         {{ s.cta_label | escape }}
-        <span class="material-icon" aria-hidden="true">arrow_downward</span>
+        {%- render 'material-icon', icon: 'arrow_downward' -%}
       </a>
     {%- endif -%}
   </div>
