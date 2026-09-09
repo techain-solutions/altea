@@ -49,6 +49,53 @@
       }
     }
   {% endif %}
+
+  /* Conversion controls for the four isolated ALTEA product templates. The
+     native Debutify sticky widget remains the source of truth; this keeps the
+     in-flow button reachable on narrow screens as well. */
+  {% if template.suffix contains 'altea-' %}
+    .altea-pdp-scope {
+      display: none;
+    }
+
+    #MainProduct-{{ section.id }} .product-form-buy-button {
+      position: relative;
+      z-index: 3;
+    }
+
+    .dbtfy-addtocart-sticky {
+      z-index: 80;
+    }
+
+    .dbtfy-addtocart-sticky .dbtfy-addtocart-sticky {
+      padding-block: var(--altea-space-3);
+      border-block-start: 1px solid var(--altea-hairline);
+      box-shadow: 0 -0.4rem 1.5rem rgba(var(--altea-navy), 0.12);
+    }
+
+    .dbtfy-addtocart-sticky .sticky-add-to-cart-button {
+      min-block-size: var(--altea-tap);
+      border-radius: var(--altea-radius-md);
+    }
+
+    @media screen and (max-width: 749px) {
+      #MainProduct-{{ section.id }} .product-form-buy-button {
+        position: sticky;
+        inset-block-end: var(--altea-space-3);
+      }
+
+      #MainProduct-{{ section.id }} .product-form-buy-button::before {
+        content: "";
+        position: absolute;
+        inset: calc(var(--altea-space-2) * -1) calc(var(--altea-space-3) * -1);
+        z-index: -1;
+        border-radius: var(--altea-radius-md);
+        background: rgba(var(--altea-surface), 0.94);
+        box-shadow: 0 -0.4rem 1.5rem rgba(var(--altea-navy), 0.08);
+        backdrop-filter: blur(0.8rem);
+      }
+    }
+  {% endif %}
 {% endstyle %}
 
 {%- liquid
@@ -59,6 +106,10 @@
 
   render 'main-product', product: product, url_should_update: settings.product_grid_enable_history_state, block_content: block_content
 -%}
+
+{% if template.suffix contains 'altea-' %}
+  <span class="altea-pdp-scope" aria-hidden="true"></span>
+{% endif %}
 
 {% schema %}
 {
