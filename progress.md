@@ -35,6 +35,8 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Uploaded the new information-page sections, assets, and `page.contact`, `page.faq`, and `page.about` templates to `altea/main`; preview QA confirmed the contact, FAQ, and À propos layouts render without template errors under the Shopify draft preview bar.
 - The FAQ and À propos pages use template suffixes `faq` and `about`; assign those templates to the merchant’s corresponding pages once the page records/handles are confirmed.
 - Created Shopify page records `FAQ` (`faq`) and `À propos d’ALTEA` (`a-propos`) as unpublished drafts with the `faq` and `about` template suffixes. They are intentionally not visible on the live storefront; publish only after final merchant approval.
+- Created and populated the Shopify menu `menu-principal-fr` in the requested order: Accueil, Catalogue, À Propos, Contact, FAQ. Its page links target `/pages/a-propos`, `/pages/contact`, and `/pages/faq`.
+- Connected `menu-principal-fr` to the header desktop/mobile navigation and footer quick links in the unpublished `altea/main` theme; the published theme's `main-menu` remains unchanged.
 ### ⏳ Pending
 - Merchant go-live actions: assign suffixes only when Debutify is ready to publish; configure Releasit and Shopify 2-for-599 pricing; add product image alt text.
 - Publish only after separate approval.
