@@ -31,6 +31,9 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Fixed the stray `ar` text in the problem → solution connector and CTA by rendering Material Icons through the shared `material-icon` snippet instead of outputting the icon name as clipped text.
 - Enabled the existing Releasit COD Form, Releasit Bundle, and WhatsApp app embeds in the unpublished `altea/main` theme. Draft PDP QA confirms the embedded COD form replaces native add-to-cart and dynamic checkout controls; the published theme was not changed.
 - Releasit’s field copy/language is app-managed (the draft currently displays the existing Arabic form labels); switch that copy in Releasit’s Form Designer/onboarding if French labels are required.
+- Built three conversion-focused information pages for the unpublished theme: a French contact page with native Shopify contact form and reassurance cues, a searchable/filterable FAQ with FAQPage JSON-LD, and an editable À propos page with brand story, values, and collection/contact CTAs.
+- Uploaded the new information-page sections, assets, and `page.contact`, `page.faq`, and `page.about` templates to `altea/main`; preview QA confirmed the contact, FAQ, and À propos layouts render without template errors under the Shopify draft preview bar.
+- The FAQ and À propos pages use template suffixes `faq` and `about`; assign those templates to the merchant’s corresponding pages once the page records/handles are confirmed.
 ### ⏳ Pending
 - Merchant go-live actions: assign suffixes only when Debutify is ready to publish; configure Releasit and Shopify 2-for-599 pricing; add product image alt text.
 - Publish only after separate approval.
@@ -43,4 +46,4 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Shopify theme file validation required `separator_height` to be at least 65; all four templates now use 65.
 
 ## Next Steps
-- Hand off Shopify's unpublished-theme preview link; do not publish or assign product suffixes until separately approved.
+- Hand off Shopify's unpublished-theme preview link; assign the new page templates and publish only after separate approval.

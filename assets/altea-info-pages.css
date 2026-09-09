@@ -1,0 +1,119 @@
+.altea-info-page {
+  --altea-info-ink: #031d42;
+  --altea-info-gold: #d6a65e;
+  --altea-info-cream: #f8f6f1;
+  --altea-info-muted: #5f6b7a;
+  --altea-info-line: rgba(3, 29, 66, 0.12);
+  --altea-info-radius: 22px;
+  color: var(--altea-info-ink);
+  background: #fff;
+}
+
+.altea-info-page * { box-sizing: border-box; }
+.altea-info-page__shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.altea-info-page__hero { padding: clamp(56px, 8vw, 112px) 0 clamp(40px, 6vw, 72px); text-align: center; }
+.altea-info-page__eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px; color: var(--altea-info-gold); font-size: .76rem; font-weight: 700; letter-spacing: .16em; line-height: 1.2; text-transform: uppercase; }
+.altea-info-page__eyebrow::before { width: 28px; height: 2px; background: currentColor; content: ''; }
+.altea-info-page__hero h1, .altea-info-page__hero h2, .altea-info-page__section-heading h2 { margin: 0; color: var(--altea-info-ink); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; }
+.altea-info-page__hero h1 { max-width: 800px; margin-inline: auto; font-size: clamp(2.5rem, 6vw, 5.25rem); }
+.altea-info-page__hero h1 em { color: var(--altea-info-gold); font-style: normal; }
+.altea-info-page__hero-copy { max-width: 650px; margin: 24px auto 0; color: var(--altea-info-muted); font-size: clamp(1rem, 1.8vw, 1.2rem); line-height: 1.7; }
+.altea-info-page__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
+.altea-info-page__button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 10px; border: 1px solid transparent; border-radius: 999px; padding: 13px 24px; font-size: .95rem; font-weight: 700; line-height: 1; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
+.altea-info-page__button:hover { transform: translateY(-2px); }
+.altea-info-page__button--primary { background: var(--altea-info-ink); color: #fff; box-shadow: 0 12px 24px rgba(3, 29, 66, .18); }
+.altea-info-page__button--primary:hover { background: #0a326b; box-shadow: 0 16px 30px rgba(3, 29, 66, .24); }
+.altea-info-page__button--secondary { border-color: var(--altea-info-line); background: #fff; color: var(--altea-info-ink); }
+.altea-info-page__button--secondary:hover { border-color: var(--altea-info-gold); }
+.altea-info-page__trust-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 auto clamp(48px, 7vw, 88px); }
+.altea-info-page__trust-item { display: flex; align-items: center; gap: 13px; border: 1px solid var(--altea-info-line); border-radius: 16px; padding: 17px 18px; background: #fff; }
+.altea-info-page__trust-icon, .altea-info-page__card-icon { display: grid; flex: 0 0 auto; width: 42px; height: 42px; place-items: center; border-radius: 50%; background: rgba(214, 166, 94, .18); color: var(--altea-info-ink); }
+.altea-info-page__trust-item strong { display: block; font-size: .92rem; }
+.altea-info-page__trust-item span:last-child { display: block; margin-top: 3px; color: var(--altea-info-muted); font-size: .8rem; }
+.altea-info-page__section { padding: clamp(48px, 7vw, 88px) 0; }
+.altea-info-page__section--cream { background: var(--altea-info-cream); }
+.altea-info-page__section-heading { max-width: 700px; margin-bottom: 34px; }
+.altea-info-page__section-heading--center { margin-inline: auto; text-align: center; }
+.altea-info-page__section-heading h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+.altea-info-page__section-heading p { margin: 16px 0 0; color: var(--altea-info-muted); font-size: 1rem; line-height: 1.7; }
+.altea-info-page__contact-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.altea-info-page__contact-card, .altea-info-page__form-card { border: 1px solid var(--altea-info-line); border-radius: var(--altea-info-radius); background: #fff; box-shadow: 0 20px 50px rgba(3, 29, 66, .07); }
+.altea-info-page__contact-card { position: relative; padding: clamp(26px, 4vw, 44px); background: var(--altea-info-ink); color: #fff; overflow: hidden; }
+.altea-info-page__contact-card::after { position: absolute; width: 220px; height: 220px; right: -100px; bottom: -110px; border: 1px solid rgba(214, 166, 94, .5); border-radius: 50%; box-shadow: 0 0 0 28px rgba(214, 166, 94, .08), 0 0 0 56px rgba(214, 166, 94, .05); content: ''; }
+.altea-info-page__contact-card h2 { max-width: 420px; margin: 0; color: #fff; font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.04em; line-height: 1.05; }
+.altea-info-page__contact-card > p { max-width: 420px; margin: 18px 0 28px; color: rgba(255, 255, 255, .75); line-height: 1.7; }
+.altea-info-page__contact-links { display: grid; gap: 11px; margin-top: 28px; }
+.altea-info-page__contact-link { display: flex; align-items: center; gap: 12px; color: #fff; font-size: .9rem; text-decoration: none; }
+.altea-info-page__contact-link .material-icon { color: var(--altea-info-gold); font-size: 21px; }
+.altea-info-page__form-card { padding: clamp(24px, 4vw, 42px); }
+.altea-info-page__form-card h2 { margin: 0 0 6px; color: var(--altea-info-ink); font-size: 1.55rem; letter-spacing: -.03em; }
+.altea-info-page__form-note { margin: 0 0 24px; color: var(--altea-info-muted); font-size: .9rem; line-height: 1.6; }
+.altea-info-page__form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.altea-info-page__field { display: grid; gap: 7px; }
+.altea-info-page__field--full { grid-column: 1 / -1; }
+.altea-info-page__field label { color: var(--altea-info-ink); font-size: .84rem; font-weight: 700; }
+.altea-info-page__field input, .altea-info-page__field textarea, .altea-info-page__search input { width: 100%; border: 1px solid rgba(3, 29, 66, .16); border-radius: 12px; padding: 13px 14px; background: #fff; color: var(--altea-info-ink); font: inherit; font-size: .95rem; outline: none; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.altea-info-page__field textarea { min-height: 138px; resize: vertical; }
+.altea-info-page__field input:focus, .altea-info-page__field textarea:focus, .altea-info-page__search input:focus { border-color: var(--altea-info-gold); box-shadow: 0 0 0 3px rgba(214, 166, 94, .2); }
+.altea-info-page__form-submit { width: 100%; margin-top: 18px; }
+.altea-info-page__form-success, .altea-info-page__form-errors { margin-bottom: 20px; border-radius: 12px; padding: 13px 15px; font-size: .9rem; line-height: 1.5; }
+.altea-info-page__form-success { background: #e8f5ed; color: #1d6a3c; }
+.altea-info-page__form-errors { background: #fff0ed; color: #a02f23; }
+.altea-info-page__faq-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.altea-info-page__search { position: relative; flex: 1 1 280px; max-width: 420px; }
+.altea-info-page__search .material-icon { position: absolute; top: 50%; left: 14px; color: var(--altea-info-muted); font-size: 20px; transform: translateY(-50%); pointer-events: none; }
+.altea-info-page__search input { padding-left: 44px; }
+.altea-info-page__faq-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.altea-info-page__filter { border: 1px solid var(--altea-info-line); border-radius: 999px; padding: 8px 13px; background: #fff; color: var(--altea-info-muted); cursor: pointer; font: inherit; font-size: .78rem; font-weight: 700; }
+.altea-info-page__filter.is-active, .altea-info-page__filter:hover { border-color: var(--altea-info-ink); background: var(--altea-info-ink); color: #fff; }
+.altea-info-page__faq-list { display: grid; gap: 10px; max-width: 900px; margin: 0 auto; }
+.altea-info-page__faq-item { border: 1px solid var(--altea-info-line); border-radius: 15px; background: #fff; transition: border-color 180ms ease, box-shadow 180ms ease; }
+.altea-info-page__faq-item[open] { border-color: rgba(214, 166, 94, .75); box-shadow: 0 12px 30px rgba(3, 29, 66, .06); }
+.altea-info-page__faq-question { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 22px; color: var(--altea-info-ink); cursor: pointer; font-size: 1rem; font-weight: 700; list-style: none; }
+.altea-info-page__faq-question::-webkit-details-marker { display: none; }
+.altea-info-page__faq-question::after { flex: 0 0 auto; color: var(--altea-info-gold); content: '+'; font-size: 1.6rem; font-weight: 400; line-height: 1; }
+.altea-info-page__faq-item[open] .altea-info-page__faq-question::after { content: '−'; }
+.altea-info-page__faq-answer { max-width: 760px; padding: 0 22px 22px; color: var(--altea-info-muted); line-height: 1.7; }
+.altea-info-page__faq-empty { display: none; padding: 28px; border: 1px dashed var(--altea-info-line); border-radius: 15px; color: var(--altea-info-muted); text-align: center; }
+.altea-info-page__faq-empty.is-visible { display: block; }
+.altea-info-page__cta { margin-top: clamp(36px, 6vw, 70px); border-radius: var(--altea-info-radius); padding: clamp(26px, 5vw, 48px); background: var(--altea-info-ink); color: #fff; text-align: center; }
+.altea-info-page__cta h2 { margin: 0; color: #fff; font-size: clamp(1.7rem, 4vw, 2.8rem); letter-spacing: -.04em; }
+.altea-info-page__cta p { max-width: 560px; margin: 12px auto 22px; color: rgba(255, 255, 255, .76); line-height: 1.65; }
+.altea-info-page__cta .altea-info-page__button--primary { background: var(--altea-info-gold); color: var(--altea-info-ink); box-shadow: none; }
+.altea-info-page__about-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr); gap: clamp(34px, 7vw, 90px); align-items: center; text-align: left; }
+.altea-info-page__about-hero .altea-info-page__hero-copy { margin-inline: 0; }
+.altea-info-page__about-visual { position: relative; min-height: 390px; border-radius: 28px; background: linear-gradient(145deg, var(--altea-info-ink), #0a407a); overflow: hidden; }
+.altea-info-page__about-visual::before, .altea-info-page__about-visual::after { position: absolute; border: 1px solid rgba(214, 166, 94, .52); border-radius: 50%; content: ''; }
+.altea-info-page__about-visual::before { width: 310px; height: 310px; top: -105px; right: -80px; }
+.altea-info-page__about-visual::after { width: 210px; height: 210px; right: 18%; bottom: -105px; box-shadow: 0 0 0 24px rgba(214, 166, 94, .08); }
+.altea-info-page__about-visual img { position: absolute; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+.altea-info-page__about-mark { position: absolute; z-index: 2; top: 50%; left: 50%; display: grid; width: 154px; height: 154px; place-items: center; border: 8px solid rgba(255, 255, 255, .86); border-radius: 50%; background: var(--altea-info-gold); color: var(--altea-info-ink); font-size: 2.5rem; font-weight: 800; letter-spacing: -.08em; transform: translate(-50%, -50%); }
+.altea-info-page__values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.altea-info-page__value-card { min-height: 190px; border: 1px solid var(--altea-info-line); border-radius: 18px; padding: 24px; background: #fff; }
+.altea-info-page__value-card h3 { margin: 20px 0 8px; color: var(--altea-info-ink); font-size: 1.15rem; letter-spacing: -.02em; }
+.altea-info-page__value-card p { margin: 0; color: var(--altea-info-muted); font-size: .9rem; line-height: 1.65; }
+.altea-info-page__story { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(30px, 7vw, 100px); align-items: center; }
+.altea-info-page__story-note { border-left: 3px solid var(--altea-info-gold); padding-left: 24px; color: var(--altea-info-ink); font-size: clamp(1.4rem, 3vw, 2.3rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.2; }
+.altea-info-page__story-copy { color: var(--altea-info-muted); font-size: 1rem; line-height: 1.8; }
+.altea-info-page__story-copy p { margin: 0 0 14px; }
+
+@media (max-width: 749px) {
+  .altea-info-page__shell { width: min(100% - 28px, 620px); }
+  .altea-info-page__hero { padding-top: 46px; }
+  .altea-info-page__actions, .altea-info-page__actions .altea-info-page__button { width: 100%; }
+  .altea-info-page__trust-row, .altea-info-page__values, .altea-info-page__contact-layout, .altea-info-page__about-hero, .altea-info-page__story { grid-template-columns: 1fr; }
+  .altea-info-page__trust-row { gap: 9px; }
+  .altea-info-page__trust-item { padding: 13px 14px; }
+  .altea-info-page__about-hero { text-align: center; }
+  .altea-info-page__about-hero .altea-info-page__hero-copy { margin-inline: auto; }
+  .altea-info-page__about-visual { min-height: 300px; }
+  .altea-info-page__form-grid { grid-template-columns: 1fr; }
+  .altea-info-page__field--full { grid-column: auto; }
+  .altea-info-page__faq-toolbar { align-items: stretch; }
+  .altea-info-page__search { max-width: none; }
+  .altea-info-page__faq-question { padding: 17px 16px; font-size: .94rem; }
+  .altea-info-page__faq-answer { padding: 0 16px 18px; font-size: .9rem; }
+  .altea-info-page__story-note { padding-left: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .altea-info-page__button { transition: none; } }
