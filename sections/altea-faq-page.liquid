@@ -1,0 +1,91 @@
+{{ 'altea-info-pages.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'altea-info-pages.js' | asset_url }}" defer></script>
+
+<section class="altea-info-page altea-faq-page" id="AlteaFaq-{{ section.id }}" data-altea-faq>
+  <div class="altea-info-page__shell">
+    <header class="altea-info-page__hero">
+      <p class="altea-info-page__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1>{{ section.settings.heading | escape }} <em>{{ section.settings.heading_accent | escape }}</em></h1>
+      <div class="altea-info-page__hero-copy">{{ section.settings.intro }}</div>
+    </header>
+    <div class="altea-info-page__section" style="padding-top: 0;">
+      <div class="altea-info-page__faq-toolbar">
+        <label class="altea-info-page__search" for="AlteaFaqSearch-{{ section.id }}">{% render 'material-icon', icon: 'search' %}<input id="AlteaFaqSearch-{{ section.id }}" type="search" placeholder="{{ section.settings.search_placeholder | escape }}" data-altea-faq-search></label>
+        <div class="altea-info-page__faq-filters" role="group" aria-label="Filtrer les questions">
+          <button class="altea-info-page__filter is-active" type="button" data-altea-faq-filter data-category="all" aria-pressed="true">Tout</button>
+          <button class="altea-info-page__filter" type="button" data-altea-faq-filter data-category="commande" aria-pressed="false">Commande</button>
+          <button class="altea-info-page__filter" type="button" data-altea-faq-filter data-category="livraison" aria-pressed="false">Livraison</button>
+          <button class="altea-info-page__filter" type="button" data-altea-faq-filter data-category="produit" aria-pressed="false">Produits</button>
+          <button class="altea-info-page__filter" type="button" data-altea-faq-filter data-category="retours" aria-pressed="false">Retours</button>
+        </div>
+      </div>
+      <div class="altea-info-page__faq-list">
+        {%- for block in section.blocks -%}
+          <details class="altea-info-page__faq-item" data-altea-faq-item data-category="{{ block.settings.category | handleize }}" {{ block.shopify_attributes }}>
+            <summary class="altea-info-page__faq-question">{{ block.settings.question | escape }}</summary>
+            <div class="altea-info-page__faq-answer">{{ block.settings.answer }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+      <p class="altea-info-page__faq-empty" data-altea-faq-empty>{{ section.settings.no_results | escape }}</p>
+      <div class="altea-info-page__cta">
+        <h2>{{ section.settings.cta_heading | escape }}</h2>
+        <p>{{ section.settings.cta_text | escape }}</p>
+        <a class="altea-info-page__button altea-info-page__button--primary" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label | escape }} {% render 'material-icon', icon: 'arrow_forward' %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+      { "@type": "Question", "name": {{ block.settings.question | strip_html | json }}, "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | json }} } }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+
+{% schema %}
+{
+  "name": "ALTEA — FAQ",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Centre d’aide ALTEA" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Les réponses qui" },
+    { "type": "text", "id": "heading_accent", "label": "Accent du titre", "default": "rassurent." },
+    { "type": "richtext", "id": "intro", "label": "Introduction", "default": "<p>Tout ce qu’il faut savoir avant de commander, de la livraison au paiement à la réception.</p>" },
+    { "type": "text", "id": "search_placeholder", "label": "Placeholder recherche", "default": "Rechercher une question…" },
+    { "type": "text", "id": "no_results", "label": "Aucun résultat", "default": "Aucune réponse ne correspond à votre recherche. Écrivez-nous, nous vous aiderons." },
+    { "type": "text", "id": "cta_heading", "label": "Titre CTA", "default": "Vous ne trouvez pas votre réponse ?" },
+    { "type": "textarea", "id": "cta_text", "label": "Texte CTA", "default": "Notre équipe est disponible pour vous conseiller avant ou après votre commande." },
+    { "type": "text", "id": "cta_label", "label": "Bouton CTA", "default": "Contacter ALTEA" },
+    { "type": "url", "id": "cta_link", "label": "Lien CTA" }
+  ],
+  "blocks": [
+    { "type": "question", "name": "Question", "settings": [
+      { "type": "select", "id": "category", "label": "Catégorie", "default": "commande", "options": [
+        { "value": "commande", "label": "Commande" }, { "value": "livraison", "label": "Livraison" }, { "value": "produit", "label": "Produits" }, { "value": "retours", "label": "Retours" }
+      ] },
+      { "type": "text", "id": "question", "label": "Question", "default": "Comment passer une commande ?" },
+      { "type": "richtext", "id": "answer", "label": "Réponse", "default": "<p>Choisissez votre produit, sélectionnez l’offre qui vous convient et remplissez le formulaire de commande. Vous recevrez une confirmation de notre équipe.</p>" }
+    ] }
+  ],
+  "presets": [
+    { "name": "ALTEA — FAQ", "blocks": [
+      { "type": "question" },
+      { "type": "question", "settings": { "category": "livraison", "question": "Quels sont les délais de livraison ?", "answer": "<p>Les commandes sont généralement livrées sous 24 à 72 heures ouvrées au Maroc. Notre équipe vous contacte pour confirmer les détails de livraison.</p>" } },
+      { "type": "question", "settings": { "category": "commande", "question": "Le paiement à la livraison est-il disponible ?", "answer": "<p>Oui. Le paiement à la livraison est disponible pour les produits éligibles. Remplissez simplement le formulaire COD sur la fiche produit.</p>" } },
+      { "type": "question", "settings": { "category": "produit", "question": "Comment choisir le bon produit ?", "answer": "<p>Chaque fiche produit présente les bénéfices, les caractéristiques et les cas d’usage. Si vous hésitez, contactez-nous avec votre besoin : nous vous orienterons.</p>" } },
+      { "type": "question", "settings": { "category": "produit", "question": "Les produits sont-ils garantis ?", "answer": "<p>Les conditions de garantie et de service après-vente sont indiquées sur la fiche du produit concerné. Contactez-nous avec votre numéro de commande pour toute demande.</p>" } },
+      { "type": "question", "settings": { "category": "commande", "question": "Puis-je modifier ou annuler ma commande ?", "answer": "<p>Écrivez-nous au plus vite avec votre numéro de commande. Nous ferons le nécessaire tant que la commande n’est pas déjà remise au transporteur.</p>" } },
+      { "type": "question", "settings": { "category": "retours", "question": "Comment demander un retour ou un échange ?", "answer": "<p>Contactez notre équipe en précisant votre numéro de commande et la raison de votre demande. Nous vous indiquerons la procédure adaptée.</p>" } },
+      { "type": "question", "settings": { "category": "livraison", "question": "Comment suivre ma commande ?", "answer": "<p>Utilisez la page de suivi ou contactez-nous avec votre numéro de commande. Nous vous aiderons à retrouver son statut.</p>" } }
+    ] }
+  ]
+}
+{% endschema %}
