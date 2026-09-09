@@ -17,7 +17,7 @@
         "footer_block_pXW9e4": {
           "type": "_footer_block",
           "settings": {
-            "column_width": 2,
+            "column_width": 3,
             "column_width_mobile": 12
           },
           "blocks": {
@@ -97,7 +97,7 @@
         "footer_block_d7Pmdm": {
           "type": "_footer_block",
           "settings": {
-            "column_width": 7,
+            "column_width": 4,
             "column_width_mobile": 12
           },
           "blocks": {
@@ -185,7 +185,7 @@
         "footer_block_U39rwE": {
           "type": "_footer_block",
           "settings": {
-            "column_width": 3,
+            "column_width": 4,
             "column_width_mobile": 12
           },
           "blocks": {
