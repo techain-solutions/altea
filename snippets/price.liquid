@@ -8,6 +8,7 @@
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
   - price_class: {String} Adds a price class to the price element (optional)
   - show_compare_at_price: {Boolean} Renders the compare at price if the product matches the condition (optional)
+  - hide_from_price: {Boolean} Hides the “From” prefix on product cards (optional)
 
   Usage:
   {% render 'price', product: product %}
@@ -36,6 +37,9 @@
   endif
 
   assign show_sales_price = false
+  if hide_from_price == blank
+    assign hide_from_price = false
+  endif
   if compare_at_price > price
     assign show_sales_price = true
   endif
@@ -44,7 +48,7 @@
     assign show_sales_price = false
   endif
 
-  if target == product and show_sales_price
+  if target == product and show_sales_price and hide_from_price == false
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
 
