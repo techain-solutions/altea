@@ -106,12 +106,15 @@
   .altea-home-hero__description {
     max-width: 560px;
     margin-top: 22px;
-    color: rgba(247, 248, 251, .82);
+    color: rgba(247, 248, 251, .82) !important;
     font-size: 17px;
     line-height: 1.6;
   }
 
-  .altea-home-hero__description p { margin: 0; }
+  .altea-home-hero__description p {
+    margin: 0;
+    color: inherit !important;
+  }
 
   .altea-home-hero__offer {
     display: inline-flex;
