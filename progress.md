@@ -21,14 +21,13 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - All four preview URLs loaded successfully with Shopify's `altea/main Draft` preview bar.
 - Preview QA confirmed product-specific copy, prices, media, COD messaging, variant controls, offer selector, quantity selector, FAQ, and CTA sections.
 - Arabic-locale preview loaded without template errors; no product or live-theme mutations were made.
-### 🔄 In Progress
-- Final commit and push of the verified PDP enhancements.
 ### ✅ Completed
 - Added a reusable problem → solution persuasion section with product-specific friction points, benefits, proof cues, and CTA links on all four alternate PDP templates.
 - Added responsive styling with shared ALTEA spacing tokens, consistent card padding, desktop connector treatment, and full-width mobile CTA behavior.
 - Normalized the purchase CTA treatment: the existing Debutify sticky add-to-cart widget is styled for the ALTEA templates and the in-flow add-to-cart button remains reachable on mobile.
 - Uploaded and verified the section, stylesheet, main product section, and four alternate templates on the unpublished `altea/main` theme only.
 - Preview QA confirmed the new section renders on Breeze, smoke detector, gas/CO detector, and fire blanket pages; each page retains its product data, purchase controls, and COD messaging.
+- Committed and pushed the verified source changes to `main` (`eee0777`).
 ### ⏳ Pending
 - Merchant go-live actions: assign suffixes only when Debutify is ready to publish; configure Releasit and Shopify 2-for-599 pricing; add product image alt text.
 - Publish only after separate approval.
