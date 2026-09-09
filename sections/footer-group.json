@@ -97,7 +97,7 @@
         "footer_block_d7Pmdm": {
           "type": "_footer_block",
           "settings": {
-            "column_width": 4,
+            "column_width": 5,
             "column_width_mobile": 12
           },
           "blocks": {
