@@ -29,6 +29,7 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 
 ## Issues
 - Normal Shopify CLI wrapper points to missing `/opt/homebrew/opt/node/bin/node`; direct Node launcher works.
+- The separate Shopify CLI session requested an interactive login; the connected Shopify Admin GraphQL theme-file mutation was used instead and completed on the unpublished theme.
 - Shopify Liquid validator dependency `@shopify/theme-check-common` is absent from the skill runtime; Theme Check remains available.
 - Four alternate templates were initially absent from remote `altea/main`; they are now uploaded and verified.
 - Shopify theme file validation required `separator_height` to be at least 65; all four templates now use 65.
