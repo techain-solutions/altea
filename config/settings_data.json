@@ -1629,6 +1629,11 @@
         "type": "shopify://apps/releasit-bundle/blocks/app-embed/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
         "disabled": true,
         "settings": {}
+      },
+      "13095726950816047308": {
+        "type": "shopify://apps/ea-auto-translate/blocks/app-embed-block/74970794-df41-4243-8f9a-ca0ffb4f8827",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
