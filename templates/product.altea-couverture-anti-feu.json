@@ -172,6 +172,37 @@
         "custom_padding_bottom": 44
       }
     },
+    "problem_solution": {
+      "type": "altea-problem-solution",
+      "blocks": {
+        "problem_0": { "type": "problem", "settings": { "icon": "local_fire_department", "title": "Une poêle peut s'enflammer en quelques secondes", "text": "Une flamme de cuisson se propage vite et laisse peu de temps pour réfléchir." } },
+        "problem_1": { "type": "problem", "settings": { "icon": "cleaning_services", "title": "La poudre complique le nettoyage", "text": "Un extincteur classique éteint la flamme, mais peut recouvrir la cuisine de résidus." } },
+        "problem_2": { "type": "problem", "settings": { "icon": "search", "title": "Le matériel n'est jamais là quand il faut", "text": "En urgence, chercher un équipement rangé loin fait perdre des secondes précieuses." } },
+        "solution_0": { "type": "solution", "settings": { "icon": "square_foot", "title": "Une couverture de 1,2 × 1,2 m", "text": "La surface de 1,44 m² recouvre complètement un départ de feu domestique." } },
+        "solution_1": { "type": "solution", "settings": { "icon": "front_hand", "title": "Tirez, dépliez, couvrez", "text": "Les deux sangles permettent un geste simple, sans pile, sans électricité et sans poudre." } },
+        "solution_2": { "type": "solution", "settings": { "icon": "wallpaper", "title": "Toujours prête sur le mur", "text": "La pochette PVC garde la couverture visible et accessible près de la zone à risque." } }
+      },
+      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "settings": {
+        "eyebrow": "L'URGENCE → LE BON GESTE",
+        "heading": "Étouffer un départ de feu avant qu'il ne se propage",
+        "intro": "<p>La couverture ALTEA vous donne un geste immédiat et propre pour protéger votre cuisine et votre famille.</p>",
+        "problem_eyebrow": "LE PROBLÈME",
+        "problem_title": "Quelques secondes peuvent tout changer",
+        "solution_eyebrow": "LA SOLUTION ALTEA",
+        "solution_title": "Un geste simple, toujours prêt",
+        "cta_label": "Je prépare mon foyer",
+        "cta_link": "",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 56,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 64
+      }
+    },
     "benefits": {
       "type": "altea-benefits",
       "blocks": {
@@ -576,6 +607,7 @@
     "separator",
     "breadcrumbs",
     "main",
+    "problem_solution",
     "benefits",
     "steps",
     "material",

@@ -172,6 +172,37 @@
         "custom_padding_bottom": 44
       }
     },
+    "problem_solution": {
+      "type": "altea-problem-solution",
+      "blocks": {
+        "problem_0": { "type": "problem", "settings": { "icon": "smoke_free", "title": "La fumée peut arriver sans prévenir", "text": "Un départ de feu se développe vite, surtout la nuit ou dans une pièce éloignée." } },
+        "problem_1": { "type": "problem", "settings": { "icon": "notifications_off", "title": "Les fausses alertes fatiguent", "text": "Les insectes, la poussière ou une pile faible peuvent rendre un détecteur classique moins rassurant." } },
+        "problem_2": { "type": "problem", "settings": { "icon": "battery_alert", "title": "Changer les piles est facile à oublier", "text": "La sécurité ne devrait pas dépendre d'un calendrier de maintenance compliqué." } },
+        "solution_0": { "type": "solution", "settings": { "icon": "sensors", "title": "Un capteur photoélectrique précis", "text": "Il repère rapidement les premières particules de fumée et limite les alertes inutiles." } },
+        "solution_1": { "type": "solution", "settings": { "icon": "campaign", "title": "Une alarme de plus de 85 dB", "text": "Le signal sonore reste audible à 3 mètres pour vous alerter même pendant votre sommeil." } },
+        "solution_2": { "type": "solution", "settings": { "icon": "verified_user", "title": "Jusqu'à 10 ans d'autonomie", "text": "La batterie lithium intégrée et le bouton HUSH rendent la protection simple au quotidien." } }
+      },
+      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "settings": {
+        "eyebrow": "LE RISQUE → LA PROTECTION",
+        "heading": "Détecter plus tôt pour dormir plus sereinement",
+        "intro": "<p>Le détecteur ALTEA transforme un risque invisible en une alerte claire, sonore et durable.</p>",
+        "problem_eyebrow": "LE PROBLÈME",
+        "problem_title": "Une alerte qui arrive trop tard",
+        "solution_eyebrow": "LA SOLUTION ALTEA",
+        "solution_title": "Une protection qui veille",
+        "cta_label": "Je protège ma maison",
+        "cta_link": "",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 56,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 64
+      }
+    },
     "benefits": {
       "type": "altea-benefits",
       "blocks": {
@@ -581,6 +612,7 @@
     "separator",
     "breadcrumbs",
     "main",
+    "problem_solution",
     "benefits",
     "technology",
     "steps",

@@ -182,6 +182,37 @@
         "custom_padding_bottom": 44
       }
     },
+    "problem_solution": {
+      "type": "altea-problem-solution",
+      "blocks": {
+        "problem_0": { "type": "problem", "settings": { "icon": "propane_tank", "title": "Une fuite de gaz est invisible", "text": "Le butane et le méthane peuvent s'accumuler avant que vous ne remarquiez le danger." } },
+        "problem_1": { "type": "problem", "settings": { "icon": "co2", "title": "Le monoxyde de carbone ne se sent pas", "text": "Le CO est sans couleur ni odeur : impossible de compter sur vos sens pour le repérer." } },
+        "problem_2": { "type": "problem", "settings": { "icon": "warning", "title": "Une simple alarme manque de contexte", "text": "Sans niveau affiché, vous ne savez pas si la situation monte ou revient à la normale." } },
+        "solution_0": { "type": "solution", "settings": { "icon": "sensors", "title": "Deux capteurs dans un seul appareil", "text": "Le détecteur surveille les gaz inflammables et le CO indépendamment, en continu." } },
+        "solution_1": { "type": "solution", "settings": { "icon": "monitoring", "title": "Un écran couleur lisible", "text": "Gaz, CO, température et humidité restent visibles pour agir avant que le seuil ne soit dépassé." } },
+        "solution_2": { "type": "solution", "settings": { "icon": "notifications_active", "title": "85 dB et flash rouge", "text": "L'alerte sonore et lumineuse vous donne un signal immédiat, même dans une pièce voisine." } }
+      },
+      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "settings": {
+        "eyebrow": "LE DANGER → LA DÉTECTION",
+        "heading": "Deux risques invisibles, une seule réponse claire",
+        "intro": "<p>ALTEA surveille les gaz inflammables et le monoxyde de carbone pour que vous puissiez réagir avant l'urgence.</p>",
+        "problem_eyebrow": "LE PROBLÈME",
+        "problem_title": "Le danger peut être invisible",
+        "solution_eyebrow": "LA SOLUTION ALTEA",
+        "solution_title": "Vous voyez le risque monter",
+        "cta_label": "Je sécurise ma cuisine",
+        "cta_link": "",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 56,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 64
+      }
+    },
     "benefits": {
       "type": "altea-benefits",
       "blocks": {
@@ -812,6 +843,7 @@
     "separator",
     "breadcrumbs",
     "main",
+    "problem_solution",
     "benefits",
     "technology",
     "steps",

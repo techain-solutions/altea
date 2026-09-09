@@ -178,6 +178,37 @@
         "custom_padding_bottom": 44
       }
     },
+    "problem_solution": {
+      "type": "altea-problem-solution",
+      "blocks": {
+        "problem_0": { "type": "problem", "settings": { "icon": "wb_sunny", "title": "Une chaleur qui fatigue", "text": "L'air chaud vous ralentit à la maison, au bureau ou pendant vos déplacements." } },
+        "problem_1": { "type": "problem", "settings": { "icon": "air", "title": "Un ventilateur classique ne suffit plus", "text": "Il brasse souvent le même air chaud et offre peu de contrôle sur la sensation de fraîcheur." } },
+        "problem_2": { "type": "problem", "settings": { "icon": "battery_alert", "title": "Besoin d'une solution vraiment mobile", "text": "Vous voulez vous rafraîchir sans prise, sans glaçons et sans équipement encombrant." } },
+        "solution_0": { "type": "solution", "settings": { "icon": "ac_unit", "title": "Une plaque froide en 3 secondes", "text": "Le refroidissement semi-conducteur apporte un contact frais immédiat sur la nuque, le front ou les poignets." } },
+        "solution_1": { "type": "solution", "settings": { "icon": "speed", "title": "100 niveaux à portée de main", "text": "Réglez la turbine selon votre confort et suivez la vitesse et la batterie sur l'écran LED." } },
+        "solution_2": { "type": "solution", "settings": { "icon": "usb", "title": "Une autonomie prête à vous suivre", "text": "La batterie 3000 mAh se recharge en USB-C, avec dragonne et câble inclus." } }
+      },
+      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "settings": {
+        "eyebrow": "LE BESOIN → LA RÉPONSE",
+        "heading": "Quand la chaleur devient gênante, gardez le contrôle",
+        "intro": "<p>ALTEA Breeze combine une fraîcheur au contact et un souffle puissant dans un format que vous pouvez emporter partout.</p>",
+        "problem_eyebrow": "LE PROBLÈME",
+        "problem_title": "La chaleur vous suit",
+        "solution_eyebrow": "LA SOLUTION ALTEA",
+        "solution_title": "Une fraîcheur immédiate",
+        "cta_label": "Je veux rester au frais",
+        "cta_link": "",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "custom",
+        "custom_padding_top": 56,
+        "padding___bottom": "custom",
+        "custom_padding_bottom": 64
+      }
+    },
     "technology": {
       "type": "altea-feature-rows",
       "blocks": {
@@ -720,6 +751,7 @@
     "separator",
     "breadcrumbs",
     "main",
+    "problem_solution",
     "technology",
     "comparison",
     "steps",
