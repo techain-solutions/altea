@@ -1,3 +1,5 @@
+{{ 'altea-info-pages.css' | asset_url | stylesheet_tag }}
+
 {%- assign contact_page = pages['contact'] -%}
 {%- assign contact_url = contact_page.url | default: '/pages/contact' -%}
 {%- assign product_collection = collections.all -%}
