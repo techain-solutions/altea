@@ -12,16 +12,85 @@
     "altea-about": {
       "type": "altea-about-page",
       "blocks": {
-        "trust-selection": { "type": "trust", "settings": { "icon": "verified", "title": "Sélection utile", "text": "Pensée pour le quotidien" } },
-        "trust-support": { "type": "trust", "settings": { "icon": "support_agent", "title": "Conseil humain", "text": "Une équipe accessible" } },
-        "trust-delivery": { "type": "trust", "settings": { "icon": "local_shipping", "title": "Livraison au Maroc", "text": "Simple et suivie" } },
-        "value-peace": { "type": "value", "settings": { "icon": "shield", "title": "La tranquillité d’esprit", "text": "Des solutions concrètes pour mieux anticiper les petits risques du quotidien." } },
-        "value-clarity": { "type": "value", "settings": { "icon": "lightbulb", "title": "Explications claires", "text": "Chaque produit est présenté avec ses bénéfices, ses usages et les informations qui aident à décider." } },
-        "value-care": { "type": "value", "settings": { "icon": "favorite", "title": "Pensé avec attention", "text": "Une expérience cohérente avant, pendant et après votre achat." } }
+        "trust-selection": {
+          "type": "trust",
+          "settings": {
+            "icon": "verified",
+            "title": "Sélection utile",
+            "text": "Pensée pour le quotidien"
+          }
+        },
+        "trust-support": {
+          "type": "trust",
+          "settings": {
+            "icon": "support_agent",
+            "title": "Conseil humain",
+            "text": "Une équipe accessible"
+          }
+        },
+        "trust-delivery": {
+          "type": "trust",
+          "settings": {
+            "icon": "local_shipping",
+            "title": "Livraison au Maroc",
+            "text": "Simple et suivie"
+          }
+        },
+        "value-peace": {
+          "type": "value",
+          "settings": {
+            "icon": "shield",
+            "title": "La tranquillité d’esprit",
+            "text": "Des solutions concrètes pour mieux anticiper les petits risques du quotidien."
+          }
+        },
+        "value-clarity": {
+          "type": "value",
+          "settings": {
+            "icon": "lightbulb",
+            "title": "Explications claires",
+            "text": "Chaque produit est présenté avec ses bénéfices, ses usages et les informations qui aident à décider."
+          }
+        },
+        "value-care": {
+          "type": "value",
+          "settings": {
+            "icon": "favorite",
+            "title": "Pensé avec attention",
+            "text": "Une expérience cohérente avant, pendant et après votre achat."
+          }
+        }
       },
-      "block_order": ["trust-selection", "trust-support", "trust-delivery", "value-peace", "value-clarity", "value-care"],
-      "settings": {}
+      "block_order": [
+        "trust-selection",
+        "trust-support",
+        "trust-delivery",
+        "value-peace",
+        "value-clarity",
+        "value-care"
+      ],
+      "settings": {
+        "eyebrow": "L’histoire ALTEA",
+        "heading": "La sécurité du quotidien,",
+        "heading_accent": "en mieux.",
+        "intro": "<p>ALTEA sélectionne des produits utiles, simples à adopter et pensés pour apporter plus de sérénité à la maison, au travail et dans la vie de tous les jours.</p>",
+        "hero_image": "shopify://shop_images/cc83cdfb-4d79-4d81-85d3-bb86264a77e4.webp",
+        "hero_image_alt": "Produits ALTEA pour un quotidien plus serein",
+        "primary_label": "Découvrir nos produits",
+        "primary_link": "shopify://collections/all",
+        "secondary_label": "Nous contacter",
+        "values_eyebrow": "Notre manière de faire",
+        "values_heading": "Utile, clair, rassurant.",
+        "values_text": "Chaque détail compte : le produit, l’explication et l’expérience après l’achat.",
+        "story_quote": "Parce qu’un bon produit doit surtout vous simplifier la vie.",
+        "story_text": "<p>Nous croyons que la confiance se construit avec des choix simples : des bénéfices expliqués sans jargon, des offres lisibles et une équipe accessible quand vous avez besoin d’aide.</p><p>ALTEA est né avec une ambition : rendre les bons réflexes de sécurité et de confort plus faciles à adopter, sans compliquer votre quotidien.</p>",
+        "cta_heading": "Prêt à rendre votre quotidien plus serein ?",
+        "cta_text": "Découvrez nos solutions et choisissez celle qui correspond à votre besoin.",
+        "cta_label": "Parler à l’équipe ALTEA"
+      }
     }
   },
-  "order": ["altea-about"]
+  "order": [
+    "altea-about"
+  ]
 }
