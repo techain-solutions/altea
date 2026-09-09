@@ -136,13 +136,26 @@
     "type_body_font": "poppins_n4",
     "body_font_size_mobile": 14,
     "title_color": "#031D42",
+    "title_default_spacing_top": "extra_small",
+    "title_default_spacing_bottom": "small",
+    "subtitle_default_spacing_top": "extra_small",
+    "subtitle_default_spacing_bottom": "extra_small",
+    "caption_default_spacing_top": "extra_small",
+    "caption_default_spacing_bottom": "extra_small",
+    "description_default_spacing_top": "extra_small",
+    "description_default_spacing_bottom": "extra_small",
     "page_width": 1400,
+    "spacing_sections": 24,
     "spacing_grid_horizontal": 20,
     "spacing_grid_vertical": 20,
+    "default_spacing_top": "medium",
+    "default_spacing_bottom": "medium",
     "spacing_small": 16,
     "buttons_border_opacity": 55,
     "buttons_shadow_vertical_offset": 4,
     "buttons_shadow_blur": 5,
+    "cta_default_spacing_top": "extra_small",
+    "cta_default_spacing_bottom": "extra_small",
     "variant_pills_border_opacity": 10,
     "variant_pills_radius": 6,
     "variant_pills_shadow_vertical_offset": 4,
@@ -1209,9 +1222,9 @@
                       "product_break_discount_amount": "40",
                       "product_break_discount_type": "$",
                       "product_break_tag_1": "",
-                      "product_break_tag_1_background_color": "#F2F0FF",
-                      "product_break_tag_1_text_color": "#7559FF",
-                      "product_break_tag_1_border_color": "#7559FF"
+                      "product_break_tag_1_background_color": "#f2f0ff",
+                      "product_break_tag_1_text_color": "#7559ff",
+                      "product_break_tag_1_border_color": "#7559ff"
                     },
                     "blocks": {}
                   }
@@ -1601,6 +1614,23 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "13669795325273674392": {
+        "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+        "disabled": false,
+        "settings": {}
+      },
+      "15830000824732515833": {
+        "type": "shopify://apps/sk-whatsapp-chat-button/blocks/app-embed/f26357f3-3b4f-4ccc-8c8a-a4df2fc1dfc5",
+        "disabled": false,
+        "settings": {}
+      },
+      "9535092338106386463": {
+        "type": "shopify://apps/releasit-bundle/blocks/app-embed/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
+        "disabled": false,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -1621,7 +1651,7 @@
           "button": "#031d42",
           "button_label": "#ffffff",
           "secondary_button_label": "#031d42",
-          "shadow": "#031d42"
+          "shadow": "#F3F3F3"
         }
       },
       "scheme-3": {
@@ -1646,37 +1676,7 @@
           "shadow": "#031d42"
         }
       }
-    },
-    "blocks": {
-      "13669795325273674392": {
-        "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-        "disabled": false,
-        "settings": {}
-      },
-      "15830000824732515833": {
-        "type": "shopify://apps/sk-whatsapp-chat-button/blocks/app-embed/f26357f3-3b4f-4ccc-8c8a-a4df2fc1dfc5",
-        "disabled": false,
-        "settings": {}
-      },
-      "9535092338106386463": {
-        "type": "shopify://apps/releasit-bundle/blocks/app-embed/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
-        "disabled": false,
-        "settings": {}
-      }
-    },
-    "spacing_sections": 24,
-    "title_default_spacing_top": "extra_small",
-    "title_default_spacing_bottom": "small",
-    "subtitle_default_spacing_top": "extra_small",
-    "subtitle_default_spacing_bottom": "extra_small",
-    "caption_default_spacing_top": "extra_small",
-    "caption_default_spacing_bottom": "extra_small",
-    "description_default_spacing_top": "extra_small",
-    "description_default_spacing_bottom": "extra_small",
-    "cta_default_spacing_top": "extra_small",
-    "cta_default_spacing_bottom": "extra_small",
-    "default_spacing_top": "medium",
-    "default_spacing_bottom": "medium"
+    }
   },
   "presets": {
     "Venom Scents": {
