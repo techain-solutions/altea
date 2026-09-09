@@ -60,16 +60,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "releasit_bundle_bundle_block_K6DeLX": {
-          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
-          "settings": {
-            "show_quantity_breaks": true,
-            "show_bundles": true,
-            "display_style": "table",
-            "margin_top": 20,
-            "margin_bottom": 20
-          }
-        },
         "product_title_L8Vi4N": {
           "type": "_product_title",
           "settings": {
@@ -108,10 +98,21 @@
         "product_quantity_selector_DcaVLW": {
           "type": "_product_quantity-selector",
           "name": "t:sections.main-product.blocks.quantity_selector.name",
+          "disabled": true,
           "settings": {
             "full_width": false
           },
           "blocks": {}
+        },
+        "releasit_bundle_bundle_block_K6DeLX": {
+          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
+          "settings": {
+            "show_quantity_breaks": true,
+            "show_bundles": true,
+            "display_style": "table",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
         },
         "product_buy_buttons_6XxfAP": {
           "type": "_product_buy-buttons",
@@ -198,13 +199,13 @@
         }
       },
       "block_order": [
-        "releasit_bundle_bundle_block_K6DeLX",
         "product_title_L8Vi4N",
         "product_price_AcU9Ak",
         "product_rating_jKmprJ",
         "product_text_GNJ9rW",
         "dbtfy_product_bullet_points_hd76s",
         "product_quantity_selector_DcaVLW",
+        "releasit_bundle_bundle_block_K6DeLX",
         "product_buy_buttons_6XxfAP",
         "description_XdAFar",
         "product_as_variant",
