@@ -1,111 +1,372 @@
 /* ==========================================================================
-   ALTEA — Rappel d'offre de fin de page (section altea-final-cta)
-
-   Panneau navy, accent or, contenu centre. Ecrit en proprietes logiques :
-   RTL natif. Aucune couleur en dur : --altea-* uniquement.
+   ALTEA — Rappel d'offre conversion-first
+   Visuel produit + bénéfices + prix dynamique, RTL friendly.
    ========================================================================== */
 
+.altea-cta {
+  position: relative;
+}
+
 .altea-cta__panel {
+  position: relative;
   display: grid;
-  justify-items: center;
-  gap: var(--altea-space-3);
-  padding: var(--altea-space-6) var(--altea-space-4);
+  grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
+  min-height: 390px;
+  overflow: hidden;
   border-radius: var(--altea-radius-lg);
+  background:
+    radial-gradient(circle at 18% 16%, rgba(var(--altea-gold), 0.18), transparent 34%),
+    linear-gradient(135deg, rgb(var(--altea-navy)) 0%, #0a315f 100%);
+  color: rgb(var(--altea-surface));
+  box-shadow: 0 18px 42px rgba(var(--altea-navy), 0.16);
+}
+
+.altea-cta__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: var(--altea-space-6);
+  isolation: isolate;
+  background:
+    linear-gradient(145deg, rgba(var(--altea-gold), 0.16), transparent 52%),
+    rgba(var(--altea-navy), 0.24);
+}
+
+.altea-cta__visual::after {
+  position: absolute;
+  inset: 20px;
+  z-index: -1;
+  border: 1px solid rgba(var(--altea-gold), 0.28);
+  border-radius: 50%;
+  content: '';
+}
+
+.altea-cta__visual-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(var(--altea-gold), 0.18);
+  filter: blur(4px);
+}
+
+.altea-cta__product-media {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: min(78%, 270px);
+  aspect-ratio: 1;
+  padding: var(--altea-space-3);
+  overflow: hidden;
+  transform: rotate(-3deg);
+  border: 7px solid rgba(var(--altea-surface), 0.9);
+  border-radius: var(--altea-radius-lg);
+  background: rgb(var(--altea-surface));
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.25);
+}
+
+.altea-cta__product-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(var(--altea-radius-lg) - 8px);
+}
+
+.altea-cta__visual-badge {
+  position: absolute;
+  right: var(--altea-space-5);
+  bottom: var(--altea-space-5);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--altea-space-1);
+  max-width: calc(100% - var(--altea-space-6));
+  padding: 8px 12px;
+  border: 1px solid rgba(var(--altea-gold), 0.55);
+  border-radius: 999px;
   background: rgb(var(--altea-navy));
   color: rgb(var(--altea-surface));
-  text-align: center;
-}
-
-@media screen and (min-width: 750px) {
-  .altea-cta__panel {
-    padding: var(--altea-space-7) var(--altea-space-6);
-  }
-}
-
-.altea-cta__eyebrow {
-  margin: 0;
   font-size: var(--altea-text-xs);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.altea-cta__visual-badge .material-icon {
+  color: rgb(var(--altea-gold));
+  font-size: 18px;
+}
+
+.altea-cta__fallback {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(var(--altea-gold), 0.42);
+  border-radius: 50%;
+  background: rgba(var(--altea-navy), 0.3);
   color: rgb(var(--altea-gold));
 }
 
+.altea-cta__fallback .material-icon {
+  font-size: 76px;
+}
+
+.altea-cta__visual-label {
+  position: absolute;
+  bottom: var(--altea-space-6);
+  color: rgba(var(--altea-surface), 0.78);
+  font-size: var(--altea-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.altea-cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(var(--altea-space-6), 5vw, var(--altea-space-8));
+}
+
+.altea-cta__eyebrow {
+  margin: 0 0 var(--altea-space-2);
+  color: rgb(var(--altea-gold));
+  font-size: var(--altea-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .altea-cta__heading {
+  max-width: 18ch;
   margin: 0;
-  max-width: 20ch;
-  font-size: var(--altea-text-2xl);
   color: inherit;
+  font-size: clamp(2rem, 3.4vw, 3.1rem);
+  line-height: 1.04;
+  text-wrap: balance;
 }
 
 .altea-cta__text {
-  margin: 0;
-  max-width: 56ch;
+  max-width: 54ch;
+  margin: var(--altea-space-3) 0 0;
+  color: rgba(var(--altea-surface), 0.82);
   font-size: var(--altea-text-md);
-  opacity: 0.85;
+  line-height: 1.6;
 }
 
-.altea-cta__text > *:last-child { margin-block-end: 0; }
+.altea-cta__text > *:last-child {
+  margin-block-end: 0;
+}
 
-/* --- Prix ------------------------------------------------------------- */
+.altea-cta__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--altea-space-2) var(--altea-space-4);
+  margin-top: var(--altea-space-4);
+}
+
+.altea-cta__highlights > span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--altea-space-1);
+  color: rgba(var(--altea-surface), 0.86);
+  font-size: var(--altea-text-sm);
+}
+
+.altea-cta__highlights .material-icon {
+  color: rgb(var(--altea-gold));
+  font-size: 18px;
+}
+
+.altea-cta__price-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--altea-space-3);
+  width: 100%;
+  margin-top: var(--altea-space-5);
+  padding-top: var(--altea-space-3);
+  border-top: 1px solid rgba(var(--altea-surface), 0.18);
+}
+
+.altea-cta__price-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.altea-cta__price-label {
+  color: rgba(var(--altea-surface), 0.66);
+  font-size: var(--altea-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 
 .altea-cta__price {
   display: flex;
   align-items: baseline;
   gap: var(--altea-space-2);
-  margin: var(--altea-space-1) 0 0;
+  margin: 0;
 }
 
 .altea-cta__price-now {
-  font-size: var(--altea-text-xl);
-  font-weight: 700;
   color: rgb(var(--altea-gold));
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
 }
 
 .altea-cta__price-was {
+  color: rgba(var(--altea-surface), 0.58);
   font-size: var(--altea-text-md);
-  opacity: 0.6;
 }
 
-/* --- Bouton ----------------------------------------------------------- */
+.altea-cta__saving {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(var(--altea-gold), 0.16);
+  color: rgb(var(--altea-gold));
+  font-size: var(--altea-text-xs);
+  font-weight: 700;
+}
 
 .altea-cta__button.button {
-  --color-button: var(--altea-gold);
-  --color-button-text: var(--altea-navy);
-  margin-block-start: var(--altea-space-2);
-  min-block-size: var(--altea-tap);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--altea-space-2);
+  min-height: var(--altea-tap);
+  margin-top: var(--altea-space-4);
+  padding-inline: var(--altea-space-5);
+  border-color: rgb(var(--altea-gold));
   background: rgb(var(--altea-gold));
   color: rgb(var(--altea-navy));
-  border-color: rgb(var(--altea-gold));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
 }
 
 .altea-cta__button.button:hover {
+  border-color: rgb(var(--altea-surface));
+  background: rgb(var(--altea-surface));
   color: rgb(var(--altea-navy));
+  transform: translateY(-2px);
 }
 
-/* --- Reassurance ------------------------------------------------------ */
-
-.altea-cta__reassurance {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--altea-space-2) var(--altea-space-5);
-  margin: var(--altea-space-3) 0 0;
-  padding: var(--altea-space-4) 0 0;
-  inline-size: 100%;
-  border-block-start: 1px solid rgba(var(--altea-surface), 0.18);
-  list-style: none;
+.altea-cta__button .material-icon {
+  font-size: 20px;
+  transition: transform 180ms ease;
 }
 
-.altea-cta__reassurance li {
+.altea-cta__button:hover .material-icon {
+  transform: translateX(3px);
+}
+
+.altea-cta__micro-proof {
   display: inline-flex;
   align-items: center;
-  gap: var(--altea-space-2);
-  font-size: var(--altea-text-sm);
-  opacity: 0.9;
+  gap: var(--altea-space-1);
+  margin: var(--altea-space-3) 0 0;
+  color: rgba(var(--altea-surface), 0.62);
+  font-size: var(--altea-text-xs);
 }
 
-.altea-cta__reassurance .material-icon {
-  font-size: 20px;
+.altea-cta__micro-proof .material-icon {
   color: rgb(var(--altea-gold));
+  font-size: 17px;
+}
+
+@media screen and (max-width: 989px) {
+  .altea-cta__panel {
+    grid-template-columns: minmax(200px, 0.72fr) minmax(0, 1.28fr);
+  }
+
+  .altea-cta__visual {
+    padding: var(--altea-space-4);
+  }
+
+  .altea-cta__product-media {
+    width: min(82%, 220px);
+  }
+
+  .altea-cta__content {
+    padding: var(--altea-space-5);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .altea-cta__panel {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: var(--altea-radius-md);
+  }
+
+  .altea-cta__visual {
+    min-height: 230px;
+    padding: var(--altea-space-5);
+  }
+
+  .altea-cta__visual::after {
+    inset: 16px 24%;
+  }
+
+  .altea-cta__product-media {
+    width: min(55vw, 210px);
+  }
+
+  .altea-cta__visual-badge {
+    right: var(--altea-space-4);
+    bottom: var(--altea-space-4);
+  }
+
+  .altea-cta__content {
+    padding: var(--altea-space-5) var(--altea-space-4) var(--altea-space-6);
+  }
+
+  .altea-cta__heading {
+    max-width: 24ch;
+    font-size: clamp(1.8rem, 8vw, 2.35rem);
+  }
+
+  .altea-cta__text {
+    font-size: var(--altea-text-sm);
+  }
+
+  .altea-cta__highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--altea-space-2);
+  }
+
+  .altea-cta__price-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--altea-space-2);
+  }
+
+  .altea-cta__button.button {
+    width: 100%;
+  }
+
+  .altea-cta__micro-proof {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .altea-cta__button.button,
+  .altea-cta__button .material-icon {
+    transition: none;
+  }
+
+  .altea-cta__button:hover .material-icon,
+  .altea-cta__button.button:hover {
+    transform: none;
+  }
 }

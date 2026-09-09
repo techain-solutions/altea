@@ -1,16 +1,7 @@
 {%- comment -%}
-  ALTEA — Rappel d'offre de fin de page
-
-  Bandeau navy/or de cloture : titre, texte, prix reels du produit et
-  bouton de retour vers la colonne d'achat. Les blocs « reassurance »
-  reprennent les arguments deja portes par la boutique.
-
-  Le prix n'est jamais ecrit en dur : il vient de la variante Shopify
-  selectionnee, comme le prix barre. Si le marchand change le prix dans
-  l'admin, ce bandeau suit.
-
-  Non gatee derriere widget-blocker : c'est du contenu produit.
-  Ecrite en proprietes logiques : RTL natif.
+  ALTEA — Rappel d'offre orienté conversion
+  Mise en page split : visuel produit + bénéfices + prix dynamique.
+  Le produit, le prix et le prix barré restent synchronisés avec Shopify.
 {%- endcomment -%}
 
 {{ 'section-altea-final-cta.css' | asset_url | stylesheet_tag }}
@@ -29,11 +20,6 @@
   assign button_url = s.button_url
   if button_url == blank
     if request.page_type == 'product'
-      comment
-        The four ALTEA templates use the stable `main` section id. Keep the
-        final CTA on the current PDP and return the shopper to its buy box,
-        rather than reloading the same product URL.
-      endcomment
       assign button_url = '#MainProduct-main'
     else
       assign button_url = cta_product.url
@@ -46,8 +32,10 @@
   endif
 
   assign on_sale = false
+  assign savings = 0
   if variant.compare_at_price > variant.price
     assign on_sale = true
+    assign savings = variant.compare_at_price | minus: variant.price
   endif
 -%}
 
@@ -57,48 +45,75 @@
 >
   <div class="{{ s.container_size }}">
     <div class="altea-cta__panel">
-      {%- if s.eyebrow != blank -%}
-        <p class="altea-cta__eyebrow">{{ s.eyebrow | escape }}</p>
-      {%- endif -%}
+      <div class="altea-cta__visual">
+        <div class="altea-cta__visual-glow" aria-hidden="true"></div>
+        {%- if cta_product != blank and cta_product.featured_image != blank -%}
+          <div class="altea-cta__product-media">
+            {{ cta_product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', alt: cta_product.featured_image.alt | default: cta_product.title }}
+          </div>
+          <span class="altea-cta__visual-badge">
+            {% render 'material-icon', icon: 'local_fire_department' %}
+            <span>Offre sélectionnée</span>
+          </span>
+        {%- else -%}
+          <div class="altea-cta__fallback" aria-hidden="true">
+            {% render 'material-icon', icon: 'shield' %}
+          </div>
+          <span class="altea-cta__visual-label">Les essentiels ALTEA</span>
+        {%- endif -%}
+      </div>
 
-      {%- if s.heading != blank -%}
-        <h2 class="altea-cta__heading">{{ s.heading }}</h2>
-      {%- endif -%}
+      <div class="altea-cta__content">
+        {%- if s.eyebrow != blank -%}
+          <p class="altea-cta__eyebrow">{{ s.eyebrow | escape }}</p>
+        {%- endif -%}
 
-      {%- if s.text != blank -%}
-        <div class="altea-cta__text">{{ s.text }}</div>
-      {%- endif -%}
+        {%- if s.heading != blank -%}
+          <h2 class="altea-cta__heading">{{ s.heading }}</h2>
+        {%- endif -%}
 
-      {%- if show_price -%}
-        <p class="altea-cta__price">
-          <span class="altea-cta__price-now">{{ variant.price | money }}</span>
-          {%- if on_sale -%}
-            <s class="altea-cta__price-was">
-              <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}: </span>
-              {{- variant.compare_at_price | money -}}
-            </s>
-          {%- endif -%}
+        {%- if s.text != blank -%}
+          <div class="altea-cta__text">{{ s.text }}</div>
+        {%- endif -%}
+
+        <div class="altea-cta__highlights" role="list">
+          <span role="listitem">{% render 'material-icon', icon: 'local_shipping' %}<span>Livraison partout au Maroc</span></span>
+          <span role="listitem">{% render 'material-icon', icon: 'payments' %}<span>Paiement à la livraison</span></span>
+          <span role="listitem">{% render 'material-icon', icon: 'support_agent' %}<span>Conseil avant commande</span></span>
+        </div>
+
+        {%- if show_price -%}
+          <div class="altea-cta__price-row">
+            <div class="altea-cta__price-group">
+              <span class="altea-cta__price-label">Votre prix</span>
+              <p class="altea-cta__price">
+                <span class="altea-cta__price-now">{{ variant.price | money }}</span>
+                {%- if on_sale -%}
+                  <s class="altea-cta__price-was">
+                    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}: </span>
+                    {{ variant.compare_at_price | money }}
+                  </s>
+                {%- endif -%}
+              </p>
+            </div>
+            {%- if on_sale -%}
+              <span class="altea-cta__saving">Économisez {{ savings | money }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if s.button_label != blank and button_url != blank -%}
+          <a class="altea-cta__button button button--primary" href="{{ button_url }}">
+            <span>{{ s.button_label | escape }}</span>
+            {% render 'material-icon', icon: 'arrow_forward' %}
+          </a>
+        {%- endif -%}
+
+        <p class="altea-cta__micro-proof">
+          {% render 'material-icon', icon: 'verified_user' %}
+          <span>Commande simple, accompagnement humain et livraison au Maroc</span>
         </p>
-      {%- endif -%}
-
-      {%- if s.button_label != blank and button_url != blank -%}
-        <a class="altea-cta__button button button--primary" href="{{ button_url }}">
-          {{- s.button_label | escape -}}
-        </a>
-      {%- endif -%}
-
-      {%- if section.blocks.size > 0 -%}
-        <ul class="altea-cta__reassurance" role="list">
-          {%- for block in section.blocks -%}
-            <li {{ block.shopify_attributes }}>
-              {%- if block.settings.icon != blank -%}
-                {%- render 'material-icon', icon: block.settings.icon -%}
-              {%- endif -%}
-              <span>{{ block.settings.text }}</span>
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
+      </div>
     </div>
   </div>
 </section>
