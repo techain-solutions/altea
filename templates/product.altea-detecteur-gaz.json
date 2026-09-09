@@ -57,16 +57,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "releasit_bundle_bundle_block_PfBEtC": {
-          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
-          "settings": {
-            "show_quantity_breaks": true,
-            "show_bundles": true,
-            "display_style": "table",
-            "margin_top": 20,
-            "margin_bottom": 20
-          }
-        },
         "product_title": {
           "type": "_product_title",
           "settings": {
@@ -212,7 +202,6 @@
         }
       },
       "block_order": [
-        "releasit_bundle_bundle_block_PfBEtC",
         "product_title",
         "product_price",
         "product_description",
