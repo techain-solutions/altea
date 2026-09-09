@@ -105,12 +105,6 @@
           "settings": {},
           "blocks": {}
         },
-        "product_quantity_breaks_ByQ96H": {
-          "type": "_product_quantity-breaks",
-          "name": "t:blocks.quantity_breaks.name",
-          "settings": {},
-          "blocks": {}
-        },
         "product_quantity_selector_DcaVLW": {
           "type": "_product_quantity-selector",
           "name": "t:sections.main-product.blocks.quantity_selector.name",
@@ -210,7 +204,6 @@
         "product_rating_jKmprJ",
         "product_text_GNJ9rW",
         "dbtfy_product_bullet_points_hd76s",
-        "product_quantity_breaks_ByQ96H",
         "product_quantity_selector_DcaVLW",
         "product_buy_buttons_6XxfAP",
         "description_XdAFar",
