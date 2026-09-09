@@ -90,7 +90,7 @@
         "padding___bottom": "custom",
         "custom_padding_bottom": 0,
         "color_scheme": "custom",
-        "custom_color_scheme": "scheme-2"
+        "custom_color_scheme": "scheme-4"
       }
     },
     "header": {
@@ -133,7 +133,7 @@
         "pattern_size_thickness": 1,
         "pattern_opacity": 50,
         "color_scheme": "custom",
-        "custom_color_scheme": "scheme-3",
+        "custom_color_scheme": "scheme-2",
         "menu_color_scheme": "scheme-1",
         "custom_menu_color_scheme": "",
         "transparent_header_color_scheme": "scheme-2",
