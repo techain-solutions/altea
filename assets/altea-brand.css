@@ -433,13 +433,3 @@ html body #MainContent .shopify-section :where(
   }
 }
 
-
-html body #MainContent > .shopify-section + .shopify-section {
-  margin-block-start: var(--spacing-sections-desktop);
-}
-
-@media screen and (max-width: 749px) {
-  html body #MainContent > .shopify-section + .shopify-section {
-    margin-block-start: var(--spacing-sections-mobile);
-  }
-}
