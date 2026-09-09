@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "altea-about": {
+      "type": "altea-about-page",
+      "blocks": {
+        "trust-selection": { "type": "trust", "settings": { "icon": "verified", "title": "Sélection utile", "text": "Pensée pour le quotidien" } },
+        "trust-support": { "type": "trust", "settings": { "icon": "support_agent", "title": "Conseil humain", "text": "Une équipe accessible" } },
+        "trust-delivery": { "type": "trust", "settings": { "icon": "local_shipping", "title": "Livraison au Maroc", "text": "Simple et suivie" } },
+        "value-peace": { "type": "value", "settings": { "icon": "shield", "title": "La tranquillité d’esprit", "text": "Des solutions concrètes pour mieux anticiper les petits risques du quotidien." } },
+        "value-clarity": { "type": "value", "settings": { "icon": "lightbulb", "title": "Explications claires", "text": "Chaque produit est présenté avec ses bénéfices, ses usages et les informations qui aident à décider." } },
+        "value-care": { "type": "value", "settings": { "icon": "favorite", "title": "Pensé avec attention", "text": "Une expérience cohérente avant, pendant et après votre achat." } }
+      },
+      "block_order": ["trust-selection", "trust-support", "trust-delivery", "value-peace", "value-clarity", "value-care"],
+      "settings": {}
+    }
+  },
+  "order": ["altea-about"]
+}

@@ -1,0 +1,91 @@
+{{ 'altea-info-pages.css' | asset_url | stylesheet_tag }}
+
+{%- assign contact_page = pages['contact'] -%}
+{%- assign contact_url = contact_page.url | default: '/pages/contact' -%}
+
+<section class="altea-info-page altea-about-page" id="AlteaAbout-{{ section.id }}">
+  <div class="altea-info-page__shell">
+    <div class="altea-info-page__hero altea-info-page__about-hero">
+      <div>
+        <p class="altea-info-page__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h1>{{ section.settings.heading | escape }} <em>{{ section.settings.heading_accent | escape }}</em></h1>
+        <div class="altea-info-page__hero-copy">{{ section.settings.intro }}</div>
+        <div class="altea-info-page__actions">
+          <a class="altea-info-page__button altea-info-page__button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }} {% render 'material-icon', icon: 'arrow_forward' %}</a>
+          <a class="altea-info-page__button altea-info-page__button--secondary" href="{{ contact_url }}">{{ section.settings.secondary_label | escape }}</a>
+        </div>
+      </div>
+      <div class="altea-info-page__about-visual">
+        {%- if section.settings.hero_image != blank -%}
+          {{ section.settings.hero_image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '400, 600, 900, 1200', alt: section.settings.hero_image_alt }}
+        {%- endif -%}
+        <span class="altea-info-page__about-mark" aria-hidden="true">AL</span>
+      </div>
+    </div>
+    <div class="altea-info-page__trust-row" role="list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'trust' -%}
+          <div class="altea-info-page__trust-item" role="listitem" {{ block.shopify_attributes }}><span class="altea-info-page__trust-icon" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><span><strong>{{ block.settings.title | escape }}</strong><span>{{ block.settings.text | escape }}</span></span></div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="altea-info-page__section altea-info-page__section--cream">
+    <div class="altea-info-page__shell">
+      <div class="altea-info-page__section-heading altea-info-page__section-heading--center"><p class="altea-info-page__eyebrow">{{ section.settings.values_eyebrow | escape }}</p><h2>{{ section.settings.values_heading | escape }}</h2><p>{{ section.settings.values_text | escape }}</p></div>
+      <div class="altea-info-page__values">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'value' -%}
+            <article class="altea-info-page__value-card" {{ block.shopify_attributes }}><span class="altea-info-page__card-icon" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="altea-info-page__section"><div class="altea-info-page__shell altea-info-page__story"><p class="altea-info-page__story-note">{{ section.settings.story_quote | escape }}</p><div class="altea-info-page__story-copy">{{ section.settings.story_text }}</div></div></div>
+
+  <div class="altea-info-page__shell"><div class="altea-info-page__cta"><h2>{{ section.settings.cta_heading | escape }}</h2><p>{{ section.settings.cta_text | escape }}</p><a class="altea-info-page__button altea-info-page__button--primary" href="{{ contact_url }}">{{ section.settings.cta_label | escape }} {% render 'material-icon', icon: 'arrow_forward' %}</a></div></div>
+</section>
+
+{% schema %}
+{
+  "name": "ALTEA — À propos",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "L’histoire ALTEA" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "La sécurité du quotidien," },
+    { "type": "text", "id": "heading_accent", "label": "Accent du titre", "default": "en mieux." },
+    { "type": "richtext", "id": "intro", "label": "Introduction", "default": "<p>ALTEA sélectionne des produits utiles, simples à adopter et pensés pour apporter plus de sérénité à la maison, au travail et dans la vie de tous les jours.</p>" },
+    { "type": "image_picker", "id": "hero_image", "label": "Image principale" },
+    { "type": "text", "id": "hero_image_alt", "label": "Texte alternatif de l’image", "default": "Produits ALTEA pour un quotidien plus serein" },
+    { "type": "text", "id": "primary_label", "label": "Bouton principal", "default": "Découvrir nos produits" },
+    { "type": "url", "id": "primary_link", "label": "Lien principal", "default": "/collections/all" },
+    { "type": "text", "id": "secondary_label", "label": "Bouton secondaire", "default": "Nous contacter" },
+    { "type": "text", "id": "values_eyebrow", "label": "Sur-titre valeurs", "default": "Notre manière de faire" },
+    { "type": "text", "id": "values_heading", "label": "Titre valeurs", "default": "Utile, clair, rassurant." },
+    { "type": "textarea", "id": "values_text", "label": "Texte valeurs", "default": "Chaque détail compte : le produit, l’explication et l’expérience après l’achat." },
+    { "type": "text", "id": "story_quote", "label": "Phrase clé", "default": "Parce qu’un bon produit doit surtout vous simplifier la vie." },
+    { "type": "richtext", "id": "story_text", "label": "Notre histoire", "default": "<p>Nous croyons que la confiance se construit avec des choix simples : des bénéfices expliqués sans jargon, des offres lisibles et une équipe accessible quand vous avez besoin d’aide.</p><p>ALTEA est né avec une ambition : rendre les bons réflexes de sécurité et de confort plus faciles à adopter, sans compliquer votre quotidien.</p>" },
+    { "type": "text", "id": "cta_heading", "label": "Titre CTA", "default": "Prêt à rendre votre quotidien plus serein ?" },
+    { "type": "textarea", "id": "cta_text", "label": "Texte CTA", "default": "Découvrez nos solutions et choisissez celle qui correspond à votre besoin." },
+    { "type": "text", "id": "cta_label", "label": "Bouton CTA", "default": "Parler à l’équipe ALTEA" }
+  ],
+  "blocks": [
+    { "type": "trust", "name": "Réassurance", "limit": 3, "settings": [
+      { "type": "text", "id": "icon", "label": "Icône Material", "default": "verified" }, { "type": "text", "id": "title", "label": "Titre", "default": "Sélection utile" }, { "type": "text", "id": "text", "label": "Texte", "default": "Pensée pour le quotidien" }
+    ] },
+    { "type": "value", "name": "Valeur", "limit": 4, "settings": [
+      { "type": "text", "id": "icon", "label": "Icône Material", "default": "shield" }, { "type": "text", "id": "title", "label": "Titre", "default": "La tranquillité d’esprit" }, { "type": "textarea", "id": "text", "label": "Texte", "default": "Des solutions concrètes pour mieux anticiper les petits risques du quotidien." }
+    ] }
+  ],
+  "presets": [
+    { "name": "ALTEA — À propos", "blocks": [
+      { "type": "trust" }, { "type": "trust", "settings": { "icon": "support_agent", "title": "Conseil humain", "text": "Une équipe accessible" } }, { "type": "trust", "settings": { "icon": "local_shipping", "title": "Livraison au Maroc", "text": "Simple et suivie" } },
+      { "type": "value" }, { "type": "value", "settings": { "icon": "lightbulb", "title": "Explications claires", "text": "Chaque produit est présenté avec ses bénéfices, ses usages et les informations qui aident à décider." } }, { "type": "value", "settings": { "icon": "favorite", "title": "Pensé avec attention", "text": "Une expérience cohérente avant, pendant et après votre achat." } }
+    ] }
+  ]
+}
+{% endschema %}
