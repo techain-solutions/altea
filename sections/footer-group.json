@@ -59,7 +59,7 @@
               "type": "_description",
               "disabled": true,
               "settings": {
-                "description": "<p>Navigate our store easily and find what you're looking for.</p>",
+                "description": "<p>Parcourez facilement notre boutique et trouvez ce que vous recherchez.</p>",
                 "alignment": "inherit",
                 "alignment_mobile": "",
                 "custom_bullet_icon": "",
@@ -192,7 +192,7 @@
             "title_KiKBkx": {
               "type": "_title",
               "settings": {
-                "title": "Stay Updated",
+                "title": "Restez informé",
                 "title_text_color": "default",
                 "title_text_color_custom": "#a52a2a",
                 "custom_color": false,
@@ -226,7 +226,7 @@
             "description_mzEbYU": {
               "type": "_description",
               "settings": {
-                "description": "<p>Sign up for exclusive offers and new arrivals!</p>",
+                "description": "<p>Inscrivez-vous pour recevoir nos offres exclusives et découvrir nos nouveautés !</p>",
                 "alignment": "inherit",
                 "alignment_mobile": "",
                 "custom_bullet_icon": "",
@@ -254,10 +254,10 @@
                 "show_newsletter_first_name": true,
                 "enable_newsletter_opt_in_checkbox": true,
                 "customer_tag": "newsletter",
-                "label_name": "Full name",
-                "label_email": "Email",
+                "label_name": "Nom complet",
+                "label_email": "E-mail",
                 "label_number": "",
-                "label_opt_checkbox": "Subscribe to email marketing"
+                "label_opt_checkbox": "J’accepte de recevoir les offres et nouveautés par e-mail"
               },
               "blocks": {}
             }
@@ -279,7 +279,7 @@
             "title_MrBwqM": {
               "type": "_title",
               "settings": {
-                "title": "Search",
+                "title": "Rechercher",
                 "title_text_color": "default",
                 "title_text_color_custom": "#a52a2a",
                 "custom_color": false,
@@ -313,7 +313,7 @@
             "description_AhJCr7": {
               "type": "_description",
               "settings": {
-                "description": "<p>Find what you need quickly with our search tool.</p>",
+                "description": "<p>Trouvez rapidement ce dont vous avez besoin grâce à notre outil de recherche.</p>",
                 "alignment": "inherit",
                 "alignment_mobile": "",
                 "custom_bullet_icon": "",
@@ -363,7 +363,7 @@
         "show_localization": false,
         "payment_enable": true,
         "show_business_registration": true,
-        "business_registration_heading": "Business registration number",
+        "business_registration_heading": "Numéro d’immatriculation de l’entreprise",
         "business_registration": "",
         "show_policy_links": true,
         "show_shopify_powered": true,
