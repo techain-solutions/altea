@@ -13,12 +13,19 @@
       "type": "dbtfy-separator",
       "settings": {
         "show_on": "both",
+        "container_size": "page-width",
+        "opacity": 50,
         "separator_type": "straight",
+        "flip": false,
         "separator_color_scheme": "custom",
-        "color": "#F3F3F3",
+        "color": "#f3f3f3",
         "separator_height": 65,
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "",
         "padding___top": "none",
-        "padding___bottom": "none"
+        "custom_padding_top": 36,
+        "padding___bottom": "none",
+        "custom_padding_bottom": 36
       }
     },
     "breadcrumbs": {
@@ -26,14 +33,40 @@
       "settings": {
         "show_on": "desktop-only",
         "show_social_media_icons": "none",
+        "share_on_facebook": false,
+        "share_on_messenger": false,
+        "tweet_on_twitter": false,
+        "pin_on_pinterest": false,
+        "share_on_whatsapp": false,
+        "share_on_linkedin": false,
+        "share_on_reddit": false,
+        "share_on_email": false,
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "color_scheme": "scheme-1",
         "custom_color_scheme": "scheme-1",
         "padding___top": "small",
-        "padding___bottom": "none"
+        "custom_padding_top": 36,
+        "padding___bottom": "none",
+        "custom_padding_bottom": 36
       }
     },
     "main": {
       "type": "main-product",
       "blocks": {
+        "releasit_bundle_bundle_block_PfBEtC": {
+          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
+          "settings": {
+            "show_quantity_breaks": true,
+            "show_bundles": true,
+            "display_style": "table",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
         "product_title": {
           "type": "_product_title",
           "settings": {
@@ -54,6 +87,19 @@
           "type": "_description",
           "settings": {
             "description": "{{ closest.product.description }}",
+            "alignment": "inherit",
+            "alignment_mobile": "",
+            "custom_bullet_icon": "",
+            "text_animation": "none",
+            "glacier_speed": 5,
+            "typing_speed": 50,
+            "typing_initial_delay": 0,
+            "typing_pause_duration": 2000,
+            "typing_deleting_speed": 30,
+            "typing_show_cursor": true,
+            "typing_cursor_character": "|",
+            "typing_cursor_blink_duration": 500,
+            "typing_hide_cursor_while_typing": false,
             "padding___top": "custom",
             "custom_padding_top": 0,
             "padding___bottom": "custom",
@@ -88,12 +134,26 @@
         "product_buy_buttons": {
           "type": "_product_buy-buttons",
           "settings": {
+            "custom_add_to_cart_buttons": "inherit",
             "add_to_cart_style": "button button--primary",
             "add_to_cart_color": "primary_color",
+            "add_to_cart__custom_background_color": "",
+            "add_to_cart__custom_text_color": "",
+            "buy_it_now_style": "button button--primary",
+            "buy_it_now_color": "secondary_color",
+            "custom_buy_it_now_background_color": "",
+            "custom_buy_it_now_text_color": "",
+            "show_gift_card_recipient": true,
+            "display_price_in_add_to_cart": false,
+            "price_position": "after-button",
             "display_icon_in_add_to_cart": true,
             "button_icon": "add_shopping_cart",
             "icon_position": "before-label",
-            "dbtfy_addtocart_animation_enable": false
+            "dbtfy_addtocart_animation_enable": false,
+            "dbtfy_addtocart_animation_type": "tada",
+            "dbtfy_addtocart_animation_interval": 5,
+            "dbtfy_addtocart_animation_duration": 1,
+            "add_to_cart_overlay_effect": "inherit"
           },
           "blocks": {}
         },
@@ -101,8 +161,12 @@
           "type": "_product_icon-with-text",
           "settings": {
             "layout": "horizontal",
+            "alignment": "align-items-center",
             "text_size": "h5",
             "enable_divider": true,
+            "show_separate_cards": false,
+            "color_scheme_block": "none",
+            "custom_color_scheme_block": "",
             "icon_1": "custom",
             "custom_icon_1": "payments",
             "heading_1": "Paiement à la livraison",
@@ -111,7 +175,8 @@
             "heading_2": "Livraison en 24 à 48h",
             "icon_3": "custom",
             "custom_icon_3": "autorenew",
-            "heading_3": "Retours sous 3 jours"
+            "heading_3": "Retours sous 3 jours",
+            "custom_icon_size": "medium"
           },
           "blocks": {}
         },
@@ -124,7 +189,8 @@
               "settings": {
                 "heading": "Livraison & paiement",
                 "icon": "local_shipping",
-                "row_content": "<p>Paiement à la livraison : vous réglez en espèces au livreur, à la réception. Livraison partout au Maroc en 24 à 48 heures. Nous vous appelons pour confirmer votre commande et votre adresse avant l'expédition.</p>"
+                "row_content": "<p>Paiement à la livraison : vous réglez en espèces au livreur, à la réception. Livraison partout au Maroc en 24 à 48 heures. Nous vous appelons pour confirmer votre commande et votre adresse avant l'expédition.</p>",
+                "page": ""
               },
               "blocks": {}
             },
@@ -133,7 +199,8 @@
               "settings": {
                 "heading": "Retours et échanges",
                 "icon": "autorenew",
-                "row_content": "<p>Vous disposez de 3 jours après la réception pour demander un échange ou un remboursement en cas de défaut de fabrication.</p>"
+                "row_content": "<p>Vous disposez de 3 jours après la réception pour demander un échange ou un remboursement en cas de défaut de fabrication.</p>",
+                "page": ""
               },
               "blocks": {}
             },
@@ -142,7 +209,8 @@
               "settings": {
                 "heading": "Besoin d'un conseil ?",
                 "icon": "question_mark",
-                "row_content": "<p>Notre service client répond sur WhatsApp, tous les jours de 8h à 23h.</p>"
+                "row_content": "<p>Notre service client répond sur WhatsApp, tous les jours de 8h à 23h.</p>",
+                "page": ""
               },
               "blocks": {}
             }
@@ -155,6 +223,7 @@
         }
       },
       "block_order": [
+        "releasit_bundle_bundle_block_PfBEtC",
         "product_title",
         "product_price",
         "product_description",
@@ -167,15 +236,27 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "media_size": "medium",
-        "media_position": "left",
-        "gallery_layout": "thumbnail",
-        "thumbnail_position": "bottom",
-        "mobile_thumbnails": "show",
-        "image_ratio": "100%",
-        "media_fit": "contain",
+        "add_to_cart_position": false,
         "color_scheme": "custom",
         "custom_color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "thumbnail_position": "bottom",
+        "media_fit": "contain",
+        "image_ratio": "100%",
+        "image_crop_position": "inherit",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "mobile_thumbnails": "show",
+        "enable_progress_bar": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "enable_video_control": false,
+        "product_enable_arrows": false,
+        "enable_arrows": true,
+        "arrow_color": "inherit",
+        "custom_arrow_color": "#ffffff",
+        "custom_arrow_background_color": "#7559ff",
         "padding___top": "custom",
         "custom_padding_top": 24,
         "padding___bottom": "custom",
@@ -308,9 +389,16 @@
         "eyebrow": "DEUX RISQUES, UN SEUL APPAREIL",
         "heading": "Le gaz qui fuit, et le gaz qui brûle mal",
         "intro": "<p>Une fuite de gaz s'accumule vite dans une pièce. Une combustion incomplète, elle, dégage du monoxyde de carbone : un gaz sans couleur, sans odeur et sans fumée. Deux dangers différents, surveillés par un seul appareil.</p>",
+        "center_header": true,
         "columns_desktop": "4",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-4",
-        "color_scheme": "custom"
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
       }
     },
     "technology": {
@@ -319,31 +407,31 @@
         "row_0": {
           "type": "row",
           "settings": {
+            "media_index": 1,
             "eyebrow": "DEUX CAPTEURS",
             "title": "Un capteur dédié à chaque danger",
             "text": "<p>Détecter un gaz inflammable et détecter du monoxyde de carbone sont deux mesures différentes. L'appareil embarque donc deux capteurs indépendants, chacun dédié à un risque.</p>",
-            "bullets": "<ul><li>Gaz inflammable : butane et méthane, de 0 à 15 % LIE — normes citées UL 1484 et EN 50194</li><li>Monoxyde de carbone : de 0 à 999 ppm — normes citées UL 2034 et EN 50291</li></ul>",
-            "media_index": 1
+            "bullets": "<ul><li>Gaz inflammable : butane et méthane, de 0 à 15 % LIE — normes citées UL 1484 et EN 50194</li><li>Monoxyde de carbone : de 0 à 999 ppm — normes citées UL 2034 et EN 50291</li></ul>"
           }
         },
         "row_1": {
           "type": "row",
           "settings": {
+            "media_index": 3,
             "eyebrow": "ALERTE PROGRESSIVE",
             "title": "Vous voyez le niveau monter avant l'alarme",
             "text": "<p>Plutôt qu'un simple état « normal » ou « alarme », l'écran affiche en continu l'évolution du taux de gaz. Vous pouvez intervenir avant que la situation ne s'aggrave.</p>",
-            "bullets": "<ul><li>Moins de 2 % LIE — air normal, aucune fuite</li><li>2 à 4 % LIE — légère hausse, aérez la pièce</li><li>4 à 6 % LIE — seuil approché, fermez la vanne et la bouteille</li><li>Plus de 6 % LIE — alarme déclenchée sous 30 secondes</li></ul>",
-            "media_index": 3
+            "bullets": "<ul><li>Moins de 2 % LIE — air normal, aucune fuite</li><li>2 à 4 % LIE — légère hausse, aérez la pièce</li><li>4 à 6 % LIE — seuil approché, fermez la vanne et la bouteille</li><li>Plus de 6 % LIE — alarme déclenchée sous 30 secondes</li></ul>"
           }
         },
         "row_2": {
           "type": "row",
           "settings": {
+            "media_index": 4,
             "eyebrow": "LECTURE",
             "title": "Un écran couleur qui alterne gaz et CO",
             "text": "<p>L'écran bascule automatiquement entre la lecture du gaz et celle du monoxyde de carbone, pendant que les deux capteurs continuent de surveiller en arrière-plan. Après une minute, la luminosité baisse ; après cinq minutes, l'écran s'éteint — la surveillance, elle, ne s'arrête pas.</p>",
-            "bullets": "",
-            "media_index": 4
+            "bullets": ""
           }
         }
       },
@@ -353,11 +441,20 @@
         "row_2"
       ],
       "settings": {
+        "product": "",
         "eyebrow": "EN DÉTAIL",
         "heading": "Comment l'appareil surveille",
         "intro": "",
+        "center_header": true,
+        "alternate": true,
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-1",
-        "color_scheme": "custom"
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
       }
     },
     "steps": {
@@ -402,9 +499,17 @@
         "eyebrow": "MISE EN SERVICE",
         "heading": "Branché en une minute, opérationnel en 200 secondes",
         "intro": "<p>Aucun câblage, aucun outil, aucun technicien.</p>",
+        "center_header": true,
+        "show_connector": true,
         "note": "<p>Si l'alarme se déclenche : ouvrez portes et fenêtres, fermez la vanne de la bouteille ou l'arrivée principale, n'actionnez aucun interrupteur ni appareil électrique, quittez les lieux et faites contrôler l'origine de la fuite par un technicien qualifié avant toute remise en service.</p>",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-2",
-        "color_scheme": "custom"
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
       }
     },
     "comparison": {
@@ -413,13 +518,44 @@
         "cta_block": {
           "type": "_cta_block",
           "static": true,
-          "settings": {},
+          "settings": {
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "none",
+            "custom_padding_bottom": 36
+          },
           "blocks": {
             "cmp_title": {
               "type": "_title",
               "settings": {
                 "title": "Détecteur de gaz seul, ou double protection ?",
-                "alignment": "text-left"
+                "title_text_color": "default",
+                "title_text_color_custom": "#a52a2a",
+                "custom_color": false,
+                "title_color": "#000000",
+                "title_line": "none",
+                "title_bg_color": "#000000",
+                "highlighted_1_border_radius": 8,
+                "highlighted_1_border_width": 0,
+                "highlighted_1_border": "solid",
+                "highlighted_1_border_color": "#003934",
+                "highlighted_1_vertical_padding": 20,
+                "highlighted_1_horizontal_padding": 20,
+                "stroke_thickness": 20,
+                "half_stroke_thickness": 40,
+                "stroke_vertical_position": 100,
+                "alignment": "text-left",
+                "alignment_mobile": "",
+                "size": "inherit",
+                "style": "inherit",
+                "icon_enable": false,
+                "icon": "lock",
+                "icon_size": "medium",
+                "icon_alignment": "align-items-center",
+                "padding___top": "inherit",
+                "custom_padding_top": 36,
+                "padding___bottom": "inherit",
+                "custom_padding_bottom": 36
               },
               "blocks": {}
             },
@@ -427,7 +563,23 @@
               "type": "_description",
               "settings": {
                 "description": "<p>Un détecteur de gaz classique ne couvre que la moitié du risque.</p>",
-                "alignment": "text-left"
+                "alignment": "text-left",
+                "alignment_mobile": "",
+                "custom_bullet_icon": "",
+                "text_animation": "none",
+                "glacier_speed": 5,
+                "typing_speed": 50,
+                "typing_initial_delay": 0,
+                "typing_pause_duration": 2000,
+                "typing_deleting_speed": 30,
+                "typing_show_cursor": true,
+                "typing_cursor_character": "|",
+                "typing_cursor_blink_duration": 500,
+                "typing_hide_cursor_while_typing": false,
+                "padding___top": "inherit",
+                "custom_padding_top": 36,
+                "padding___bottom": "inherit",
+                "custom_padding_bottom": 36
               },
               "blocks": {}
             }
@@ -448,7 +600,13 @@
                 "title": "Détection du butane",
                 "subtitle": "",
                 "display_type": "text",
+                "shop": true,
+                "icon1": "check",
+                "icon1_color": "",
                 "text_1": "Oui",
+                "competitor": true,
+                "icon2": "close",
+                "icon2_color": "",
                 "text_2": "Oui"
               },
               "blocks": {}
@@ -459,7 +617,13 @@
                 "title": "Détection du monoxyde de carbone",
                 "subtitle": "",
                 "display_type": "text",
+                "shop": true,
+                "icon1": "check",
+                "icon1_color": "",
                 "text_1": "Oui",
+                "competitor": true,
+                "icon2": "close",
+                "icon2_color": "",
                 "text_2": "Non"
               },
               "blocks": {}
@@ -470,7 +634,13 @@
                 "title": "Deux capteurs indépendants",
                 "subtitle": "",
                 "display_type": "text",
+                "shop": true,
+                "icon1": "check",
+                "icon1_color": "",
                 "text_1": "Oui",
+                "competitor": true,
+                "icon2": "close",
+                "icon2_color": "",
                 "text_2": "Non"
               },
               "blocks": {}
@@ -481,7 +651,13 @@
                 "title": "Écran gaz, CO, température, humidité",
                 "subtitle": "",
                 "display_type": "text",
+                "shop": true,
+                "icon1": "check",
+                "icon1_color": "",
                 "text_1": "Oui",
+                "competitor": true,
+                "icon2": "close",
+                "icon2_color": "",
                 "text_2": "Non"
               },
               "blocks": {}
@@ -492,7 +668,13 @@
                 "title": "Mesure du CO en ppm",
                 "subtitle": "",
                 "display_type": "text",
+                "shop": true,
+                "icon1": "check",
+                "icon1_color": "",
                 "text_1": "Oui",
+                "competitor": true,
+                "icon2": "close",
+                "icon2_color": "",
                 "text_2": "Non"
               },
               "blocks": {}
@@ -508,10 +690,33 @@
         }
       },
       "settings": {
+        "show_on": "both",
         "container_size": "page-width",
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "hoverable": true,
+        "desktop_table_placement": "right",
+        "mobile_table_placement": "top",
+        "table_style": "classic",
+        "box_shadow_active": true,
+        "border_radius": 0,
+        "title_size": "large",
+        "title_size_mobile": "large",
+        "logo_size": 50,
+        "logo_size_mobile": 50,
         "shop_title": "ALTEA 2 en 1",
         "competitor_title": "Détecteur de gaz classique",
-        "custom_color_scheme": "scheme-1"
+        "table_title_size": "large",
+        "table_subtitle_size": "small",
+        "color_scheme": "scheme-1",
+        "custom_color_scheme": "scheme-1",
+        "padding___top": "inherit",
+        "custom_padding_top": 36,
+        "padding___bottom": "inherit",
+        "custom_padding_bottom": 36
       }
     },
     "specs": {
@@ -704,107 +909,116 @@
       "settings": {
         "eyebrow": "CARACTÉRISTIQUES",
         "heading": "Fiche technique",
+        "intro": "",
+        "center_header": true,
         "box_title": "Dans la boîte",
         "note": "<p>Les normes et certifications indiquées sont celles annoncées par le fabricant sur le produit et son emballage.</p>",
+        "show_on": "both",
         "container_size": "page-width",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-1",
-        "color_scheme": "custom"
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
       }
     },
     "faq": {
       "type": "dbtfy-faq",
       "blocks": {
-        "heading": {
-          "type": "_heading",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "faq_title": {
-              "type": "_title",
-              "settings": {
-                "title": "Questions fréquentes",
-                "alignment": "text-center"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "faq_title"
-          ]
-        },
         "faq_group": {
           "type": "_dbtfy-faq-group",
-          "settings": {},
+          "settings": {
+            "heading": "",
+            "title": "Catégorie",
+            "icon": "support"
+          },
           "blocks": {
             "faq_q_0": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": true,
                 "question": "L'appareil détecte-t-il réellement le monoxyde de carbone ?",
                 "answer": "<p>Oui. Il embarque deux capteurs totalement indépendants : l'un dédié au monoxyde de carbone, l'autre aux gaz inflammables comme le butane.</p>",
-                "open_by_default": true
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_1": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Fonctionne-t-il sans Wi-Fi ?",
                 "answer": "<p>Oui. Il ne nécessite ni internet, ni application, ni abonnement. Branchez-le et il fonctionne de façon autonome.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_2": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Faut-il un électricien pour l'installer ?",
                 "answer": "<p>Non. Il se branche directement sur une prise murale ordinaire, sans câblage supplémentaire ni outil.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_3": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Quelle est sa consommation électrique ?",
                 "answer": "<p>Moins de 3 W, soit environ 26 kWh par an.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_4": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "L'écran reste-t-il allumé toute la nuit ?",
                 "answer": "<p>Non. La luminosité baisse automatiquement après une minute, puis l'écran s'éteint après cinq minutes. La détection et l'alarme, elles, restent actives en permanence.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_5": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Où faut-il l'installer ?",
                 "answer": "<p>À proximité des sources de gaz — cuisine ou chauffe-eau — en respectant la distance et la hauteur recommandées dans la notice fournie.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_6": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Comment vérifier qu'il fonctionne ?",
                 "answer": "<p>Un appui court sur le bouton TEST déclenche l'alarme et fait clignoter les voyants. Il est conseillé de faire ce test une fois par mois.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             },
             "faq_q_7": {
               "type": "_dbtfy-faq-question",
               "settings": {
+                "heading": "",
+                "open_by_default": false,
                 "question": "Comment se passe la livraison ?",
                 "answer": "<p>Nous livrons partout au Maroc en 24 à 48 heures. Vous recevez un appel de confirmation de la commande et de l'adresse avant l'expédition.</p>",
-                "open_by_default": false
+                "icon": ""
               },
               "blocks": {}
             }
@@ -819,17 +1033,98 @@
             "faq_q_6",
             "faq_q_7"
           ]
+        },
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {
+            "as_column": false,
+            "columns": 1,
+            "row_gap": 20,
+            "column_gap": 20,
+            "columns_mobile": 1,
+            "row_gap_mobile": 20,
+            "column_gap_mobile": 20,
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "none",
+            "custom_padding_bottom": 36
+          },
+          "blocks": {
+            "faq_title": {
+              "type": "_title",
+              "settings": {
+                "title": "Questions fréquentes",
+                "title_text_color": "default",
+                "title_text_color_custom": "#a52a2a",
+                "custom_color": false,
+                "title_color": "#000000",
+                "title_line": "none",
+                "title_bg_color": "#000000",
+                "highlighted_1_border_radius": 8,
+                "highlighted_1_border_width": 0,
+                "highlighted_1_border": "solid",
+                "highlighted_1_border_color": "#003934",
+                "highlighted_1_vertical_padding": 20,
+                "highlighted_1_horizontal_padding": 20,
+                "stroke_thickness": 20,
+                "half_stroke_thickness": 40,
+                "stroke_vertical_position": 100,
+                "alignment": "text-center",
+                "alignment_mobile": "",
+                "size": "inherit",
+                "style": "inherit",
+                "icon_enable": false,
+                "icon": "lock",
+                "icon_size": "medium",
+                "icon_alignment": "align-items-center",
+                "padding___top": "inherit",
+                "custom_padding_top": 36,
+                "padding___bottom": "inherit",
+                "custom_padding_bottom": 36
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "faq_title"
+          ]
         }
       },
       "block_order": [
         "faq_group"
       ],
       "settings": {
+        "show_on": "both",
         "container_size": "container",
         "show_search": false,
-        "show_banner": false,
+        "search_placeholder": "Rechercher des questions...",
+        "no_result_text": "Aucun résultat trouvé....",
         "text_alignment": "text-left",
-        "custom_color_scheme": "scheme-2"
+        "text_alignment_mobile": "text-left",
+        "show_banner": false,
+        "banner_icon": "help",
+        "banner_heading": "Vous n'avez pas trouvé votre réponse ?",
+        "banner_subheading": "<p>Notre service client se fera un plaisir de vous aider.</p>",
+        "banner_button_label": "Entrer en contact",
+        "banner_button_url": "",
+        "banner_button_style": "button button--secondary",
+        "button_size": "inherit",
+        "fillable_color": false,
+        "fillable_type": "inherit",
+        "pattern_bg": "none",
+        "pattern_color": "#a52a2a",
+        "pattern_size": 20,
+        "pattern_size_thickness": 1,
+        "pattern_opacity": 50,
+        "color_scheme_block": "scheme-2",
+        "custom_color_scheme_block": "",
+        "color_scheme": "scheme-2",
+        "custom_color_scheme": "scheme-2",
+        "padding___top": "inherit",
+        "custom_padding_top": 36,
+        "padding___bottom": "inherit",
+        "custom_padding_bottom": 36
       }
     },
     "final_cta": {
@@ -863,35 +1158,112 @@
         "cta_r_2"
       ],
       "settings": {
+        "product": "",
         "eyebrow": "PRÊT À COMMANDER ?",
         "heading": "Protégez votre foyer des dangers invisibles",
         "text": "<p>Commandez maintenant et payez à la livraison. Vous pouvez vérifier votre commande avec le livreur à la réception.</p>",
-        "button_label": "Commander maintenant",
         "show_price": true,
+        "button_label": "Commander maintenant",
+        "button_url": "",
+        "show_on": "both",
+        "container_size": "page-width",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-3",
-        "color_scheme": "custom"
+        "padding___top": "medium",
+        "custom_padding_top": 60,
+        "padding___bottom": "medium",
+        "custom_padding_bottom": 60
       }
     },
     "related_products": {
       "type": "related-products",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {
+            "as_column": false,
+            "columns": 1,
+            "row_gap": 20,
+            "column_gap": 20,
+            "columns_mobile": 1,
+            "row_gap_mobile": 20,
+            "column_gap_mobile": 20,
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "none",
+            "custom_padding_bottom": 36
+          },
+          "blocks": {}
+        }
+      },
       "settings": {
         "products_to_show": 3,
         "columns_desktop": 3,
-        "columns_mobile": "2",
+        "image_ratio": "inherit",
+        "image_crop_position": "inherit",
+        "image_shape": "default",
+        "show_secondary_image": "inherit",
+        "show_carousel": "inherit",
+        "quick_add": "none",
         "show_vendor": false,
         "show_rating": false,
+        "columns_mobile": "2",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-4",
-        "color_scheme": "custom"
+        "padding___top": "inherit",
+        "custom_padding_top": 36,
+        "padding___bottom": "inherit",
+        "custom_padding_bottom": 36
       }
     },
     "recently_viewed": {
       "type": "dbtfy-recently-viewed",
+      "blocks": {
+        "heading": {
+          "type": "_heading",
+          "static": true,
+          "settings": {
+            "as_column": false,
+            "columns": 1,
+            "row_gap": 20,
+            "column_gap": 20,
+            "columns_mobile": 1,
+            "row_gap_mobile": 20,
+            "column_gap_mobile": 20,
+            "padding___top": "none",
+            "custom_padding_top": 36,
+            "padding___bottom": "none",
+            "custom_padding_bottom": 36
+          },
+          "blocks": {}
+        }
+      },
       "settings": {
-        "products_to_show": 4,
+        "show_on": "both",
+        "empty_heading": "Ce que vous avez récemment consulté est vide",
+        "empty_heading_size": "h2",
         "grid_col_desktop": 4,
         "grid_col_mobile": "2",
+        "products_to_show": 4,
+        "image_ratio": "inherit",
+        "image_crop_position": "inherit",
+        "slider_on": "both",
+        "enable_autoplay": false,
+        "autoplay_speed": 5,
+        "enable_loop": true,
+        "enable_dots": true,
+        "enable_arrows": true,
+        "arrow_color": "inherit",
+        "custom_arrow_color": "#ffffff",
+        "custom_arrow_background_color": "#7559ff",
+        "arrow_position": "middle",
+        "color_scheme": "custom",
         "custom_color_scheme": "scheme-2",
-        "color_scheme": "custom"
+        "padding___top": "inherit",
+        "custom_padding_top": 36,
+        "padding___bottom": "inherit",
+        "custom_padding_bottom": 36
       }
     }
   },
