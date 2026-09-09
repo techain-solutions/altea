@@ -433,3 +433,102 @@ html body #MainContent .shopify-section :where(
   }
 }
 
+
+/* 6. TYPOGRAPHIE ALTEA
+   -------------------------------------------------------------------------
+   Une voix plus technique, calme et rassurante pour la sécurité domestique.
+   Inter apporte des formes nettes et des chiffres lisibles (dB, 10 ans,
+   24–48 h) ; le fallback arabe reste natif et lisible.
+*/
+:root {
+  --altea-font-display: "Inter", var(--altea-font-arabic), sans-serif;
+  --altea-font-body: "Inter", var(--altea-font-arabic), sans-serif;
+  --altea-body-size: clamp(1.5rem, 1.42rem + 0.15vw, 1.7rem);
+}
+
+html body,
+html body input,
+html body textarea,
+html body select,
+html body button {
+  font-family: var(--altea-font-body);
+}
+
+html body #MainContent .shopify-section :where(h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5) {
+  font-family: var(--altea-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+html body #MainContent .shopify-section :where(h1, .h0) {
+  font-size: clamp(3.4rem, 2.8rem + 2vw, 5.6rem);
+}
+
+html body #MainContent .shopify-section :where(h2, .h1) {
+  font-size: clamp(2.8rem, 2.35rem + 1.35vw, 4rem);
+}
+
+html body #MainContent .shopify-section :where(h3, .h2) {
+  font-size: clamp(2.2rem, 1.95rem + 0.75vw, 2.9rem);
+}
+
+html body #MainContent .shopify-section :where(h4, h5, h6, .h3, .h4, .h5) {
+  font-size: clamp(1.8rem, 1.65rem + 0.45vw, 2.2rem);
+  letter-spacing: -0.01em;
+}
+
+html body #MainContent .shopify-section :where(p, li, .rte, .rich-text__text, .image-with-text__text) {
+  font-size: var(--altea-body-size);
+  line-height: 1.62;
+}
+
+html body #MainContent .shopify-section :where(.price, .price-item, .product-form__input, .quantity__label, .form__label) {
+  font-family: var(--altea-font-body);
+  letter-spacing: 0;
+}
+
+html body #MainContent .shopify-section :where(.product__title, .product__title h1, .product__info-container > h1) {
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+html body #MainContent .shopify-section :where(.altea-benefits__eyebrow, .altea-rows__eyebrow, .altea-steps__eyebrow, .altea-problem-solution__eyebrow, .altea-specs__eyebrow, .altea-cta__eyebrow, .altea-kicker) {
+  font-family: var(--altea-font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 749px) {
+  html body #MainContent .shopify-section :where(h1, .h0) {
+    font-size: clamp(3rem, 8vw, 4rem);
+  }
+
+  html body #MainContent .shopify-section :where(h2, .h1) {
+    font-size: clamp(2.5rem, 6vw, 3.2rem);
+  }
+
+  html body #MainContent .shopify-section :where(h3, .h2) {
+    font-size: clamp(2.1rem, 5.2vw, 2.6rem);
+  }
+
+  html body #MainContent .shopify-section :where(p, li, .rte, .rich-text__text, .image-with-text__text) {
+    font-size: 1.5rem;
+    line-height: 1.68;
+  }
+}
+
+[dir="rtl"] {
+  --altea-font-display: "Inter", var(--altea-font-arabic), sans-serif;
+  --altea-font-body: "Inter", var(--altea-font-arabic), sans-serif;
+}
+
+[dir="rtl"] html body #MainContent .shopify-section :where(h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5) {
+  letter-spacing: 0;
+  line-height: 1.35;
+}
