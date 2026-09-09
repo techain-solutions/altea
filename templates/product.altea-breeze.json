@@ -30,6 +30,7 @@
     },
     "breadcrumbs": {
       "type": "dbtfy-breadcrumbs",
+      "disabled": true,
       "settings": {
         "show_on": "desktop-only",
         "show_social_media_icons": "none",
