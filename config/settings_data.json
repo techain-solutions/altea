@@ -135,7 +135,7 @@
     "heading_scale": 100,
     "type_body_font": "inter_n4",
     "body_font_size_mobile": 15,
-    "title_color": "#031D42",
+    "title_color": "#D6A65E",
     "title_default_spacing_top": "extra_small",
     "title_default_spacing_bottom": "small",
     "subtitle_default_spacing_top": "extra_small",
@@ -1651,7 +1651,7 @@
           "button": "#031d42",
           "button_label": "#ffffff",
           "secondary_button_label": "#031d42",
-          "shadow": "#F3F3F3"
+          "shadow": "#f3f3f3"
         }
       },
       "scheme-3": {
