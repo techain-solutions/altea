@@ -120,17 +120,6 @@
           "settings": {},
           "blocks": {}
         },
-        "altea_offer": {
-          "type": "_altea-offer",
-          "settings": {
-            "single_label": "1 détecteur",
-            "bundle_label": "2 détecteurs",
-            "bundle_quantity": 2,
-            "offer_price": 599,
-            "default_selection": "single"
-          },
-          "blocks": {}
-        },
         "product_buy_buttons": {
           "type": "_product_buy-buttons",
           "settings": {
@@ -229,7 +218,6 @@
         "product_description",
         "altea_highlights",
         "product_variant_picker",
-        "altea_offer",
         "product_buy_buttons",
         "product_reassurance",
         "product_collapsible"
