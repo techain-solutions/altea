@@ -341,3 +341,94 @@ hr,
 [dir="rtl"] .slider-button--next .icon {
   transform: scaleX(-1);
 }
+
+
+:root {
+  --altea-section-gap: clamp(2.4rem, 3.2vw, 4.8rem);
+  --altea-content-gap: clamp(1.6rem, 2vw, 2.4rem);
+  --altea-heading-gap: clamp(1rem, 1.4vw, 1.6rem);
+  --altea-media-gap: clamp(2rem, 3vw, 3.2rem);
+}
+
+html body #MainContent .shopify-section :where(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: 0;
+}
+
+html body #MainContent .shopify-section :where(
+  .title-wrapper,
+  .title-wrapper-with-link,
+  .collection__title,
+  .section-header,
+  .rich-text__blocks,
+  .altea-benefits__header,
+  .altea-rows__header,
+  .altea-steps__header,
+  .altea-problem-solution__header,
+  .altea-specs__header,
+  .altea-info-page__section-heading
+) {
+  margin-block-end: var(--altea-content-gap);
+}
+
+html body #MainContent .shopify-section :where(
+  .title-wrapper,
+  .title-wrapper-with-link,
+  .collection__title,
+  .section-header,
+  .rich-text__blocks,
+  .altea-benefits__header,
+  .altea-rows__header,
+  .altea-steps__header,
+  .altea-problem-solution__header,
+  .altea-specs__header,
+  .altea-info-page__section-heading
+) > :where(h1, h2, h3, h4, h5, h6) {
+  margin-block-end: 0;
+}
+
+html body #MainContent .shopify-section :where(
+  .rte,
+  .rich-text__text,
+  .image-with-text__text,
+  .multicolumn-card__info,
+  .altea-info-page__section-heading,
+  .altea-benefits__intro,
+  .altea-rows__intro,
+  .altea-steps__intro,
+  .altea-specs__intro,
+  .altea-problem-solution__intro
+) > :where(p, ul, ol) + :where(p, ul, ol) {
+  margin-block-start: var(--altea-heading-gap);
+}
+
+html body #MainContent .shopify-section :where(
+  .image-with-text__content,
+  .altea-rows__row,
+  .altea-about-v2__content,
+  .altea-contact-page__grid,
+  .altea-contact-page__layout
+) {
+  gap: var(--altea-media-gap);
+}
+
+html body #MainContent .shopify-section :where(
+  .grid,
+  .multicolumn-list,
+  .collection-list,
+  .product-grid
+) {
+  row-gap: var(--grid-desktop-vertical-spacing);
+  column-gap: var(--grid-desktop-horizontal-spacing);
+}
+
+@media screen and (max-width: 749px) {
+  html body #MainContent .shopify-section :where(
+    .grid,
+    .multicolumn-list,
+    .collection-list,
+    .product-grid
+  ) {
+    row-gap: var(--grid-mobile-vertical-spacing);
+    column-gap: var(--grid-mobile-horizontal-spacing);
+  }
+}

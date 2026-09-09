@@ -137,8 +137,8 @@
     "body_font_size_mobile": 14,
     "title_color": "#031D42",
     "page_width": 1400,
-    "spacing_grid_horizontal": 12,
-    "spacing_grid_vertical": 12,
+    "spacing_grid_horizontal": 20,
+    "spacing_grid_vertical": 20,
     "spacing_small": 16,
     "buttons_border_opacity": 55,
     "buttons_shadow_vertical_offset": 4,
@@ -1663,7 +1663,20 @@
         "disabled": false,
         "settings": {}
       }
-    }
+    },
+    "spacing_sections": 24,
+    "title_default_spacing_top": "extra_small",
+    "title_default_spacing_bottom": "small",
+    "subtitle_default_spacing_top": "extra_small",
+    "subtitle_default_spacing_bottom": "extra_small",
+    "caption_default_spacing_top": "extra_small",
+    "caption_default_spacing_bottom": "extra_small",
+    "description_default_spacing_top": "extra_small",
+    "description_default_spacing_bottom": "extra_small",
+    "cta_default_spacing_top": "extra_small",
+    "cta_default_spacing_bottom": "extra_small",
+    "default_spacing_top": "medium",
+    "default_spacing_bottom": "medium"
   },
   "presets": {
     "Venom Scents": {
