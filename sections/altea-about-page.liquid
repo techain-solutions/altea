@@ -1,52 +1,110 @@
-{{ 'altea-info-pages.css' | asset_url | stylesheet_tag }}
-
 {%- assign contact_page = pages['contact'] -%}
 {%- assign contact_url = contact_page.url | default: '/pages/contact' -%}
-
-<section class="altea-info-page altea-about-page" id="AlteaAbout-{{ section.id }}">
-  <div class="altea-info-page__shell">
-    <div class="altea-info-page__hero altea-info-page__about-hero">
-      <div>
-        <p class="altea-info-page__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-        <h1>{{ section.settings.heading | escape }} <em>{{ section.settings.heading_accent | escape }}</em></h1>
-        <div class="altea-info-page__hero-copy">{{ section.settings.intro }}</div>
-        <div class="altea-info-page__actions">
-          <a class="altea-info-page__button altea-info-page__button--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }} {% render 'material-icon', icon: 'arrow_forward' %}</a>
-          <a class="altea-info-page__button altea-info-page__button--secondary" href="{{ contact_url }}">{{ section.settings.secondary_label | escape }}</a>
+{%- assign product_collection = collections.all -%}
+<section class="altea-info-page altea-about-page altea-about-v2" id="AlteaAbout-{{ section.id }}">
+  <div class="altea-about-v2__hero-wrap">
+    <div class="altea-info-page__shell altea-about-v2__hero">
+      <div class="altea-about-v2__hero-copy">
+        <p class="altea-info-page__eyebrow">Notre histoire</p>
+        <h1>La sécurité qui se vit <em>au quotidien.</em></h1>
+        <div class="altea-about-v2__intro"><p>Chez ALTEA, nous rendons les bons réflexes de sécurité plus simples à adopter. Nous sélectionnons des produits utiles, nous expliquons leur rôle sans jargon et nous restons présents quand vous avez besoin de nous.</p></div>
+        <div class="altea-info-page__actions altea-about-v2__actions">
+          <a class="altea-info-page__button altea-info-page__button--primary" href="{{ section.settings.primary_link }}">Découvrir nos solutions {% render 'material-icon', icon: 'arrow_forward' %}</a>
+          <a class="altea-info-page__button altea-info-page__button--secondary" href="{{ contact_url }}">Parler à notre équipe</a>
         </div>
+        <div class="altea-about-v2__micro-proof"><span>{% render 'material-icon', icon: 'verified_user' %}</span><p>Paiement à la livraison • Livraison partout au Maroc</p></div>
       </div>
-      <div class="altea-info-page__about-visual">
+      <div class="altea-about-v2__hero-media">
         {%- if section.settings.hero_image != blank -%}
-          {{ section.settings.hero_image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '400, 600, 900, 1200', alt: section.settings.hero_image_alt }}
+          {{ section.settings.hero_image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '480, 720, 1000, 1400', alt: section.settings.hero_image_alt }}
         {%- endif -%}
-        <span class="altea-info-page__about-mark" aria-hidden="true">AL</span>
+        <div class="altea-about-v2__hero-badge"><span class="altea-about-v2__hero-badge-icon">{% render 'material-icon', icon: 'home' %}</span><span><strong>Pensé pour le quotidien</strong><small>Des solutions simples et concrètes</small></span></div>
       </div>
-    </div>
-    <div class="altea-info-page__trust-row" role="list">
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'trust' -%}
-          <div class="altea-info-page__trust-item" role="listitem" {{ block.shopify_attributes }}><span class="altea-info-page__trust-icon" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><span><strong>{{ block.settings.title | escape }}</strong><span>{{ block.settings.text | escape }}</span></span></div>
-        {%- endif -%}
-      {%- endfor -%}
     </div>
   </div>
 
+  <div class="altea-info-page__shell altea-about-v2__trust-grid" role="list">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'trust' -%}
+        <div class="altea-about-v2__trust-card" role="listitem" {{ block.shopify_attributes }}><span class="altea-about-v2__icon-circle" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><span><strong>{{ block.settings.title | escape }}</strong><small>{{ block.settings.text | escape }}</small></span></div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
   <div class="altea-info-page__section altea-info-page__section--cream">
+    <div class="altea-info-page__shell altea-about-v2__story-grid">
+      <div class="altea-about-v2__story-media">
+        {%- if section.settings.hero_image != blank -%}
+          {{ section.settings.hero_image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '420, 650, 900, 1100', alt: section.settings.hero_image_alt }}
+        {%- endif -%}
+        <div class="altea-about-v2__story-label"><span>{% render 'material-icon', icon: 'favorite' %}</span>La sérénité commence par un bon choix</div>
+      </div>
+      <div class="altea-about-v2__story-content">
+        <p class="altea-info-page__eyebrow">Pourquoi ALTEA existe</p>
+        <h2>Protéger ce qui compte, sans compliquer la vie.</h2>
+        <div class="altea-about-v2__richtext">
+          <p>Un détecteur, une couverture anti-feu ou une solution de confort ne sont pas de simples objets. Ce sont des gestes concrets qui permettent de se sentir mieux préparé, à la maison comme au travail.</p>
+          <p>ALTEA sélectionne des produits fiables et faciles à comprendre pour aider chaque famille à adopter de meilleurs réflexes, sans promesse exagérée et sans parcours compliqué.</p>
+          <p>Notre rôle est de vous aider à choisir la bonne solution, au bon moment, avec une expérience claire avant, pendant et après la commande.</p>
+        </div>
+        <div class="altea-about-v2__signature"><span>AL</span><p><strong>L’équipe ALTEA</strong><small>Une équipe basée au Maroc</small></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="altea-info-page__section">
     <div class="altea-info-page__shell">
-      <div class="altea-info-page__section-heading altea-info-page__section-heading--center"><p class="altea-info-page__eyebrow">{{ section.settings.values_eyebrow | escape }}</p><h2>{{ section.settings.values_heading | escape }}</h2><p>{{ section.settings.values_text | escape }}</p></div>
-      <div class="altea-info-page__values">
+      <div class="altea-info-page__section-heading"><p class="altea-info-page__eyebrow">Nos principes</p><h2>Une marque construite sur la confiance.</h2><p>Nous privilégions l’utilité, la pédagogie et la proximité pour que chaque achat soit une décision sereine.</p></div>
+      <div class="altea-about-v2__values-grid">
         {%- for block in section.blocks -%}
           {%- if block.type == 'value' -%}
-            <article class="altea-info-page__value-card" {{ block.shopify_attributes }}><span class="altea-info-page__card-icon" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></article>
+            <article class="altea-about-v2__value-card" {{ block.shopify_attributes }}><span class="altea-about-v2__value-number">{{ forloop.index | prepend: '0' }}</span><span class="altea-about-v2__icon-circle" aria-hidden="true">{% render 'material-icon', icon: block.settings.icon %}</span><h3>{{ block.settings.title | escape }}</h3><p>{{ block.settings.text | escape }}</p></article>
           {%- endif -%}
         {%- endfor -%}
       </div>
     </div>
   </div>
 
-  <div class="altea-info-page__section"><div class="altea-info-page__shell altea-info-page__story"><p class="altea-info-page__story-note">{{ section.settings.story_quote | escape }}</p><div class="altea-info-page__story-copy">{{ section.settings.story_text }}</div></div></div>
+  <div class="altea-info-page__section altea-info-page__section--cream">
+    <div class="altea-info-page__shell">
+      <div class="altea-info-page__section-heading altea-info-page__section-heading--center"><p class="altea-info-page__eyebrow">Notre méthode</p><h2>Du bon produit au bon réflexe.</h2><p>Nous travaillons chaque étape pour vous faire gagner du temps et vous aider à passer à l’action.</p></div>
+      <div class="altea-about-v2__method-grid">
+        <article class="altea-about-v2__method-card"><span>01</span><h3>Nous observons les vrais besoins</h3><p>Nous partons des situations vécues au quotidien pour sélectionner des solutions qui ont une vraie utilité.</p></article>
+        <article class="altea-about-v2__method-card"><span>02</span><h3>Nous expliquons simplement</h3><p>Chaque fiche produit vous aide à comprendre le bénéfice, l’usage et le bon choix pour votre foyer.</p></article>
+        <article class="altea-about-v2__method-card"><span>03</span><h3>Nous restons présents</h3><p>Une question avant ou après la commande ? Notre équipe vous répond avec des conseils concrets.</p></article>
+      </div>
+    </div>
+  </div>
 
-  <div class="altea-info-page__shell"><div class="altea-info-page__cta"><h2>{{ section.settings.cta_heading | escape }}</h2><p>{{ section.settings.cta_text | escape }}</p><a class="altea-info-page__button altea-info-page__button--primary" href="{{ contact_url }}">{{ section.settings.cta_label | escape }} {% render 'material-icon', icon: 'arrow_forward' %}</a></div></div>
+  <div class="altea-info-page__section">
+    <div class="altea-info-page__shell">
+      <div class="altea-info-page__section-heading"><p class="altea-info-page__eyebrow">Notre promesse</p><h2>Une expérience simple, du premier clic à la réception.</h2><p>Pas de discours compliqué : seulement des produits utiles, des informations honnêtes et un accompagnement humain.</p></div>
+      <div class="altea-about-v2__promise-grid">
+        <article class="altea-about-v2__promise-card"><span class="altea-about-v2__icon-circle">{% render 'material-icon', icon: 'travel_explore' %}</span><div><h3>Choisir mieux</h3><p>Des solutions utiles, compréhensibles et adaptées aux besoins du quotidien.</p></div></article>
+        <article class="altea-about-v2__promise-card"><span class="altea-about-v2__icon-circle">{% render 'material-icon', icon: 'menu_book' %}</span><div><h3>Comprendre avant d’acheter</h3><p>Les éléments essentiels pour faire un choix serein, sans jargon ni pression.</p></div></article>
+        <article class="altea-about-v2__promise-card"><span class="altea-about-v2__icon-circle">{% render 'material-icon', icon: 'local_shipping' %}</span><div><h3>Recevoir simplement</h3><p>Une commande claire, une livraison au Maroc et un paiement à la livraison.</p></div></article>
+        <article class="altea-about-v2__promise-card"><span class="altea-about-v2__icon-circle">{% render 'material-icon', icon: 'support_agent' %}</span><div><h3>Être accompagné</h3><p>Une équipe disponible pour répondre à vos questions avant et après la commande.</p></div></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="altea-info-page__section altea-info-page__section--cream altea-about-v2__products-section">
+    <div class="altea-info-page__shell">
+      <div class="altea-info-page__section-heading altea-about-v2__products-heading"><p class="altea-info-page__eyebrow">À découvrir</p><h2>Les solutions pour un foyer plus serein.</h2><p>Retrouvez les produits ALTEA pensés pour anticiper, protéger et simplifier le quotidien.</p></div>
+      <div class="altea-about-v2__products-grid">
+        {%- for product in product_collection.products limit: 4 -%}
+          {%- assign product_alt = product.featured_image.alt | default: product.title -%}
+          <article class="altea-about-v2__product-card">
+            <a class="altea-about-v2__product-image" href="{{ product.url }}">{%- if product.featured_image != blank -%}{{ product.featured_image | image_url: width: 720 | image_tag: loading: 'lazy', widths: '240, 360, 540, 720', alt: product_alt }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}{%- endif -%}</a>
+            <div class="altea-about-v2__product-info"><p class="altea-about-v2__product-kicker">{{ product.vendor | default: 'ALTEA' | escape }}</p><h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3><p class="altea-about-v2__product-description">{{ product.description | strip_html | truncate: 96 }}</p><div class="altea-about-v2__product-footer"><strong>{{ product.price | money }}</strong><a href="{{ product.url }}" aria-label="Voir {{ product.title | escape }}">{% render 'material-icon', icon: 'arrow_forward' %}</a></div></div>
+          </article>
+        {%- else -%}<p>Les produits seront bientôt disponibles.</p>{%- endfor -%}
+      </div>
+      <div class="altea-info-page__actions altea-about-v2__products-action"><a class="altea-info-page__button altea-info-page__button--secondary" href="{{ section.settings.primary_link }}">Voir tout le catalogue {% render 'material-icon', icon: 'arrow_forward' %}</a></div>
+    </div>
+  </div>
+
+  <div class="altea-info-page__shell"><div class="altea-about-v2__cta"><div><p class="altea-info-page__eyebrow">Besoin d’aide pour choisir ?</p><h2>Faites le premier pas vers un quotidien plus serein.</h2><p>Notre équipe est disponible pour répondre à vos questions et vous orienter vers la solution la plus adaptée.</p></div><a class="altea-info-page__button altea-info-page__button--primary" href="{{ contact_url }}">Nous contacter {% render 'material-icon', icon: 'arrow_forward' %}</a></div></div>
 </section>
 
 {% schema %}
