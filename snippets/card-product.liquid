@@ -403,7 +403,7 @@
               </div>
             {% endif %}
             {% unless hide_price %}
-              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, hide_from_price: true %}
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: false, hide_from_price: true %}
             {% endunless %}
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
@@ -494,7 +494,7 @@
         {% if list_type %}
           <div class="collecion-list-view-quick-add">
             {% unless hide_price %}
-              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, hide_from_price: true %}
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: false, hide_from_price: true %}
             {% endunless %}
         {% endif %}
         {%- assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id -%}
@@ -707,7 +707,7 @@
                           <h3>{{ card_product.title | escape }}</h3>
                         </a>
                         {% unless hide_price %}
-                          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true, hide_from_price: true %}
+                          {% render 'price', product: card_product, price_class: '', show_compare_at_price: false, hide_from_price: true %}
                         {% endunless %}
                         {%- if card_product.quantity_price_breaks_configured? -%}
                           <div class="card__information-volume-pricing-note">
@@ -724,7 +724,7 @@
                           </h3>
                         </a>
                         {%- unless hide_price -%}
-                          {%- render 'price', product: card_product, price_class: '', show_compare_at_price: true, hide_from_price: true -%}
+                          {%- render 'price', product: card_product, price_class: '', show_compare_at_price: false, hide_from_price: true -%}
                         {%- endunless -%}
                         {%- if card_product.quantity_price_breaks_configured? -%}
                           <div class="card__information-volume-pricing-note">
