@@ -441,8 +441,8 @@ html body #MainContent .shopify-section :where(
    24–48 h) ; le fallback arabe reste natif et lisible.
 */
 :root {
-  --altea-font-display: "Inter", var(--altea-font-arabic), sans-serif;
-  --altea-font-body: "Inter", var(--altea-font-arabic), sans-serif;
+  --altea-font-display: var(--font-heading-family), var(--altea-font-arabic), sans-serif;
+  --altea-font-body: var(--font-body-family), var(--altea-font-arabic), sans-serif;
   --altea-body-size: clamp(1.5rem, 1.42rem + 0.15vw, 1.7rem);
 }
 
@@ -524,8 +524,8 @@ html body #MainContent .shopify-section :where(.altea-benefits__eyebrow, .altea-
 }
 
 [dir="rtl"] {
-  --altea-font-display: "Inter", var(--altea-font-arabic), sans-serif;
-  --altea-font-body: "Inter", var(--altea-font-arabic), sans-serif;
+  --altea-font-display: var(--font-heading-family), var(--altea-font-arabic), sans-serif;
+  --altea-font-body: var(--font-body-family), var(--altea-font-arabic), sans-serif;
 }
 
 [dir="rtl"] html body #MainContent .shopify-section :where(h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5) {
