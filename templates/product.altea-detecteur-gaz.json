@@ -185,14 +185,63 @@
     "problem_solution": {
       "type": "altea-problem-solution",
       "blocks": {
-        "problem_0": { "type": "problem", "settings": { "icon": "propane_tank", "title": "Une fuite de gaz est invisible", "text": "Le butane et le méthane peuvent s'accumuler avant que vous ne remarquiez le danger." } },
-        "problem_1": { "type": "problem", "settings": { "icon": "co2", "title": "Le monoxyde de carbone ne se sent pas", "text": "Le CO est sans couleur ni odeur : impossible de compter sur vos sens pour le repérer." } },
-        "problem_2": { "type": "problem", "settings": { "icon": "warning", "title": "Une simple alarme manque de contexte", "text": "Sans niveau affiché, vous ne savez pas si la situation monte ou revient à la normale." } },
-        "solution_0": { "type": "solution", "settings": { "icon": "sensors", "title": "Deux capteurs dans un seul appareil", "text": "Le détecteur surveille les gaz inflammables et le CO indépendamment, en continu." } },
-        "solution_1": { "type": "solution", "settings": { "icon": "monitoring", "title": "Un écran couleur lisible", "text": "Gaz, CO, température et humidité restent visibles pour agir avant que le seuil ne soit dépassé." } },
-        "solution_2": { "type": "solution", "settings": { "icon": "notifications_active", "title": "85 dB et flash rouge", "text": "L'alerte sonore et lumineuse vous donne un signal immédiat, même dans une pièce voisine." } }
+        "problem_0": {
+          "type": "problem",
+          "settings": {
+            "icon": "propane_tank",
+            "title": "Une fuite de gaz est invisible",
+            "text": "Le butane et le méthane peuvent s'accumuler avant que vous ne remarquiez le danger."
+          }
+        },
+        "problem_1": {
+          "type": "problem",
+          "settings": {
+            "icon": "co2",
+            "title": "Le monoxyde de carbone ne se sent pas",
+            "text": "Le CO est sans couleur ni odeur : impossible de compter sur vos sens pour le repérer."
+          }
+        },
+        "problem_2": {
+          "type": "problem",
+          "settings": {
+            "icon": "warning",
+            "title": "Une simple alarme manque de contexte",
+            "text": "Sans niveau affiché, vous ne savez pas si la situation monte ou revient à la normale."
+          }
+        },
+        "solution_0": {
+          "type": "solution",
+          "settings": {
+            "icon": "sensors",
+            "title": "Deux capteurs dans un seul appareil",
+            "text": "Le détecteur surveille les gaz inflammables et le CO indépendamment, en continu."
+          }
+        },
+        "solution_1": {
+          "type": "solution",
+          "settings": {
+            "icon": "monitoring",
+            "title": "Un écran couleur lisible",
+            "text": "Gaz, CO, température et humidité restent visibles pour agir avant que le seuil ne soit dépassé."
+          }
+        },
+        "solution_2": {
+          "type": "solution",
+          "settings": {
+            "icon": "notifications_active",
+            "title": "85 dB et flash rouge",
+            "text": "L'alerte sonore et lumineuse vous donne un signal immédiat, même dans une pièce voisine."
+          }
+        }
       },
-      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "block_order": [
+        "problem_0",
+        "problem_1",
+        "problem_2",
+        "solution_0",
+        "solution_1",
+        "solution_2"
+      ],
       "settings": {
         "eyebrow": "LE DANGER → LA DÉTECTION",
         "heading": "Deux risques invisibles, une seule réponse claire",
@@ -205,8 +254,8 @@
         "cta_link": "",
         "show_on": "both",
         "container_size": "page-width",
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-2",
         "padding___top": "custom",
         "custom_padding_top": 56,
         "padding___bottom": "custom",
@@ -260,7 +309,8 @@
         "heading": "Le gaz qui fuit, et le gaz qui brûle mal",
         "intro": "<p>Une fuite de gaz s'accumule vite dans une pièce. Une combustion incomplète, elle, dégage du monoxyde de carbone : un gaz sans couleur, sans odeur et sans fumée. Deux dangers différents, surveillés par un seul appareil.</p>",
         "columns_desktop": "4",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-4",
+        "color_scheme": "custom"
       }
     },
     "technology": {
@@ -306,7 +356,8 @@
         "eyebrow": "EN DÉTAIL",
         "heading": "Comment l'appareil surveille",
         "intro": "",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom"
       }
     },
     "steps": {
@@ -352,7 +403,8 @@
         "heading": "Branché en une minute, opérationnel en 200 secondes",
         "intro": "<p>Aucun câblage, aucun outil, aucun technicien.</p>",
         "note": "<p>Si l'alarme se déclenche : ouvrez portes et fenêtres, fermez la vanne de la bouteille ou l'arrivée principale, n'actionnez aucun interrupteur ni appareil électrique, quittez les lieux et faites contrôler l'origine de la fuite par un technicien qualifié avant toute remise en service.</p>",
-        "custom_color_scheme": "scheme-2"
+        "custom_color_scheme": "scheme-2",
+        "color_scheme": "custom"
       }
     },
     "comparison": {
@@ -655,7 +707,8 @@
         "box_title": "Dans la boîte",
         "note": "<p>Les normes et certifications indiquées sont celles annoncées par le fabricant sur le produit et son emballage.</p>",
         "container_size": "page-width",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom"
       }
     },
     "faq": {
@@ -815,7 +868,8 @@
         "text": "<p>Commandez maintenant et payez à la livraison. Vous pouvez vérifier votre commande avec le livreur à la réception.</p>",
         "button_label": "Commander maintenant",
         "show_price": true,
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-3",
+        "color_scheme": "custom"
       }
     },
     "related_products": {
@@ -826,7 +880,8 @@
         "columns_mobile": "2",
         "show_vendor": false,
         "show_rating": false,
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-4",
+        "color_scheme": "custom"
       }
     },
     "recently_viewed": {
@@ -835,7 +890,8 @@
         "products_to_show": 4,
         "grid_col_desktop": 4,
         "grid_col_mobile": "2",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-2",
+        "color_scheme": "custom"
       }
     }
   },

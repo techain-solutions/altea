@@ -175,14 +175,63 @@
     "problem_solution": {
       "type": "altea-problem-solution",
       "blocks": {
-        "problem_0": { "type": "problem", "settings": { "icon": "local_fire_department", "title": "Une poêle peut s'enflammer en quelques secondes", "text": "Une flamme de cuisson se propage vite et laisse peu de temps pour réfléchir." } },
-        "problem_1": { "type": "problem", "settings": { "icon": "cleaning_services", "title": "La poudre complique le nettoyage", "text": "Un extincteur classique éteint la flamme, mais peut recouvrir la cuisine de résidus." } },
-        "problem_2": { "type": "problem", "settings": { "icon": "search", "title": "Le matériel n'est jamais là quand il faut", "text": "En urgence, chercher un équipement rangé loin fait perdre des secondes précieuses." } },
-        "solution_0": { "type": "solution", "settings": { "icon": "square_foot", "title": "Une couverture de 1,2 × 1,2 m", "text": "La surface de 1,44 m² recouvre complètement un départ de feu domestique." } },
-        "solution_1": { "type": "solution", "settings": { "icon": "front_hand", "title": "Tirez, dépliez, couvrez", "text": "Les deux sangles permettent un geste simple, sans pile, sans électricité et sans poudre." } },
-        "solution_2": { "type": "solution", "settings": { "icon": "wallpaper", "title": "Toujours prête sur le mur", "text": "La pochette PVC garde la couverture visible et accessible près de la zone à risque." } }
+        "problem_0": {
+          "type": "problem",
+          "settings": {
+            "icon": "local_fire_department",
+            "title": "Une poêle peut s'enflammer en quelques secondes",
+            "text": "Une flamme de cuisson se propage vite et laisse peu de temps pour réfléchir."
+          }
+        },
+        "problem_1": {
+          "type": "problem",
+          "settings": {
+            "icon": "cleaning_services",
+            "title": "La poudre complique le nettoyage",
+            "text": "Un extincteur classique éteint la flamme, mais peut recouvrir la cuisine de résidus."
+          }
+        },
+        "problem_2": {
+          "type": "problem",
+          "settings": {
+            "icon": "search",
+            "title": "Le matériel n'est jamais là quand il faut",
+            "text": "En urgence, chercher un équipement rangé loin fait perdre des secondes précieuses."
+          }
+        },
+        "solution_0": {
+          "type": "solution",
+          "settings": {
+            "icon": "square_foot",
+            "title": "Une couverture de 1,2 × 1,2 m",
+            "text": "La surface de 1,44 m² recouvre complètement un départ de feu domestique."
+          }
+        },
+        "solution_1": {
+          "type": "solution",
+          "settings": {
+            "icon": "front_hand",
+            "title": "Tirez, dépliez, couvrez",
+            "text": "Les deux sangles permettent un geste simple, sans pile, sans électricité et sans poudre."
+          }
+        },
+        "solution_2": {
+          "type": "solution",
+          "settings": {
+            "icon": "wallpaper",
+            "title": "Toujours prête sur le mur",
+            "text": "La pochette PVC garde la couverture visible et accessible près de la zone à risque."
+          }
+        }
       },
-      "block_order": ["problem_0", "problem_1", "problem_2", "solution_0", "solution_1", "solution_2"],
+      "block_order": [
+        "problem_0",
+        "problem_1",
+        "problem_2",
+        "solution_0",
+        "solution_1",
+        "solution_2"
+      ],
       "settings": {
         "eyebrow": "L'URGENCE → LE BON GESTE",
         "heading": "Étouffer un départ de feu avant qu'il ne se propage",
@@ -195,8 +244,8 @@
         "cta_link": "",
         "show_on": "both",
         "container_size": "page-width",
-        "color_scheme": "scheme-1",
-        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom",
+        "custom_color_scheme": "scheme-2",
         "padding___top": "custom",
         "custom_padding_top": 56,
         "padding___bottom": "custom",
@@ -250,7 +299,8 @@
         "heading": "Prête, à portée de main, sans entretien",
         "intro": "<p>Une poêle, une huile qui s'enflamme, un geste malheureux pendant la cuisson : la couverture ALTEA est utilisable immédiatement, sans électricité et sans pile.</p>",
         "columns_desktop": "4",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-4",
+        "color_scheme": "custom"
       }
     },
     "steps": {
@@ -288,7 +338,8 @@
         "heading": "Trois gestes, quelques secondes",
         "intro": "<p>La couverture étouffe la flamme en l'isolant de l'air.</p>",
         "note": "<p>Installez la pochette murale à un endroit visible et facile d'accès — par exemple dans la cuisine ou près d'une sortie — de façon à pouvoir la saisir sans vous approcher de la zone à risque.</p>",
-        "custom_color_scheme": "scheme-2"
+        "custom_color_scheme": "scheme-2",
+        "color_scheme": "custom"
       }
     },
     "material": {
@@ -323,7 +374,8 @@
         "eyebrow": "MATIÈRE",
         "heading": "Une fibre de verre tissée serrée",
         "intro": "",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom"
       }
     },
     "specs": {
@@ -439,7 +491,8 @@
         "box_title": "Dans la boîte",
         "note": "<p>La norme et le marquage indiqués sont ceux annoncés par le fabricant sur le produit et son emballage.</p>",
         "container_size": "page-width",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-1",
+        "color_scheme": "custom"
       }
     },
     "faq": {
@@ -579,7 +632,8 @@
         "text": "<p>Commandez maintenant et payez à la livraison, partout au Maroc.</p>",
         "button_label": "Commander maintenant",
         "show_price": true,
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-3",
+        "color_scheme": "custom"
       }
     },
     "related_products": {
@@ -590,7 +644,8 @@
         "columns_mobile": "2",
         "show_vendor": false,
         "show_rating": false,
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-4",
+        "color_scheme": "custom"
       }
     },
     "recently_viewed": {
@@ -599,7 +654,8 @@
         "products_to_show": 4,
         "grid_col_desktop": 4,
         "grid_col_mobile": "2",
-        "custom_color_scheme": "scheme-1"
+        "custom_color_scheme": "scheme-2",
+        "color_scheme": "custom"
       }
     }
   },
