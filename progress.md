@@ -43,4 +43,4 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Shopify theme file validation required `separator_height` to be at least 65; all four templates now use 65.
 
 ## Next Steps
-- Commit the progress log and icon/app-embed fix, then hand off preview links; do not publish or assign product suffixes until separately approved.
+- Hand off Shopify's unpublished-theme preview link; do not publish or assign product suffixes until separately approved.
