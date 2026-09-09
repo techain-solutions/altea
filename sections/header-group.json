@@ -90,7 +90,7 @@
         "padding___bottom": "custom",
         "custom_padding_bottom": 0,
         "color_scheme": "custom",
-        "custom_color_scheme": "scheme-4"
+        "custom_color_scheme": "scheme-2"
       }
     },
     "header": {
@@ -106,7 +106,7 @@
         "show_compare": false,
         "open_dropdown_hover": true,
         "active_badge": true,
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "menu_center": true,
         "menu_text_bold": false,
         "select_menu_text_type": "inherit",
@@ -133,7 +133,7 @@
         "pattern_size_thickness": 1,
         "pattern_opacity": 50,
         "color_scheme": "custom",
-        "custom_color_scheme": "scheme-2",
+        "custom_color_scheme": "scheme-3",
         "menu_color_scheme": "scheme-1",
         "custom_menu_color_scheme": "",
         "transparent_header_color_scheme": "scheme-2",

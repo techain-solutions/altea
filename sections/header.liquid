@@ -437,7 +437,7 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-      {% render "header-logo" %}
+      {% render 'header-logo' %}
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
@@ -459,7 +459,7 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-      {% render "header-logo" %}
+      {% render 'header-logo' %}
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
@@ -580,11 +580,12 @@
         {% if section.settings.show_cart_text_icon == 'text' %}
         <span>
           <span>{{ 'templates.cart.cart' | t }}</span>
+        </span>
         {% elsif section.settings.show_cart_text_icon == 'icon' %}
         <span>
           {% render 'cart-icon-bubble' %}
-        {% endif %}
         </span>
+        {% endif %}
       </a>
     </div>
   </header>

@@ -21,7 +21,8 @@
       #shopify-section-{{ section.id }} {
         position: sticky;
         width: 100%;
-        top: var(--height--annauncement-bar);
+        top: 0;
+        z-index: 50;
       }
       body:not(.header-loaded) .dbtfy-announcement-bar #section--{{ section.id }} {
         position: absolute;
@@ -71,7 +72,7 @@
     <div
       id="section--{{ section.id }}"
       class="utility-bar color-{{ section.settings.custom_color_scheme }} dbtfy-color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} utility-bar--bottom-border {% endif %} header-localization section-{{ section.id }}-padding"
-      {{ block.shopify_attributes }}
+      data-altea-announcement="true"
     >
       <div class="page-width utility-bar__grid--3-col utility-bar__grid announcement-contents">
         {%- content_for 'block', type: '_announcement-bar-left-bar', id: 'announcement-bar-left-bar' -%}

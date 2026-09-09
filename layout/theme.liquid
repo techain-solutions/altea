@@ -75,7 +75,7 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script defer src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="{{ 'splide.min.js' | asset_url }}" defer="defer"></script>
 
     <link rel="stylesheet" href="{{ 'dbtfy-splide.css' | asset_url }}" media="print" onload="this.media='all'">
     <script src="{{ 'dbtfy-splide.js' | asset_url }}" defer="defer"></script>
@@ -352,6 +352,7 @@
     <script defer src="{{ 'dbtfy-drawer.js' | asset_url }}"></script>
 
     <script defer src="{{ 'theme.js' | asset_url }}"></script>
+    <script defer src="{{ 'altea-storefront.js' | asset_url }}"></script>
 
     <script defer src="{{ 'dbtfy-search-bar-minimal.js' | asset_url }}"></script>
     {%- if settings.dbtfy_cart_variant_picker or settings.dbtfy_conditional_gift -%}

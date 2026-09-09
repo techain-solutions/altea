@@ -532,3 +532,156 @@ html body #MainContent .shopify-section :where(.altea-benefits__eyebrow, .altea-
   letter-spacing: 0;
   line-height: 1.35;
 }
+
+:root {
+  --altea-announcement: 7, 23, 41;
+  --altea-warm-white: 247, 243, 234;
+}
+
+.section-header .header-wrapper {
+  background: rgb(var(--altea-surface));
+  box-shadow: 0 0.1rem 0 rgba(var(--altea-navy), 0.08);
+}
+
+.section-header .header {
+  min-height: 7.2rem;
+  height: 7.2rem;
+  padding-block: 0;
+}
+
+.section-header .header--middle-left.header--has-menu:not(.drawer-menu) {
+  grid-template-areas: "heading navigation icons";
+  grid-template-columns: minmax(16rem, 1fr) auto minmax(16rem, 1fr);
+  column-gap: 2.4rem;
+}
+
+.section-header .header--middle-left .header__heading,
+.section-header .header--middle-left .header__heading-link {
+  justify-self: start;
+  text-align: start;
+}
+
+.section-header .header__heading-link {
+  padding: 0;
+}
+
+.section-header .altea-wordmark {
+  display: inline-flex;
+  align-items: center;
+  width: 17.6rem;
+  height: 3.4rem;
+}
+
+.section-header .altea-wordmark__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section-header .altea-wordmark__svg--white {
+  display: none;
+  color: rgb(var(--altea-warm-white));
+}
+
+.section-header .altea-wordmark__svg--navy {
+  color: rgb(var(--altea-navy));
+}
+
+.section-header .header__inline-menu {
+  justify-self: center;
+  margin-inline: 0;
+}
+
+.section-header .header__inline-menu .header__menu-item {
+  color: rgba(var(--altea-navy), 0.78);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-inline: 1.1rem;
+}
+
+.section-header .header__icons {
+  justify-self: end;
+  gap: 0.4rem;
+}
+
+.section-header .header__icon {
+  color: rgb(var(--altea-navy));
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+}
+
+.dbtfy-announcement-bar .utility-bar {
+  background: rgb(var(--altea-announcement));
+  color: rgb(var(--altea-warm-white));
+}
+
+.dbtfy-announcement-bar .utility-bar a,
+.dbtfy-announcement-bar .utility-bar button,
+.dbtfy-announcement-bar .utility-bar .announcement-bar__message,
+.dbtfy-announcement-bar .utility-bar .header__icon {
+  color: inherit;
+}
+
+.dbtfy-announcement-bar .utility-bar .announcement-bar__message,
+.dbtfy-announcement-bar .utility-bar .announcement-bar__message a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.dbtfy-announcement-bar .utility-bar .localization-form__select,
+.dbtfy-announcement-bar .utility-bar .localization-form__select svg {
+  color: rgb(var(--altea-gold));
+}
+
+.section-header.shopify-section-header-sticky {
+  top: var(--altea-announcement-height, 0px);
+  z-index: 40;
+}
+
+@media screen and (max-width: 989px) {
+  .section-header .header {
+    min-height: 5.8rem;
+    height: 5.8rem;
+  }
+
+  .section-header .header--middle-left.header--has-menu:not(.drawer-menu) {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .section-header .header--middle-left .header__heading,
+  .section-header .header--middle-left .header__heading-link {
+    justify-self: start;
+  }
+
+  .section-header .altea-wordmark {
+    width: 13.2rem;
+    height: 2.6rem;
+  }
+
+  .section-header .header__icons {
+    gap: 0;
+  }
+
+  .section-header .header__icon {
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+
+  .dbtfy-announcement-bar .utility-bar .announcement-bar__message,
+  .dbtfy-announcement-bar .utility-bar .announcement-bar__message a {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-header .altea-wordmark {
+    width: 11.8rem;
+  }
+
+  .dbtfy-announcement-bar .utility-bar .announcement-bar__message,
+  .dbtfy-announcement-bar .utility-bar .announcement-bar__message a {
+    font-size: 1rem;
+  }
+}

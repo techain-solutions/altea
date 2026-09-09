@@ -131,7 +131,7 @@
     "h1_font_size": 48,
     "h2_font_size": 36,
     "h5_font_size": 16,
-    "type_header_font": "inter_n7",
+    "type_header_font": "manrope_n7",
     "heading_scale": 100,
     "type_body_font": "inter_n4",
     "body_font_size_mobile": 15,
@@ -1617,7 +1617,7 @@
     "blocks": {
       "13669795325273674392": {
         "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       },
       "15830000824732515833": {
@@ -1632,7 +1632,7 @@
       },
       "13095726950816047308": {
         "type": "shopify://apps/ea-auto-translate/blocks/app-embed-block/74970794-df41-4243-8f9a-ca0ffb4f8827",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     },
