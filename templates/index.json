@@ -222,7 +222,7 @@
       },
       "settings": {
         "show_on": "both",
-        "container_size": "",
+        "container_size": "container",
         "collection": "nos-produits",
         "products_to_show": 21,
         "columns_desktop": 4,
