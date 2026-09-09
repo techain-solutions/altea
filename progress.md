@@ -28,6 +28,9 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Uploaded and verified the section, stylesheet, main product section, and four alternate templates on the unpublished `altea/main` theme only.
 - Preview QA confirmed the new section renders on Breeze, smoke detector, gas/CO detector, and fire blanket pages; each page retains its product data, purchase controls, and COD messaging.
 - Committed and pushed the verified source changes to `main` (`eee0777`).
+- Fixed the stray `ar` text in the problem → solution connector and CTA by rendering Material Icons through the shared `material-icon` snippet instead of outputting the icon name as clipped text.
+- Enabled the existing Releasit COD Form, Releasit Bundle, and WhatsApp app embeds in the unpublished `altea/main` theme. Draft PDP QA confirms the embedded COD form replaces native add-to-cart and dynamic checkout controls; the published theme was not changed.
+- Releasit’s field copy/language is app-managed (the draft currently displays the existing Arabic form labels); switch that copy in Releasit’s Form Designer/onboarding if French labels are required.
 ### ⏳ Pending
 - Merchant go-live actions: assign suffixes only when Debutify is ready to publish; configure Releasit and Shopify 2-for-599 pricing; add product image alt text.
 - Publish only after separate approval.
@@ -40,4 +43,4 @@ ALTEA Stores sells four safety and comfort products in Morocco. Goal: preview fo
 - Shopify theme file validation required `separator_height` to be at least 65; all four templates now use 65.
 
 ## Next Steps
-- Commit the progress log and template constraint fix, then hand off preview links; do not publish or assign product suffixes until separately approved.
+- Commit the progress log and icon/app-embed fix, then hand off preview links; do not publish or assign product suffixes until separately approved.
